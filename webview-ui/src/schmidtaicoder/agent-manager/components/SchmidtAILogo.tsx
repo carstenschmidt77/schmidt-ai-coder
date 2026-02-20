@@ -5,9 +5,9 @@ export const SchmidtAILogo = () => {
 	return (
 		<div style={{ width: "100%", height: "100%", display: "flex", alignItems: "center", justifyContent: "center" }}>
 			<img
-				src={`${iconsBaseUri}/schmidt_ai_logo.png`}
+				src={`${iconsBaseUri}/schmidt-ai-full-logo.svg`}
 				alt="Schmidt AI Coder"
-				style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain", opacity: 0.85 }}
+				style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain" }}
 			/>
 		</div>
 	)

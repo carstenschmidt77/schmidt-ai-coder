@@ -77,12 +77,11 @@ const isMac = navigator.platform.toUpperCase().indexOf("MAC") >= 0
 const SchmidtAILogo = () => {
 	const iconsBaseUri = (window as any).ICONS_BASE_URI || ""
 	return (
-		<div className="flex items-center justify-center" style={{ width: "120px", height: "56px", margin: "0 auto" }}>
+		<div className="flex items-center justify-center" style={{ width: "160px", height: "64px", margin: "0 auto" }}>
 			<img
-				src={`${iconsBaseUri}/schmidt_ai_logo.png`}
+				src={`${iconsBaseUri}/schmidt-ai-full-logo.svg`}
 				alt="Schmidt AI Coder"
 				className="w-full h-full object-contain"
-				style={{ opacity: 0.85 }}
 			/>
 		</div>
 	)

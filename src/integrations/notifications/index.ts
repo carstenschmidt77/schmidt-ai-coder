@@ -24,7 +24,7 @@ async function showMacOSNotification(options: NotificationOptions): Promise<void
 
 		// Add Schmidt AI Coder logo
 		const extensionUri = vscode.extensions.getExtension(`kilocode.kilo-code`)!.extensionUri
-		const iconPath = vscode.Uri.joinPath(extensionUri, "assets", "icons", "schmidt-ai.png").fsPath
+		const iconPath = vscode.Uri.joinPath(extensionUri, "assets", "icons", "schmidt_ai_logo.png").fsPath
 		args.push("-appIcon", iconPath)
 
 		await execa("terminal-notifier", args)

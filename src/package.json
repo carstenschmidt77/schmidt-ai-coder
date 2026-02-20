@@ -6,8 +6,8 @@
 	"version": "5.8.0",
 	"icon": "assets/icons/schmidt_ai_logo.png",
 	"galleryBanner": {
-		"color": "#FFFFFF",
-		"theme": "light"
+		"color": "#1a1a2e",
+		"theme": "dark"
 	},
 	"engines": {
 		"vscode": "^1.84.0",
