@@ -76,14 +76,10 @@ const isMac = navigator.platform.toUpperCase().indexOf("MAC") >= 0
 // kilocode_change start: SchmidtAILogo component
 const SchmidtAILogo = () => {
 	const iconsBaseUri = (window as any).ICONS_BASE_URI || ""
-	const isLightTheme =
-		document.body.classList.contains("vscode-light") ||
-		document.body.classList.contains("vscode-high-contrast-light")
-	const iconFile = isLightTheme ? "schmidt-ai-light.svg" : "schmidt-ai-dark.svg"
 	return (
-		<div className="flex items-center justify-center" style={{ width: "56px", height: "56px", margin: "0 auto" }}>
+		<div className="flex items-center justify-center" style={{ width: "120px", height: "56px", margin: "0 auto" }}>
 			<img
-				src={`${iconsBaseUri}/${iconFile}`}
+				src={`${iconsBaseUri}/schmidt_ai_logo.png`}
 				alt="Schmidt AI Coder"
 				className="w-full h-full object-contain"
 				style={{ opacity: 0.85 }}
