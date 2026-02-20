@@ -219,7 +219,7 @@ export const getModelsByProvider = ({
 		}
 		case "schmidt-embedded-systems": {
 			return {
-				models: routerModels.kilocode,
+				models: routerModels["schmidt-embedded-systems"],
 				defaultModel: kilocodeDefaultModel,
 			}
 		}

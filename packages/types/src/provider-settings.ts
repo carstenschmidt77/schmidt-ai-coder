@@ -769,7 +769,7 @@ export const modelIdKeysByProvider: Record<TypicalProvider, ModelIdKey> = {
 	glama: "glamaModelId", // kilocode_change
 	"nano-gpt": "nanoGptModelId", // kilocode_change
 	openrouter: "openRouterModelId",
-	kilocode: "kilocodeModel",
+	"schmidt-embedded-systems": "kilocodeModel",
 	bedrock: "apiModelId",
 	vertex: "apiModelId",
 	"openai-codex": "apiModelId",
@@ -966,7 +966,7 @@ export const MODELS_BY_PROVIDER: Record<
 	// kilocode_change start
 	ovhcloud: { id: "ovhcloud", label: "OVHcloud AI Endpoints", models: [] },
 	inception: { id: "inception", label: "Inception", models: [] },
-	kilocode: { id: "schmidt-embedded-systems", label: "Kilocode", models: [] },
+	"schmidt-embedded-systems": { id: "schmidt-embedded-systems", label: "Schmidt AI", models: [] },
 	"virtual-quota-fallback": { id: "virtual-quota-fallback", label: "Virtual Quota Fallback", models: [] },
 	apertis: { id: "apertis", label: "Apertis", models: [] },
 	zenmux: { id: "zenmux", label: "ZenMux", models: [] }, // kilocode_change

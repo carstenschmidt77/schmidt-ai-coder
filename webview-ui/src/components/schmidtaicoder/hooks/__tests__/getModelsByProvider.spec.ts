@@ -28,7 +28,7 @@ describe("getModelsByProvider", () => {
 		glama: { "test-model": testModel },
 		unbound: { "test-model": testModel },
 		litellm: { "test-model": testModel },
-		kilocode: { "test-model": testModel },
+		"schmidt-embedded-systems": { "test-model": testModel },
 		"nano-gpt": { "test-model": testModel },
 		ollama: { "test-model": testModel },
 		lmstudio: { "test-model": testModel },

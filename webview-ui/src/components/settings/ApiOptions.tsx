@@ -476,7 +476,7 @@ const ApiOptions = ({
 				lmstudio: { field: "lmStudioModelId" },
 				// kilocode_change start
 				apertis: { field: "apertisModelId", default: apertisDefaultModelId },
-				kilocode: { field: "kilocodeModel", default: kilocodeDefaultModel },
+				"schmidt-embedded-systems": { field: "kilocodeModel", default: kilocodeDefaultModel },
 				synthetic: { field: "apiModelId", default: syntheticDefaultModelId },
 				ovhcloud: { field: "ovhCloudAiEndpointsModelId", default: ovhCloudAiEndpointsDefaultModelId },
 				inception: { field: "inceptionLabsModelId", default: inceptionDefaultModelId },
