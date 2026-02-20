@@ -107,19 +107,19 @@
 				{
 					"id": "schmidt-ai-coder-ActivityBar",
 					"title": "%views.activitybar.title%",
-					"icon": "assets/icons/schmidt-ai.png",
-					"darkIcon": "assets/icons/schmidt-ai-dark.png"
-				}
-			]
-		},
-		"views": {
-			"schmidt-ai-coder-ActivityBar": [
-				{
-					"type": "webview",
-					"id": "schmidt-ai-coder.SidebarProvider",
-					"name": "%views.sidebar.name%",
-					"icon": "assets/icons/schmidt-ai.png",
-					"darkIcon": "assets/icons/schmidt-ai-dark.png"
+				"icon": "assets/icons/schmidt-ai-light.svg",
+				"darkIcon": "assets/icons/schmidt-ai-dark.svg"
+			}
+		]
+	},
+	"views": {
+		"schmidt-ai-coder-ActivityBar": [
+			{
+				"type": "webview",
+				"id": "schmidt-ai-coder.SidebarProvider",
+				"name": "%views.sidebar.name%",
+				"icon": "assets/icons/schmidt-ai-light.svg",
+				"darkIcon": "assets/icons/schmidt-ai-dark.svg"
 				}
 			]
 		},
