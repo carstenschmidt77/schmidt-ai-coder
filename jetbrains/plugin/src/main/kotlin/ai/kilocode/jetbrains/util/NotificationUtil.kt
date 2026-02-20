@@ -15,7 +15,7 @@ import com.intellij.openapi.project.ProjectManager
  */
 object NotificationUtil {
 
-    private const val NOTIFICATION_GROUP_ID = "kilocode"
+    private const val NOTIFICATION_GROUP_ID = "schmidt-embedded-systems"
 
     /**
      * Show error notification

@@ -383,7 +383,7 @@ export class CodeIndexManager {
 			rooIgnoreController,
 		)
 
-		// kilocode_change start: Handle Kilo org mode (no embedder/vector store validation needed)
+		// kilocode_change start: Handle Schmidt AI org mode (no embedder/vector store validation needed)
 		const isKiloOrgMode = this._configManager!.isKiloOrgMode
 
 		if (!isKiloOrgMode) {
@@ -413,8 +413,8 @@ export class CodeIndexManager {
 			fileWatcher,
 		)
 
-		// kilocode_change start: Always create search service (it handles both local and Kilo org mode)
-		// In Kilo org mode, embedder and vectorStore ill be null, but search service handles this
+		// kilocode_change start: Always create search service (it handles both local and Schmidt AI org mode)
+		// In Schmidt AI org mode, embedder and vectorStore ill be null, but search service handles this
 		this._searchService = new CodeIndexSearchService(
 			this._configManager!,
 			this._stateManager,

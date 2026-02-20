@@ -17,7 +17,7 @@ import { Button } from "@/components/ui"
 
 import { SectionHeader } from "./SectionHeader"
 import { Section } from "./Section"
-import { getMemoryPercentage } from "@/kilocode/helpers"
+import { getMemoryPercentage } from "@/schmidtaicoder/helpers"
 
 type AboutProps = HTMLAttributes<HTMLDivElement> & {
 	telemetrySetting: TelemetrySetting
@@ -64,7 +64,7 @@ export const About = ({
 						<Trans
 							i18nKey="settings:footer.telemetry.description"
 							components={{
-								privacyLink: <VSCodeLink href="https://kilo.ai/privacy" />,
+								privacyLink: <VSCodeLink href="https://www.schmidt-embedded-systems.de/ai/privacy" />,
 							}}
 						/>
 					</p>
@@ -74,9 +74,9 @@ export const About = ({
 					<Trans
 						i18nKey="settings:footer.feedback"
 						components={{
-							githubLink: <VSCodeLink href="https://github.com/Kilo-Org/kilocode" />,
-							redditLink: <VSCodeLink href="https://reddit.com/r/kilocode" />,
-							discordLink: <VSCodeLink href="https://kilo.ai/discord" />,
+							githubLink: <VSCodeLink href="https://github.com/schmidt-embedded-systems/schmidt-ai-coder" />,
+							redditLink: <VSCodeLink href="https://reddit.com/r/schmidtaicoder" />,
+							discordLink: <VSCodeLink href="https://schmidt-embedded-systems.de/ai" />,
 						}}
 					/>
 				</div>
@@ -86,7 +86,7 @@ export const About = ({
 					<Trans
 						i18nKey="settings:footer.support"
 						components={{
-							supportLink: <VSCodeLink href="https://kilo.ai/support" />,
+							supportLink: <VSCodeLink href="https://www.schmidt-embedded-systems.de/ai/support" />,
 						}}
 					/>
 				</div>

@@ -14,7 +14,7 @@ import { getModelParams } from "../transform/model-params"
 import { DEFAULT_HEADERS } from "./constants"
 import { BaseProvider } from "./base-provider"
 import type { SingleCompletionHandler, ApiHandlerCreateMessageMetadata } from "../index"
-import { verifyFinishReason } from "./kilocode/verifyFinishReason" // kilocode_change
+import { verifyFinishReason } from "./schmidtaicoder/verifyFinishReason" // kilocode_change
 import { handleOpenAIError } from "./utils/openai-error-handler"
 
 const XAI_DEFAULT_TEMPERATURE = 0

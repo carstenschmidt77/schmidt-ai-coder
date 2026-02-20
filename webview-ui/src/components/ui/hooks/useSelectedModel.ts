@@ -57,7 +57,7 @@ import { useExtensionState } from "@/context/ExtensionStateContext" // kilocode_
 export const useModelProviders = (kilocodeDefaultModel: string, apiConfiguration?: ProviderSettings) => {
 	const provider = apiConfiguration?.apiProvider
 	return useOpenRouterModelProviders(
-		provider === "kilocode"
+		provider === "schmidt-embedded-systems"
 			? (apiConfiguration?.kilocodeModel ?? kilocodeDefaultModel)
 			: provider === "openrouter"
 				? (apiConfiguration?.openRouterModelId ?? openRouterDefaultModelId)
@@ -433,11 +433,11 @@ function getSelectedModel({
 			return { id, info: { ...openAiModelInfoSaneDefaults, ...info, supportsImages: false } } // VSCode LM API currently doesn't support images.
 		}
 		// kilocode_change begin
-		case "kilocode": {
+		case "schmidt-embedded-systems": {
 			// Use the fetched models from routerModels
-			if (routerModels["kilocode"] && apiConfiguration.kilocodeModel) {
+			if (routerModels["schmidt-embedded-systems"] && apiConfiguration.kilocodeModel) {
 				// Find the model in the fetched models
-				const modelEntries = Object.entries(routerModels["kilocode"])
+				const modelEntries = Object.entries(routerModels["schmidt-embedded-systems"])
 
 				const selectedModelId = apiConfiguration.kilocodeModel.toLowerCase()
 
@@ -463,7 +463,7 @@ function getSelectedModel({
 			const invalidOrDefaultModel = apiConfiguration.kilocodeModel ?? kilocodeDefaultModel
 			return {
 				id: invalidOrDefaultModel,
-				info: routerModels["kilocode"][invalidOrDefaultModel],
+				info: routerModels["schmidt-embedded-systems"][invalidOrDefaultModel],
 			}
 		}
 		case "virtual-quota-fallback": {
@@ -588,7 +588,7 @@ function getSelectedModel({
 		// case "human-relay":
 		// case "fake-ai":
 		default: {
-			provider satisfies "anthropic" | "fake-ai" | "human-relay" | "kilocode" | "apertis"
+			provider satisfies "anthropic" | "fake-ai" | "human-relay" | "schmidt-embedded-systems" | "apertis"
 			const id = apiConfiguration.apiModelId ?? defaultModelId
 			const baseInfo = anthropicModels[id as keyof typeof anthropicModels]
 

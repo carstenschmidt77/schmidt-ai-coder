@@ -22,7 +22,7 @@ export interface KilocodePayload extends Record<string, unknown> {
 }
 
 export interface KilocodeStreamEvent {
-	streamEventType: "kilocode"
+	streamEventType: "schmidt-embedded-systems"
 	payload: KilocodePayload
 	sessionId?: string
 }
@@ -310,7 +310,7 @@ function toStreamEvent(parsed: Record<string, unknown>): StreamEvent | null {
 	}
 
 	return {
-		streamEventType: "kilocode",
+		streamEventType: "schmidt-embedded-systems",
 		payload: parsed as KilocodePayload,
 	}
 }

@@ -1,8 +1,8 @@
 /**
- * @kilocode/agent-runtime
+ * @schmidtaicoder/agent-runtime
  *
- * Core agent runtime for Kilo Code - enables running agents without CLI.
- * This package provides the essential components for running the Kilo Code extension
+ * Core agent runtime for Schmidt AI Coder - enables running agents without CLI.
+ * This package provides the essential components for running the Schmidt AI Coder extension
  * in a Node.js environment without VS Code.
  */
 

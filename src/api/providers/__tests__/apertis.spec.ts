@@ -2,8 +2,8 @@
 // Mock DEFAULT_HEADERS before imports
 vi.mock("../constants", () => ({
 	DEFAULT_HEADERS: {
-		"HTTP-Referer": "https://github.com/Kilo-Org/kilocode",
-		"X-Title": "Kilo Code",
+		"HTTP-Referer": "https://github.com/schmidt-embedded-systems/schmidt-ai-coder",
+		"X-Title": "Schmidt AI Coder",
 		"User-Agent": "KiloCode/1.0.0",
 	},
 }))

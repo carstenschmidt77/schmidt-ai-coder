@@ -89,7 +89,7 @@ import {
 	editMessageHandler,
 	fetchKilocodeNotificationsHandler,
 	deviceAuthMessageHandler,
-} from "../kilocode/webview/webviewMessageHandlerUtils"
+} from "../schmidtaicoder/webview/webviewMessageHandlerUtils"
 import { AutocompleteServiceManager } from "../../services/autocomplete/AutocompleteServiceManager"
 import { handleChatCompletionRequest } from "../../services/autocomplete/chat-autocomplete/handleChatCompletionRequest"
 import { handleChatCompletionAccepted } from "../../services/autocomplete/chat-autocomplete/handleChatCompletionAccepted"
@@ -99,15 +99,15 @@ const ALLOWED_VSCODE_SETTINGS = new Set(["terminal.integrated.inheritEnv"])
 
 import { MarketplaceManager, MarketplaceItemType } from "../../services/marketplace"
 import { UsageTracker } from "../../utils/usage-tracker" // kilocode_change
-import { seeNewChanges } from "../checkpoints/kilocode/seeNewChanges" // kilocode_change
-import { getTaskHistory } from "../../shared/kilocode/getTaskHistory" // kilocode_change
+import { seeNewChanges } from "../checkpoints/schmidtaicoder/seeNewChanges" // kilocode_change
+import { getTaskHistory } from "../../shared/schmidtaicoder/getTaskHistory" // kilocode_change
 import { fetchAndRefreshOrganizationModesOnStartup, refreshOrganizationModes } from "./kiloWebviewMessgeHandlerHelpers" // kilocode_change
 import { getSapAiCoreDeployments } from "../../api/providers/fetchers/sap-ai-core" // kilocode_change
 import { AutoPurgeScheduler } from "../../services/auto-purge" // kilocode_change
 import { setPendingTodoList } from "../tools/UpdateTodoListTool"
 import { ManagedIndexer } from "../../services/code-index/managed/ManagedIndexer"
-import { SessionManager } from "../../shared/kilocode/cli-sessions/core/SessionManager" // kilocode_change
-import { getEffectiveTelemetrySetting } from "../kilocode/wrapper"
+import { SessionManager } from "../../shared/schmidtaicoder/cli-sessions/core/SessionManager" // kilocode_change
+import { getEffectiveTelemetrySetting } from "../schmidtaicoder/wrapper"
 
 export const webviewMessageHandler = async (
 	provider: ClineProvider,
@@ -969,9 +969,9 @@ export const webviewMessageHandler = async (
 				{ key: "glama", options: { provider: "glama" } }, // kilocode_change
 				{ key: "unbound", options: { provider: "unbound", apiKey: apiConfiguration.unboundApiKey } },
 				{
-					key: "kilocode",
+					key: "schmidt-embedded-systems",
 					options: {
-						provider: "kilocode",
+						provider: "schmidt-embedded-systems",
 						kilocodeToken: apiConfiguration.kilocodeToken,
 						kilocodeOrganizationId: apiConfiguration.kilocodeOrganizationId,
 					},
@@ -1669,7 +1669,7 @@ export const webviewMessageHandler = async (
 			break
 		// kilocode_change begin
 		case "openGlobalKeybindings":
-			vscode.commands.executeCommand("workbench.action.openGlobalKeybindings", message.text ?? "kilo-code.")
+			vscode.commands.executeCommand("workbench.action.openGlobalKeybindings", message.text ?? "schmidt-ai-coder.")
 			break
 		case "showSystemNotification":
 			const isSystemNotificationsEnabled = getGlobalState("systemNotificationsEnabled") ?? true
@@ -2004,7 +2004,7 @@ export const webviewMessageHandler = async (
 			const validatedSettings = autocompleteServiceSettingsSchema.parse(message.values)
 			await updateGlobalState("ghostServiceSettings", validatedSettings)
 			await provider.postStateToWebview()
-			vscode.commands.executeCommand("kilo-code.autocomplete.reload")
+			vscode.commands.executeCommand("schmidt-ai-coder.autocomplete.reload")
 			break
 		case "snoozeAutocomplete":
 			if (typeof message.value === "number" && message.value > 0) {
@@ -2145,7 +2145,7 @@ export const webviewMessageHandler = async (
 			)
 
 			if (answer === githubIssuesText) {
-				await vscode.env.openExternal(vscode.Uri.parse("https://github.com/Kilo-Org/kilocode/issues"))
+				await vscode.env.openExternal(vscode.Uri.parse("https://github.com/schmidt-embedded-systems/schmidt-ai-coder/issues"))
 			} else if (answer === discordText) {
 				await vscode.env.openExternal(vscode.Uri.parse("https://discord.gg/fxrhCFGhkP"))
 			} else if (answer === customerSupport) {
@@ -2254,7 +2254,7 @@ export const webviewMessageHandler = async (
 					await provider.providerSettingsManager.saveConfig(message.text, message.apiConfiguration)
 					const listApiConfig = await provider.providerSettingsManager.listConfig()
 					await updateGlobalState("listApiConfigMeta", listApiConfig)
-					vscode.commands.executeCommand("kilo-code.autocomplete.reload") // kilocode_change: Reload autocomplete model when API provider settings change
+					vscode.commands.executeCommand("schmidt-ai-coder.autocomplete.reload") // kilocode_change: Reload autocomplete model when API provider settings change
 				} catch (error) {
 					provider.log(
 						`Error save api configuration: ${JSON.stringify(error, Object.getOwnPropertyNames(error), 2)}`,
@@ -2293,14 +2293,14 @@ export const webviewMessageHandler = async (
 						// Flush and refetch models
 						await flushModels(
 							{
-								provider: "kilocode",
+								provider: "schmidt-embedded-systems",
 								kilocodeOrganizationId: message.apiConfiguration.kilocodeOrganizationId,
 								kilocodeToken: message.apiConfiguration.kilocodeToken,
 							},
 							true,
 						)
 						const models = await getModels({
-							provider: "kilocode",
+							provider: "schmidt-embedded-systems",
 							kilocodeOrganizationId: message.apiConfiguration.kilocodeOrganizationId,
 							kilocodeToken: message.apiConfiguration.kilocodeToken,
 						})
@@ -2317,7 +2317,7 @@ export const webviewMessageHandler = async (
 				const currentApiConfigName = getGlobalState("currentApiConfigName") || "default"
 				const isActiveProfile = message.text === currentApiConfigName
 				await provider.upsertProviderProfile(message.text, configToSave, isActiveProfile) // Activate if it's the current active profile
-				vscode.commands.executeCommand("kilo-code.autocomplete.reload")
+				vscode.commands.executeCommand("schmidt-ai-coder.autocomplete.reload")
 				// kilocode_change end
 
 				// Ensure state is posted to webview after profile update to reflect organization mode changes
@@ -2326,7 +2326,7 @@ export const webviewMessageHandler = async (
 				}
 
 				// kilocode_change: Reload autocomplete model when API provider settings change
-				vscode.commands.executeCommand("kilo-code.autocomplete.reload")
+				vscode.commands.executeCommand("schmidt-ai-coder.autocomplete.reload")
 			}
 			// kilocode_change end: check for kilocodeToken change to remove organizationId and fetch organization modes
 			break
@@ -2353,7 +2353,7 @@ export const webviewMessageHandler = async (
 					await provider.activateProviderProfile({ name: newName })
 
 					// kilocode_change: Reload autocomplete model when API provider settings change
-					vscode.commands.executeCommand("kilo-code.autocomplete.reload")
+					vscode.commands.executeCommand("schmidt-ai-coder.autocomplete.reload")
 				} catch (error) {
 					provider.log(
 						`Error rename api configuration: ${JSON.stringify(error, Object.getOwnPropertyNames(error), 2)}`,
@@ -2430,7 +2430,7 @@ export const webviewMessageHandler = async (
 					await provider.activateProviderProfile({ name: newName })
 
 					// kilocode_change: Reload autocomplete model when API provider settings change
-					vscode.commands.executeCommand("kilo-code.autocomplete.reload")
+					vscode.commands.executeCommand("schmidt-ai-coder.autocomplete.reload")
 				} catch (error) {
 					provider.log(
 						`Error delete api configuration: ${JSON.stringify(error, Object.getOwnPropertyNames(error), 2)}`,
@@ -2846,7 +2846,7 @@ export const webviewMessageHandler = async (
 					headers["X-KILOCODE-TESTER"] = "SUPPRESS"
 				}
 
-				const url = getKiloUrlFromToken("https://api.kilo.ai/api/profile", kilocodeToken)
+				const url = getKiloUrlFromToken("https://api.schmidt-embedded-systems.de/ai/api/profile", kilocodeToken)
 				const response = await axios.get<Omit<ProfileData, "kilocodeToken">>(url, { headers })
 
 				// Go back to Personal when no longer part of the current set organization
@@ -2944,7 +2944,7 @@ export const webviewMessageHandler = async (
 					headers["X-KILOCODE-TESTER"] = "SUPPRESS"
 				}
 
-				const url = getKiloUrlFromToken("https://api.kilo.ai/api/profile/balance", kilocodeToken)
+				const url = getKiloUrlFromToken("https://api.schmidt-embedded-systems.de/ai/api/profile/balance", kilocodeToken)
 				const response = await axios.get(url, { headers })
 				provider.postMessageToWebview({
 					type: "balanceDataResponse", // New response type
@@ -2974,7 +2974,7 @@ export const webviewMessageHandler = async (
 				const source = uiKind === "Web" ? "web" : uriScheme
 
 				const url = getKiloUrlFromToken(
-					`https://api.kilo.ai/payments/topup?origin=extension&source=${source}&amount=${credits}`,
+					`https://api.schmidt-embedded-systems.de/ai/payments/topup?origin=extension&source=${source}&amount=${credits}`,
 					kilocodeToken,
 				)
 				const response = await axios.post(
@@ -4352,7 +4352,7 @@ export const webviewMessageHandler = async (
 					throw new Error("SessionManager not initialized")
 				}
 
-				const shareUrl = `https://app.kilo.ai/share/${result.share_id}`
+				const shareUrl = `https://app.schmidt-embedded-systems.de/ai/share/${result.share_id}`
 
 				// Copy URL to clipboard and show success notification
 				await vscode.env.clipboard.writeText(shareUrl)
@@ -4383,7 +4383,7 @@ export const webviewMessageHandler = async (
 					throw new Error("SessionManager not initialized")
 				}
 
-				const shareUrl = `https://app.kilo.ai/share/${result.share_id}`
+				const shareUrl = `https://app.schmidt-embedded-systems.de/ai/share/${result.share_id}`
 
 				await vscode.env.clipboard.writeText(shareUrl)
 				vscode.window.showInformationMessage(

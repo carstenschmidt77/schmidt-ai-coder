@@ -145,7 +145,7 @@ export const KiloProviderRouting = ({ apiConfiguration, setApiConfigurationField
 				</SelectTrigger>
 				<SelectContent>
 					<SelectItem value={DEFAULT_VALUE_KEY}>
-						{apiConfiguration.apiProvider === "kilocode"
+						{apiConfiguration.apiProvider === "schmidt-embedded-systems"
 							? t("kilocode:settings.provider.providerRouting.dataCollection.allowFree")
 							: t("kilocode:settings.provider.providerRouting.dataCollection.default")}
 					</SelectItem>
@@ -160,7 +160,7 @@ export const KiloProviderRouting = ({ apiConfiguration, setApiConfigurationField
 					</SelectItem>
 				</SelectContent>
 			</Select>
-			{apiConfiguration.apiProvider === "kilocode" && (
+			{apiConfiguration.apiProvider === "schmidt-embedded-systems" && (
 				<VSCodeButtonLink
 					onClick={() => {
 						telemetryClient.capture(TelemetryEventName.CREATE_ORGANIZATION_LINK_CLICKED, {

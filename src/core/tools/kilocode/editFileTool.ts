@@ -12,7 +12,7 @@ import { DEFAULT_HEADERS } from "../../../api/providers/constants"
 import { TelemetryService } from "@roo-code/telemetry"
 import { type ClineProviderState } from "../../webview/ClineProvider"
 import { ClineSayTool } from "../../../shared/ExtensionMessage"
-import { X_KILOCODE_ORGANIZATIONID, X_KILOCODE_TASKID, X_KILOCODE_TESTER } from "../../../shared/kilocode/headers"
+import { X_KILOCODE_ORGANIZATIONID, X_KILOCODE_TASKID, X_KILOCODE_TESTER } from "../../../shared/schmidtaicoder/headers"
 import { trackContribution } from "../../../services/contribution-tracking/ContributionTrackingService"
 
 const FAST_APPLY_MODEL_PRICING = {
@@ -384,12 +384,12 @@ function getFastApplyConfiguration(state: ClineProviderState): FastApplyConfigur
 	}
 
 	// Priority 2: Use KiloCode provider
-	if (apiProvider === "kilocode") {
+	if (apiProvider === "schmidt-embedded-systems") {
 		const token = useCurrentApiConfiguration ? state.apiConfiguration.kilocodeToken : state.morphApiKey
 		if (!token) {
 			return { available: false, error: "No KiloCode token available to use Fast Apply" }
 		}
-		const url = getKiloUrlFromToken("https://api.kilo.ai/api/openrouter/", token)
+		const url = getKiloUrlFromToken("https://api.schmidt-embedded-systems.de/ai/api/openrouter/", token)
 
 		return {
 			available: true,

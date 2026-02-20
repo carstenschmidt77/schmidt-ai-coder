@@ -1,8 +1,8 @@
 import type * as vscode from "vscode"
 import type { ClineMessage } from "@roo-code/types"
 import type { Anthropic } from "@anthropic-ai/sdk"
-import { SessionManager } from "../../../shared/kilocode/cli-sessions/core/SessionManager"
-import { fetchSignedBlob } from "../../../shared/kilocode/cli-sessions/utils/fetchBlobFromSignedUrl"
+import { SessionManager } from "../../../shared/schmidtaicoder/cli-sessions/core/SessionManager"
+import { fetchSignedBlob } from "../../../shared/schmidtaicoder/cli-sessions/utils/fetchBlobFromSignedUrl"
 import type { RemoteSession } from "./types"
 
 /**

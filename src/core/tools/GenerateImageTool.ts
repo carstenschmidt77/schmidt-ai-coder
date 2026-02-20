@@ -203,15 +203,15 @@ export class GenerateImageTool extends BaseTool<"generate_image"> {
 			}
 
 			let result
-			// kilocode_change start: Updated from "roo" to "kilocode" provider
-			// Use Kilo Code Cloud provider (supports both chat completions and images API via OpenRouter)
+			// kilocode_change start: Updated from "roo" to "schmidt-embedded-systems" provider
+			// Use Schmidt AI Coder Cloud provider (supports both chat completions and images API via OpenRouter)
 			// Use OpenRouter provider (only supports chat completions API)
 			const handler =
-				modelProvider === "kilocode"
+				modelProvider === "schmidt-embedded-systems"
 					? new KilocodeOpenrouterHandler({
 							kilocodeToken: kiloCodeApiKey,
 							kilocodeOrganizationId:
-								task.apiConfiguration.apiProvider === "kilocode" &&
+								task.apiConfiguration.apiProvider === "schmidt-embedded-systems" &&
 								task.apiConfiguration.kilocodeToken === kiloCodeApiKey
 									? task.apiConfiguration.kilocodeOrganizationId
 									: undefined,

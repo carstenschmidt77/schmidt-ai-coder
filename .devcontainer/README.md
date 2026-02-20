@@ -1,15 +1,15 @@
-# Kilo Code Development Container
+# Schmidt AI Coder Development Container
 
-This development container provides a standardized environment for developing Kilo Code.
+This development container provides a standardized environment for developing Schmidt AI Coder.
 
 ## Persistence
 
-Kilo Code stores thread conversations, settings, and caches in the following locations:
+Schmidt AI Coder stores thread conversations, settings, and caches in the following locations:
 
-- **Threads/Conversations**: `~/.vscode-remote/data/User/globalStorage/kilocode.kilo-code/`
+- **Threads/Conversations**: `~/.vscode-remote/data/User/globalStorage/kilocode.schmidt-ai-coder/`
 - **Settings**: `~/.vscode-remote/data/User/settings/`
-- **Cache**: `~/.vscode-remote/data/User/globalStorage/kilocode.kilo-code/cache/`
-- **Vector Store**: `~/.vscode-remote/data/User/globalStorage/kilocode.kilo-code/vector/`
+- **Cache**: `~/.vscode-remote/data/User/globalStorage/kilocode.schmidt-ai-coder/cache/`
+- **Vector Store**: `~/.vscode-remote/data/User/globalStorage/kilocode.schmidt-ai-coder/vector/`
 
 ### Volume Mounts
 
@@ -69,7 +69,7 @@ To back up your threads:
 If you need threads stored in a different location, configure a custom storage path in VS Code settings:
 
 1. Open VS Code settings (`Ctrl+,` or `Cmd+,`)
-2. Search for "Kilo Code: Custom Storage Path"
+2. Search for "Schmidt AI Coder: Custom Storage Path"
 3. Enter an absolute path that's mounted into the container
 
 Example `devcontainer.json` mount for custom path:

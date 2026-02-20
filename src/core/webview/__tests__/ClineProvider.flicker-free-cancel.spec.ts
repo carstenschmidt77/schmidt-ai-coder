@@ -88,7 +88,7 @@ vi.mock("../../../shared/embeddingModels", () => ({
 	EMBEDDING_MODEL_PROFILES: [],
 }))
 
-vi.mock("../../../shared/kilocode/cli-sessions/core/SessionManager", () => ({
+vi.mock("../../../shared/schmidtaicoder/cli-sessions/core/SessionManager", () => ({
 	SessionManager: {
 		init: vi.fn().mockReturnValue({
 			startTimer: vi.fn(),

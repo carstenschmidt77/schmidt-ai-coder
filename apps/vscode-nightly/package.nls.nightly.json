@@ -1,7 +1,7 @@
 {
-	"extension.displayName": "Kilo Code Nightly",
-	"views.contextMenu.label": "Kilo Code Nightly",
-	"views.terminalMenu.label": "Kilo Code Nightly",
-	"views.activitybar.title": "Kilo Code Nightly",
-	"configuration.title": "Kilo Code Nightly"
+	"extension.displayName": "Schmidt AI Coder Nightly",
+	"views.contextMenu.label": "Schmidt AI Coder Nightly",
+	"views.terminalMenu.label": "Schmidt AI Coder Nightly",
+	"views.activitybar.title": "Schmidt AI Coder Nightly",
+	"configuration.title": "Schmidt AI Coder Nightly"
 }

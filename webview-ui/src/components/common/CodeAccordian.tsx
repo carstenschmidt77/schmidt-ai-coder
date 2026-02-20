@@ -5,7 +5,7 @@ import { getLanguageFromPath } from "@src/utils/getLanguageFromPath"
 import { formatPathTooltip } from "@src/utils/formatPathTooltip"
 
 import { ToolUseBlock, ToolUseBlockHeader } from "./ToolUseBlock"
-import CodeBlock from "../kilocode/common/CodeBlock" // kilocode_change
+import CodeBlock from "../schmidtaicoder/common/CodeBlock" // kilocode_change
 import { PathTooltip } from "../ui/PathTooltip"
 import DiffView from "./DiffView"
 

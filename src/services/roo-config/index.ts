@@ -183,14 +183,14 @@ export async function discoverSubfolderRooDirectories(cwd: string): Promise<stri
 		// available in the webview context
 		const { executeRipgrep } = await import("../search/file-search")
 
-		// Use ripgrep to find any file inside any .kilocode or legacy .roo directory.
+		// Use ripgrep to find any file inside any .schmidtaicoder or legacy .roo directory.
 		// This efficiently discovers all config folders regardless of their content.
 		const args = [
 			"--files",
 			"--hidden",
 			"--follow",
 			"-g",
-			"**/.kilocode/**", // kilocode_change
+			"**/.schmidtaicoder/**", // kilocode_change
 			"-g",
 			"**/.roo/**", // kilocode_change (legacy)
 			"-g",
@@ -203,21 +203,21 @@ export async function discoverSubfolderRooDirectories(cwd: string): Promise<stri
 		const results = await executeRipgrep({ args, workspacePath: cwd })
 
 		// Extract unique config directory paths.
-		// Prefer .kilocode when both .kilocode and .roo exist for the same parent folder.
+		// Prefer .schmidtaicoder when both .schmidtaicoder and .roo exist for the same parent folder.
 		const configDirsByParent = new Map<string, string>() // parentDir -> configDir
 		const rootKiloDir = path.join(cwd, ".kilocode") // kilocode_change
 		const rootRooDir = path.join(cwd, ".roo")
 
 		for (const result of results) {
 			// Match paths like:
-			// - "subfolder/.kilocode/anything" (preferred)
+			// - "subfolder/.schmidtaicoder/anything" (preferred)
 			// - "subfolder/.roo/anything" (legacy)
 			// Handle both forward slashes (Unix) and backslashes (Windows)
 			const match = result.path.match(/^(.+?)[/\\]\.(kilocode|roo)[/\\]/)
 			if (!match?.[1] || !match?.[2]) continue
 
 			const parentRel = match[1]
-			const dirName = match[2] as "kilocode" | "roo"
+			const dirName = match[2] as "schmidt-embedded-systems" | "roo"
 			const configDir = path.join(cwd, parentRel, `.${dirName}`)
 
 			// Exclude the root config dirs (already handled by getProjectRooDirectoryForCwd)
@@ -231,8 +231,8 @@ export async function discoverSubfolderRooDirectories(cwd: string): Promise<stri
 				continue
 			}
 
-			// Prefer .kilocode over legacy .roo for the same parent folder
-			if (existing.endsWith(`${path.sep}.roo`) && dirName === "kilocode") {
+			// Prefer .schmidtaicoder over legacy .roo for the same parent folder
+			if (existing.endsWith(`${path.sep}.roo`) && dirName === "schmidt-embedded-systems") {
 				configDirsByParent.set(parentRel, configDir)
 			}
 		}

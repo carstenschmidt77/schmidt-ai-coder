@@ -1,5 +1,5 @@
 import React, { memo, useState, useEffect } from "react"
-import BottomControls from "../kilocode/BottomControls" // kilocode_change
+import BottomControls from "../schmidtaicoder/BottomControls" // kilocode_change
 import { ArrowLeft, Filter, ListChecks, Check, X, Trash2 } from "lucide-react"
 import { DeleteTaskDialog } from "./DeleteTaskDialog"
 import { BatchDeleteTaskDialog } from "./BatchDeleteTaskDialog"

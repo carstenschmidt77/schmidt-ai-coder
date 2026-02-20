@@ -29,7 +29,7 @@ import { getGenerateImageDescription } from "./generate-image"
 import { getDeleteFileDescription } from "./delete-file" // kilocode_change
 
 // kilocode_change start: Morph fast apply
-import { isFastApplyAvailable } from "../../tools/kilocode/editFileTool"
+import { isFastApplyAvailable } from "../../tools/schmidtaicoder/editFileTool"
 import { getEditFileDescription } from "./edit-file"
 import { type ClineProviderState } from "../../webview/ClineProvider"
 import { ManagedIndexer } from "../../../services/code-index/managed/ManagedIndexer"

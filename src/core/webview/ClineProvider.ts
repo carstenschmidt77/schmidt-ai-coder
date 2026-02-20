@@ -76,7 +76,7 @@ import { ShadowCheckpointService } from "../../services/checkpoints/ShadowCheckp
 import { CodeIndexManager } from "../../services/code-index/manager"
 import type { IndexProgressUpdate } from "../../services/code-index/interfaces/manager"
 import { MdmService } from "../../services/mdm/MdmService"
-import { SessionManager } from "../../shared/kilocode/cli-sessions/core/SessionManager"
+import { SessionManager } from "../../shared/schmidtaicoder/cli-sessions/core/SessionManager"
 import { SkillsManager } from "../../services/skills/SkillsManager"
 
 import { fileExistsAtPath } from "../../utils/fs"
@@ -110,17 +110,17 @@ import { REQUESTY_BASE_URL } from "../../shared/utils/requesty"
 import { validateAndFixToolResultIds } from "../task/validateToolResultIds"
 
 //kilocode_change start
-import { McpDownloadResponse, McpMarketplaceCatalog } from "../../shared/kilocode/mcp"
+import { McpDownloadResponse, McpMarketplaceCatalog } from "../../shared/schmidtaicoder/mcp"
 import { McpServer } from "../../shared/mcp"
 import { OpenRouterHandler } from "../../api/providers"
-import { stringifyError } from "../../shared/kilocode/errorUtils"
+import { stringifyError } from "../../shared/schmidtaicoder/errorUtils"
 import isWsl from "is-wsl"
-import { getKilocodeDefaultModel } from "../../api/providers/kilocode/getKilocodeDefaultModel"
-import { getEffectiveTelemetrySetting, getKiloCodeWrapperProperties } from "../../core/kilocode/wrapper"
+import { getKilocodeDefaultModel } from "../../api/providers/schmidtaicoder/getKilocodeDefaultModel"
+import { getEffectiveTelemetrySetting, getKiloCodeWrapperProperties } from "../../core/schmidtaicoder/wrapper"
 import { getKilocodeConfig, KilocodeConfig } from "../../utils/kilo-config-file"
 import { resolveToolProtocol } from "../../utils/resolveToolProtocol"
-import { kilo_execIfExtension } from "../../shared/kilocode/cli-sessions/extension/session-manager-utils"
-import { DeviceAuthHandler } from "../kilocode/webview/deviceAuthHandler"
+import { kilo_execIfExtension } from "../../shared/schmidtaicoder/cli-sessions/extension/session-manager-utils"
+import { DeviceAuthHandler } from "../schmidtaicoder/webview/deviceAuthHandler"
 
 export type ClineProviderState = Awaited<ReturnType<ClineProvider["getState"]>>
 // kilocode_change end
@@ -1290,7 +1290,7 @@ export class ClineProvider
 						window.MATERIAL_ICONS_BASE_URI = "${materialIconsUri}"
 						window.KILOCODE_BACKEND_BASE_URL = "${process.env.KILOCODE_BACKEND_BASE_URL ?? ""}"
 					</script>
-					<title>Kilo Code</title>
+					<title>Schmidt AI Coder</title>
 				</head>
 				<body>
 					<div id="root"></div>
@@ -1373,7 +1373,7 @@ export class ClineProvider
 				window.MATERIAL_ICONS_BASE_URI = "${materialIconsUri}"
 				window.KILOCODE_BACKEND_BASE_URL = "${process.env.KILOCODE_BACKEND_BASE_URL ?? ""}"
 			</script>
-            <title>Kilo Code</title>
+            <title>Schmidt AI Coder</title>
           </head>
           <body>
             <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -1732,14 +1732,14 @@ export class ClineProvider
 		// Get platform-specific application data directory
 		let mcpServersDir: string
 		if (process.platform === "win32") {
-			// Windows: %APPDATA%\Kilo-Code\MCP
-			mcpServersDir = path.join(os.homedir(), "AppData", "Roaming", "Kilo-Code", "MCP")
+			// Windows: %APPDATA%\Schmidt-AI-Coder\MCP
+			mcpServersDir = path.join(os.homedir(), "AppData", "Roaming", "Schmidt-AI-Coder", "MCP")
 		} else if (process.platform === "darwin") {
-			// macOS: ~/Documents/Kilo-Code/MCP
-			mcpServersDir = path.join(os.homedir(), "Documents", "Kilo-Code", "MCP")
+			// macOS: ~/Documents/Schmidt-AI-Coder/MCP
+			mcpServersDir = path.join(os.homedir(), "Documents", "Schmidt-AI-Coder", "MCP")
 		} else {
-			// Linux: ~/.local/share/Kilo-Code/MCP
-			mcpServersDir = path.join(os.homedir(), ".local", "share", "Kilo-Code", "MCP")
+			// Linux: ~/.local/share/Schmidt-AI-Coder/MCP
+			mcpServersDir = path.join(os.homedir(), ".local", "share", "Schmidt-AI-Coder", "MCP")
 		}
 
 		try {
@@ -1853,16 +1853,16 @@ export class ClineProvider
 
 	// kilocode_change start
 	async handleKiloCodeCallback(token: string) {
-		const kilocode: ProviderName = "kilocode"
+		const kilocode: ProviderName = "schmidt-embedded-systems"
 		let { apiConfiguration, currentApiConfigName = "default" } = await this.getState()
 
 		await this.upsertProviderProfile(currentApiConfigName, {
 			...apiConfiguration,
-			apiProvider: "kilocode",
+			apiProvider: "schmidt-embedded-systems",
 			kilocodeToken: token,
 		})
 
-		vscode.window.showInformationMessage("Kilo Code successfully configured!")
+		vscode.window.showInformationMessage("Schmidt AI Coder successfully configured!")
 
 		if (this.getCurrentTask()) {
 			this.getCurrentTask()!.api = buildApiHandler({
@@ -1942,7 +1942,7 @@ export class ClineProvider
 		// commented out deleting the task, because in the previous version we made this task red
 		// instead of deleting, and people were confused because the task was actually working fine
 		// which leads us to believe that this is triggered to often somehow, or that the task will turn up later
-		// via some sync ( context https://github.com/Kilo-Org/kilocode/pull/4880 )
+		// via some sync ( context https://github.com/schmidt-embedded-systems/schmidt-ai-coder/pull/4880 )
 		// await this.deleteTaskFromState(id)
 		// kilocode_change end
 		throw new Error("Task not found")
@@ -2601,7 +2601,7 @@ export class ClineProvider
 		const customModes = await this.customModesManager.getCustomModes()
 
 		// Determine apiProvider with the same logic as before.
-		const apiProvider: ProviderName = stateValues.apiProvider ? stateValues.apiProvider : "kilocode" // kilocode_change: fall back to kilocode
+		const apiProvider: ProviderName = stateValues.apiProvider ? stateValues.apiProvider : "schmidt-embedded-systems" // kilocode_change: fall back to kilocode
 
 		// Build the apiConfiguration object combining state values and secrets.
 		const providerSettings = this.contextProxy.getProviderSettings()
@@ -2942,7 +2942,7 @@ export class ClineProvider
 			return
 		}
 
-		// Logout from Kilo Code provider before resetting (same approach as ProfileView logout)
+		// Logout from Schmidt AI Coder provider before resetting (same approach as ProfileView logout)
 		const { apiConfiguration, currentApiConfigName = "default" } = await this.getState()
 		if (apiConfiguration.kilocodeToken) {
 			await this.upsertProviderProfile(currentApiConfigName, {
@@ -3605,7 +3605,7 @@ export class ClineProvider
 		function getOpenRouter() {
 			if (
 				apiConfiguration &&
-				(apiConfiguration.apiProvider === "openrouter" || apiConfiguration.apiProvider === "kilocode")
+				(apiConfiguration.apiProvider === "openrouter" || apiConfiguration.apiProvider === "schmidt-embedded-systems")
 			) {
 				return {
 					openRouter: {

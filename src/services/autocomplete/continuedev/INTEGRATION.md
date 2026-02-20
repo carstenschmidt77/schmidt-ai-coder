@@ -54,7 +54,7 @@ Since this library is fully integrated into Kilocode:
 1. **Clone Kilocode repository**:
 
     ```bash
-    git clone https://github.com/kilocode/kilocode.git
+    git clone https://github.com/schmidtaicoder/kilocode.git
     cd kilocode
     ```
 

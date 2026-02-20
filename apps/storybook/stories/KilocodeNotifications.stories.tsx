@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
 import { fn } from "storybook/test"
-import { KilocodeNotifications } from "@/components/kilocode/KilocodeNotifications"
+import { KilocodeNotifications } from "@/components/schmidtaicoder/KilocodeNotifications"
 
 const meta = {
 	title: "Components/KilocodeNotifications",
@@ -20,7 +20,7 @@ type Story = StoryObj<typeof meta>
 
 const defaultNotification = {
 	id: "1",
-	title: "Welcome to Kilo Code!",
+	title: "Welcome to Schmidt AI Coder!",
 	message: "Get started by setting up your API configuration in the settings.",
 	action: {
 		actionText: "Open Settings",

@@ -52,7 +52,7 @@
 		}
 	},
 	"commitMessage": {
-		"activated": "Generator pesan komit Kilo Code diaktifkan",
+		"activated": "Generator pesan komit Schmidt AI Coder diaktifkan",
 		"gitNotFound": "⚠️ Repositori Git tidak ditemukan atau git tidak tersedia",
 		"gitInitError": "⚠️ Kesalahan inisialisasi Git: {{error}}",
 		"generating": "Kilo: Menghasilkan pesan komit...",
@@ -64,7 +64,7 @@
 		"providerRegistered": "Kilo: Penyedia pesan komit terdaftar",
 		"errors": {
 			"noProject": "Tidak ada proyek yang tersedia",
-			"connectionFailed": "Gagal terhubung ke ekstensi Kilo Code",
+			"connectionFailed": "Gagal terhubung ke ekstensi Schmidt AI Coder",
 			"timeout": "Permintaan waktu habis setelah 30 detik",
 			"invalidResponse": "Format respons tidak valid diterima dari ekstensi",
 			"noChanges": "Tidak ada perubahan ditemukan untuk di-commit",
@@ -89,7 +89,7 @@
 		"progress": {
 			"title": "Membuat Pesan Commit",
 			"analyzing": "Menganalisis perubahan...",
-			"connecting": "Menghubungkan ke Kilo Code...",
+			"connecting": "Menghubungkan ke Schmidt AI Coder...",
 			"generating": "Menghasilkan pesan commit..."
 		},
 		"ui": {
@@ -99,14 +99,14 @@
 	},
 	"autocomplete": {
 		"statusBar": {
-			"enabled": "$(kilo-logo) Autocomplete",
+			"enabled": "$(schmidt-ai-logo) Autocomplete",
 			"snoozed": "dijeda",
 			"warning": "$(warning) Autocomplete",
 			"tooltip": {
-				"basic": "Kilo Code Autocomplete",
-				"disabled": "Kilo Code Autocomplete (dinonaktifkan)",
-				"noCredits": "**Tidak ada kredit di akun kamu**\n\nAkun Kilo Code kamu tidak memiliki kredit. Untuk menggunakan autocomplete, silakan tambahkan kredit ke akun kamu.\n\n[Buka Pengaturan](command:kilo-code.settingsButtonClicked)",
-				"noUsableProvider": "**Tidak ada model autocomplete yang dikonfigurasi**\n\nUntuk mengaktifkan autocomplete, tambahkan profil dengan salah satu penyedia yang didukung ini: {{providers}}.\n\n[Buka Pengaturan](command:kilo-code.settingsButtonClicked)",
+				"basic": "Schmidt AI Coder Autocomplete",
+				"disabled": "Schmidt AI Coder Autocomplete (dinonaktifkan)",
+				"noCredits": "**Tidak ada kredit di akun kamu**\n\nAkun Schmidt AI Coder kamu tidak memiliki kredit. Untuk menggunakan autocomplete, silakan tambahkan kredit ke akun kamu.\n\n[Buka Pengaturan](command:schmidt-ai-coder.settingsButtonClicked)",
+				"noUsableProvider": "**Tidak ada model autocomplete yang dikonfigurasi**\n\nUntuk mengaktifkan autocomplete, tambahkan profil dengan salah satu penyedia yang didukung ini: {{providers}}.\n\n[Buka Pengaturan](command:schmidt-ai-coder.settingsButtonClicked)",
 				"sessionTotal": "Total biaya sesi:",
 				"provider": "Penyedia:",
 				"model": "Model:",
@@ -120,36 +120,36 @@
 				"lessThanCent": "<$0.01"
 			}
 		},
-		"toggleMessage": "Kilo Code Autocomplete {{status}}",
+		"toggleMessage": "Schmidt AI Coder Autocomplete {{status}}",
 		"progress": {
-			"title": "Kilo Code",
+			"title": "Schmidt AI Coder",
 			"analyzing": "Menganalisis kode Anda...",
 			"generating": "Menghasilkan suntingan yang disarankan...",
 			"processing": "Memproses suntingan yang disarankan...",
 			"showing": "Menampilkan suntingan yang disarankan..."
 		},
 		"input": {
-			"title": "Kilo Code: Tugas Cepat",
+			"title": "Schmidt AI Coder: Tugas Cepat",
 			"placeholder": "mis., 'refaktor fungsi ini agar lebih efisien'"
 		},
 		"commands": {
-			"generateSuggestions": "Kilo Code: Hasilkan Suntingan yang Disarankan",
+			"generateSuggestions": "Schmidt AI Coder: Hasilkan Suntingan yang Disarankan",
 			"displaySuggestions": "Tampilkan Suntingan yang Disarankan",
 			"cancelSuggestions": "Batalkan Suntingan yang Disarankan",
 			"applyCurrentSuggestion": "Terapkan Suntingan yang Disarankan Saat Ini",
 			"applyAllSuggestions": "Terapkan Semua Suntingan yang Disarankan",
-			"category": "Kilo Code"
+			"category": "Schmidt AI Coder"
 		},
 		"codeAction": {
-			"title": "Kilo Code: Suntingan yang Disarankan"
+			"title": "Schmidt AI Coder: Suntingan yang Disarankan"
 		},
 		"chatParticipant": {
-			"fullName": "Kilo Code Agent",
+			"fullName": "Schmidt AI Coder Agent",
 			"name": "Agent",
 			"description": "Saya dapat membantu Anda dengan tugas cepat dan suntingan yang disarankan."
 		},
 		"incompatibilityExtensionPopup": {
-			"message": "Kilo Code Autocomplete diblokir oleh konflik dengan GitHub Copilot. Untuk memperbaiki ini, Anda harus menonaktifkan saran inline Copilot.",
+			"message": "Schmidt AI Coder Autocomplete diblokir oleh konflik dengan GitHub Copilot. Untuk memperbaiki ini, Anda harus menonaktifkan saran inline Copilot.",
 			"disableCopilot": "Nonaktifkan Copilot",
 			"disableInlineAssist": "Nonaktifkan Autocomplete"
 		}
@@ -206,7 +206,7 @@
 		}
 	},
 	"configDiscovery": {
-		"added": "Kilo Kode: Ditambahkan {{source}} {{configType}}: {{name}}{{modeStr}}",
-		"removed": "Kilo Kode: Dihapus {{source}} {{configType}}: {{name}}{{modeStr}}"
+		"added": "Schmidt AI Kode: Ditambahkan {{source}} {{configType}}: {{name}}{{modeStr}}",
+		"removed": "Schmidt AI Kode: Dihapus {{source}} {{configType}}: {{name}}{{modeStr}}"
 	}
 }

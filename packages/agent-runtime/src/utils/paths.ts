@@ -4,8 +4,8 @@ import * as fs from "fs"
 import { logs } from "./logger.js"
 
 /**
- * Centralized path management for Kilo Code agent runtime
- * All configuration and logs are stored in ~/.kilocode/
+ * Centralized path management for Schmidt AI Coder agent runtime
+ * All configuration and logs are stored in ~/.schmidtaicoder/
  */
 export class KiloCodePaths {
 	private static readonly BASE_DIR_NAME = ".kilocode"
@@ -20,7 +20,7 @@ export class KiloCodePaths {
 	}
 
 	/**
-	 * Get base .kilocode/cli directory in user home
+	 * Get base .schmidtaicoder/cli directory in user home
 	 */
 	static getKiloCodeDir(): string {
 		return path.join(this.getHomeDir(), this.BASE_DIR_NAME, this.CLI_SUBDIR)

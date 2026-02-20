@@ -36,7 +36,7 @@ describe("providerEnvMapper", () => {
 					{ id: "anthropic", provider: "anthropic", apiKey: "x", apiModelId: "y" },
 					{
 						id: "kilo-1",
-						provider: "kilocode",
+						provider: "schmidt-embedded-systems",
 						kilocodeToken: "",
 						kilocodeModel: "claude-sonnet-4-20250514",
 					},
@@ -47,7 +47,7 @@ describe("providerEnvMapper", () => {
 		const baseEnv = { KEEP_ME: "1", KILOCODE_TOKEN: "user-token" }
 		const overrides = buildProviderEnvOverrides(
 			{
-				apiProvider: "kilocode",
+				apiProvider: "schmidt-embedded-systems",
 				kilocodeToken: "ext-token",
 			} as ProviderSettings,
 			{ ...baseEnv, HOME: tempHome },
@@ -92,7 +92,7 @@ describe("providerEnvMapper", () => {
 
 		const overrides = buildProviderEnvOverrides(
 			{
-				apiProvider: "kilocode",
+				apiProvider: "schmidt-embedded-systems",
 				kilocodeToken: "ext-token",
 				kilocodeModel: "claude-sonnet-4-20250514",
 			} as ProviderSettings,
@@ -103,7 +103,7 @@ describe("providerEnvMapper", () => {
 
 		expect(overrides.HOME).toBe(path.join(tempHome, "kilocode-agent-manager-home"))
 		expect(overrides.USERPROFILE).toBe(path.join(tempHome, "kilocode-agent-manager-home"))
-		expect(overrides.KILO_PROVIDER_TYPE).toBe("kilocode")
+		expect(overrides.KILO_PROVIDER_TYPE).toBe("schmidt-embedded-systems")
 		expect(overrides.KILOCODE_MODEL).toBe("claude-sonnet-4-20250514")
 		expect(overrides.KILOCODE_TOKEN).toBe("ext-token")
 	})
@@ -111,7 +111,7 @@ describe("providerEnvMapper", () => {
 	it("uses env-config mode without HOME override when no CLI config exists", () => {
 		const overrides = buildProviderEnvOverrides(
 			{
-				apiProvider: "kilocode",
+				apiProvider: "schmidt-embedded-systems",
 				kilocodeToken: "ext-token",
 				kilocodeModel: "claude-sonnet-4-20250514",
 			} as ProviderSettings,
@@ -121,7 +121,7 @@ describe("providerEnvMapper", () => {
 		)
 
 		expect(overrides.HOME).toBeUndefined()
-		expect(overrides.KILO_PROVIDER_TYPE).toBe("kilocode")
+		expect(overrides.KILO_PROVIDER_TYPE).toBe("schmidt-embedded-systems")
 		expect(overrides.KILOCODE_MODEL).toBe("claude-sonnet-4-20250514")
 		expect(overrides.KILOCODE_TOKEN).toBe("ext-token")
 	})
@@ -129,7 +129,7 @@ describe("providerEnvMapper", () => {
 	it("skips injection when kilocode token is missing", () => {
 		const overrides = buildProviderEnvOverrides(
 			{
-				apiProvider: "kilocode",
+				apiProvider: "schmidt-embedded-systems",
 				kilocodeToken: "",
 			} as ProviderSettings,
 			{},
@@ -143,7 +143,7 @@ describe("providerEnvMapper", () => {
 	it("includes org id when present", () => {
 		const overrides = buildProviderEnvOverrides(
 			{
-				apiProvider: "kilocode",
+				apiProvider: "schmidt-embedded-systems",
 				kilocodeToken: "ext-token",
 				kilocodeModel: "claude-sonnet-4-20250514",
 				kilocodeOrganizationId: "org-123",

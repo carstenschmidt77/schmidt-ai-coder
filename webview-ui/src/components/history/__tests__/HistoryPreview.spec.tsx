@@ -4,7 +4,7 @@ import type { HistoryItem } from "@roo-code/types"
 
 import HistoryPreview from "../HistoryPreview"
 
-vi.mock("@/kilocode/hooks/useTaskHistory")
+vi.mock("@/schmidtaicoder/hooks/useTaskHistory")
 
 vi.mock("../TaskItem", () => {
 	return {
@@ -19,7 +19,7 @@ vi.mock("../TaskItem", () => {
 import { useTaskSearch } from "../useTaskSearch"
 import TaskItem from "../TaskItem"
 
-import { useTaskHistory } from "@/kilocode/hooks/useTaskHistory"
+import { useTaskHistory } from "@/schmidtaicoder/hooks/useTaskHistory"
 
 function kiloCodeSetUpUseTaskHistoryMock(useTaskSearchReturnValue: Partial<ReturnType<typeof useTaskSearch>>) {
 	;(useTaskHistory as ReturnType<typeof vi.fn>).mockReturnValue({

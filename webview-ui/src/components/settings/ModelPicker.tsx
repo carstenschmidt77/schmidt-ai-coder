@@ -7,7 +7,7 @@ import type { ProviderSettings, ModelInfo, OrganizationAllowList } from "@roo-co
 
 import { useAppTranslation } from "@src/i18n/TranslationContext"
 import { useSelectedModel } from "@/components/ui/hooks/useSelectedModel"
-import { useGroupedModelIds } from "@/components/ui/hooks/kilocode/usePreferredModels" // kilocode_change
+import { useGroupedModelIds } from "@/components/ui/hooks/schmidtaicoder/usePreferredModels" // kilocode_change
 // import { filterModels } from "./utils/organizationFilters" // kilocode_change: not doing this
 import { cn } from "@src/lib/utils"
 import {
@@ -26,7 +26,7 @@ import { useEscapeKey } from "@src/hooks/useEscapeKey"
 
 import { ModelInfoView } from "./ModelInfoView"
 import { ApiErrorMessage } from "./ApiErrorMessage"
-import { KiloModelInfoView } from "../kilocode/settings/KiloModelInfoView"
+import { KiloModelInfoView } from "../schmidtaicoder/settings/KiloModelInfoView"
 
 type ModelIdKey = keyof Pick<
 	ProviderSettings,
@@ -280,7 +280,7 @@ export const ModelPicker = ({
 						// kilocode_change start
 						selectedModelId &&
 							selectedModelInfo &&
-							(apiConfiguration.apiProvider === "kilocode" ||
+							(apiConfiguration.apiProvider === "schmidt-embedded-systems" ||
 							apiConfiguration.apiProvider === "openrouter" ? (
 								<KiloModelInfoView
 									apiConfiguration={apiConfiguration}
@@ -302,7 +302,7 @@ export const ModelPicker = ({
 							))
 						// kilocode_change end
 					}
-					{apiConfiguration.apiProvider !== "kilocode" && ( // kilocode_change
+					{apiConfiguration.apiProvider !== "schmidt-embedded-systems" && ( // kilocode_change
 						<div className="text-sm text-vscode-descriptionForeground">
 							<Trans
 								i18nKey="settings:modelPicker.automaticFetch"

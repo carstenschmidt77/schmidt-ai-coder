@@ -1,5 +1,5 @@
 // kilocode_change - new file
-// npx vitest run src/components/ui/hooks/kilocode/__tests__/usePreferredModels.spec.ts
+// npx vitest run src/components/ui/hooks/schmidtaicoder/__tests__/usePreferredModels.spec.ts
 
 import { renderHook } from "@testing-library/react"
 import { useGroupedModelIds, getGroupedModelIds } from "../usePreferredModels"

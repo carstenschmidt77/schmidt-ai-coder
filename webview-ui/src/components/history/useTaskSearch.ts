@@ -7,7 +7,7 @@ import {
 
 // import { highlightFzfMatch } from "@/utils/highlight" // kilocode_change
 import { useExtensionState } from "@/context/ExtensionStateContext"
-import { useTaskHistory } from "@/kilocode/hooks/useTaskHistory"
+import { useTaskHistory } from "@/schmidtaicoder/hooks/useTaskHistory"
 
 type SortOption = "newest" | "oldest" | "mostExpensive" | "mostTokens" | "mostRelevant"
 
@@ -43,7 +43,7 @@ export const useTaskSearch = () => {
 		}
 	}, [searchQuery, sortOption, lastNonRelevantSort])
 
-	// kilocode_change start: logic moved to src/core/kilocode/webview/getTaskHistory.ts
+	// kilocode_change start: logic moved to src/core/schmidtaicoder/webview/getTaskHistory.ts
 	//const presentableTasks = useMemo(() => {
 	//	const taskHistory = data?.historyItems ?? [] // kilocode_change
 	//	let tasks = taskHistory.filter((item) => item.ts && item.task)

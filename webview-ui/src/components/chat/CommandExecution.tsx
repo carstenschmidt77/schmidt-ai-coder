@@ -15,7 +15,7 @@ import { useExtensionState } from "@src/context/ExtensionStateContext"
 import { cn } from "@src/lib/utils"
 
 import { Button, StandardTooltip } from "@src/components/ui"
-import CodeBlock from "../kilocode/common/CodeBlock" // kilocode_change
+import CodeBlock from "../schmidtaicoder/common/CodeBlock" // kilocode_change
 import { CommandPatternSelector } from "./CommandPatternSelector"
 
 interface CommandPattern {

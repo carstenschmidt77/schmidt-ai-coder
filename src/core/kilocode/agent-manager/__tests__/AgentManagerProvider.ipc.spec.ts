@@ -71,7 +71,7 @@ describe("AgentManagerProvider IPC paths", () => {
 			extensionMode: 1, // Development mode
 		} as unknown as vscode.ExtensionContext
 		const providerStub = {
-			getState: vi.fn().mockResolvedValue({ apiConfiguration: { apiProvider: "kilocode" } }),
+			getState: vi.fn().mockResolvedValue({ apiConfiguration: { apiProvider: "schmidt-embedded-systems" } }),
 		}
 
 		provider = new AgentManagerProvider(context, outputChannel, providerStub as any)

@@ -17,7 +17,7 @@ import { getModels } from "./fetchers/modelCache"
 
 import { DEFAULT_HEADERS } from "./constants"
 import { BaseProvider } from "./base-provider"
-import { verifyFinishReason } from "./kilocode/verifyFinishReason"
+import { verifyFinishReason } from "./schmidtaicoder/verifyFinishReason"
 
 import type { ApiHandlerCreateMessageMetadata, SingleCompletionHandler } from "../index"
 import { ChatCompletionTool } from "openai/resources"
@@ -26,7 +26,7 @@ import { convertToR1Format } from "../transform/r1-format"
 import { resolveToolProtocol } from "../../utils/resolveToolProtocol"
 import { ApiStreamChunk } from "../transform/stream"
 import { NativeToolCallParser } from "../../core/assistant-message/NativeToolCallParser"
-import { KiloCodeChunkSchema } from "./kilocode/chunk-schema"
+import { KiloCodeChunkSchema } from "./schmidtaicoder/chunk-schema"
 
 // ZenMux provider parameters
 type ZenMuxProviderParams = {

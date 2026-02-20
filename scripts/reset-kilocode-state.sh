@@ -32,7 +32,7 @@ sqlite3 "$VSCODE_DIR/User/globalStorage/state.vscdb" \
     key LIKE 'secret://{\"extensionId\":\"kilocode.kilo-code\",%';"
 
 # delete all kilocode state files:
-rm -rf "$VSCODE_DIR/User/globalStorage/kilocode.kilo-code/"
+rm -rf "$VSCODE_DIR/User/globalStorage/kilocode.schmidt-ai-coder/"
 
 # clear some of the vscode cache that I've observed contains kilocode related entries:
 rm -f "$VSCODE_DIR/CachedProfilesData/__default__profile__/extensions.user.cache"

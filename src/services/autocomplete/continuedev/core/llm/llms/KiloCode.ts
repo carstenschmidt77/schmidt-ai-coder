@@ -1,8 +1,8 @@
 import { ChatMessage, CompletionOptions, LLMOptions } from "../../index.js"
-import { X_KILOCODE_VERSION } from "../../../../../../shared/kilocode/headers"
+import { X_KILOCODE_VERSION } from "../../../../../../shared/schmidtaicoder/headers"
 import { Package } from "../../../../../../shared/package"
 import OpenRouter from "./OpenRouter"
-import { IFimProvider } from "../../../../../../api/providers/kilocode/IFimProvider"
+import { IFimProvider } from "../../../../../../api/providers/schmidtaicoder/IFimProvider"
 import { getKiloUrlFromToken } from "@roo-code/types"
 
 /**
@@ -23,7 +23,7 @@ export interface KiloCodeCompletionOptions extends CompletionOptions {
  * while working within the continuedev LLM architecture.
  */
 class KiloCode extends OpenRouter {
-	static override providerName = "kilocode"
+	static override providerName = "schmidt-embedded-systems"
 
 	// Instance variables to store per-request metadata
 	private currentTaskId?: string
@@ -40,7 +40,7 @@ class KiloCode extends OpenRouter {
 		// Transform apiBase to use KiloCode backend
 		const transformedOptions = {
 			...parentOptions,
-			apiBase: getKiloUrlFromToken("https://api.kilo.ai/api/openrouter/v1/", kilocodeToken),
+			apiBase: getKiloUrlFromToken("https://api.schmidt-embedded-systems.de/ai/api/openrouter/v1/", kilocodeToken),
 		}
 
 		super(transformedOptions)

@@ -8,7 +8,7 @@ import { DEEP_SEEK_DEFAULT_TEMPERATURE, openRouterDefaultModelId, openRouterDefa
 import { getKiloUrlFromToken } from "@roo-code/types"
 import type { ApiHandlerCreateMessageMetadata } from ".."
 import { getModelEndpoints } from "./fetchers/modelEndpointCache"
-import { getKilocodeDefaultModel } from "./kilocode/getKilocodeDefaultModel"
+import { getKilocodeDefaultModel } from "./schmidtaicoder/getKilocodeDefaultModel"
 import {
 	X_KILOCODE_ORGANIZATIONID,
 	X_KILOCODE_TASKID,
@@ -18,11 +18,11 @@ import {
 	X_KILOCODE_EDITORNAME,
 	X_KILOCODE_MACHINEID,
 	X_KILOCODE_FEATURE, // kilocode_change
-} from "../../shared/kilocode/headers"
+} from "../../shared/schmidtaicoder/headers"
 import { DEFAULT_HEADERS } from "./constants"
 import { streamSse } from "../../services/autocomplete/continuedev/core/fetch/stream"
-import { getEditorNameHeader, getKiloCodeWrapperProperties } from "../../core/kilocode/wrapper"
-import type { FimHandler } from "./kilocode/FimHandler"
+import { getEditorNameHeader, getKiloCodeWrapperProperties } from "../../core/schmidtaicoder/wrapper"
+import type { FimHandler } from "./schmidtaicoder/FimHandler"
 import * as vscode from "vscode"
 
 /**
@@ -39,7 +39,7 @@ export class KilocodeOpenrouterHandler extends OpenRouterHandler {
 	}
 
 	constructor(options: ApiHandlerOptions) {
-		const baseApiUrl = getKiloUrlFromToken("https://api.kilo.ai/api/", options.kilocodeToken ?? "")
+		const baseApiUrl = getKiloUrlFromToken("https://api.schmidt-embedded-systems.de/ai/api/", options.kilocodeToken ?? "")
 
 		options = {
 			...options,
@@ -129,7 +129,7 @@ export class KilocodeOpenrouterHandler extends OpenRouterHandler {
 		if (!model.inputPrice && !model.outputPrice) {
 			return 0
 		}
-		// https://github.com/Kilo-Org/kilocode-backend/blob/eb3d382df1e933a089eea95b9c4387db0c676e35/src/lib/processUsage.ts#L281
+		// https://github.com/schmidt-embedded-systems/schmidt-ai-coder-backend/blob/eb3d382df1e933a089eea95b9c4387db0c676e35/src/lib/processUsage.ts#L281
 		if (lastUsage.is_byok) {
 			return lastUsage.cost_details?.upstream_inference_cost || 0
 		}
@@ -166,7 +166,7 @@ export class KilocodeOpenrouterHandler extends OpenRouterHandler {
 
 		const [models, endpoints, defaultModel] = await Promise.all([
 			getModels({
-				provider: "kilocode",
+				provider: "schmidt-embedded-systems",
 				kilocodeToken: this.options.kilocodeToken,
 				kilocodeOrganizationId: this.options.kilocodeOrganizationId,
 			}),

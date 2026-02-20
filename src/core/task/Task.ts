@@ -153,9 +153,9 @@ import {
 	isUnauthorizedGenericError,
 	isUnauthorizedPaidModelError,
 	isUnauthorizedPromotionLimitError,
-} from "../../shared/kilocode/errorUtils"
+} from "../../shared/schmidtaicoder/errorUtils"
 import { getAppUrl } from "@roo-code/types"
-import { getKilocodeDefaultModel } from "../../api/providers/kilocode/getKilocodeDefaultModel" // kilocode_change
+import { getKilocodeDefaultModel } from "../../api/providers/schmidtaicoder/getKilocodeDefaultModel" // kilocode_change
 import { addOrMergeUserContent } from "./kilocode"
 import { AutoApprovalHandler, checkAutoApproval } from "../auto-approval"
 import { MessageManager } from "../message-manager"
@@ -1892,7 +1892,7 @@ export class Task extends EventEmitter<TaskEvents> implements TaskLike {
 		contextTruncation?: ContextTruncation,
 	): Promise<undefined> {
 		if (this.abort) {
-			throw new Error(`[Kilo Code#say] task ${this.taskId}.${this.instanceId} aborted`)
+			throw new Error(`[Schmidt AI Coder#say] task ${this.taskId}.${this.instanceId} aborted`)
 		}
 
 		if (partial !== undefined) {
@@ -2017,7 +2017,7 @@ export class Task extends EventEmitter<TaskEvents> implements TaskLike {
 		})()
 		await this.say(
 			"error",
-			`Kilo Code tried to use ${toolName}${
+			`Schmidt AI Coder tried to use ${toolName}${
 				relPath ? ` for '${relPath.toPosix()}'` : ""
 			} without value for required parameter '${paramName}'. ${kilocodeExtraText}Retrying...`,
 		)
@@ -2783,7 +2783,7 @@ export class Task extends EventEmitter<TaskEvents> implements TaskLike {
 			if (needsRulesFileCheck) {
 				await this.say(
 					"error",
-					"Issue with processing the /newrule command. Double check that, if '.kilocode/rules' already exists, it's a directory and not a file. Otherwise there was an issue referencing this file/directory",
+					"Issue with processing the /newrule command. Double check that, if '.schmidtaicoder/rules' already exists, it's a directory and not a file. Otherwise there was an issue referencing this file/directory",
 				)
 			}
 			// kilocode_change end
@@ -4729,7 +4729,7 @@ export class Task extends EventEmitter<TaskEvents> implements TaskLike {
 		} catch (error) {
 			this.isWaitingForFirstChunk = false
 			// kilocode_change start
-			if (apiConfiguration?.apiProvider === "kilocode" && isAnyRecognizedKiloCodeError(error)) {
+			if (apiConfiguration?.apiProvider === "schmidt-embedded-systems" && isAnyRecognizedKiloCodeError(error)) {
 				const defaultFreeModel = (
 					await getKilocodeDefaultModel(
 						apiConfiguration.kilocodeToken,

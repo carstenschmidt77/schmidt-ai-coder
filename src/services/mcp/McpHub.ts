@@ -38,7 +38,7 @@ import { GlobalFileNames } from "../../shared/globalFileNames"
 import { fileExistsAtPath } from "../../utils/fs"
 import { arePathsEqual, getWorkspacePath } from "../../utils/path"
 import { injectVariables } from "../../utils/config"
-import { NotificationService } from "./kilocode/NotificationService"
+import { NotificationService } from "./schmidtaicoder/NotificationService"
 import { safeWriteJson } from "../../utils/safeWriteJson"
 import { sanitizeMcpName } from "../../utils/mcp-name"
 // kilocode_change start - MCP OAuth Authorization
@@ -808,7 +808,7 @@ export class McpHub {
 		}
 
 		const workspaceFolder = this.providerRef.deref()?.cwd ?? getWorkspacePath()
-		const projectMcpPattern = new vscode.RelativePattern(workspaceFolder, ".kilocode/mcp.json")
+		const projectMcpPattern = new vscode.RelativePattern(workspaceFolder, ".schmidtaicoder/mcp.json")
 
 		// Create a file system watcher for the project MCP file pattern
 		this.projectMcpWatcher = vscode.workspace.createFileSystemWatcher(projectMcpPattern)
@@ -1056,7 +1056,7 @@ export class McpHub {
 			// kilocode_change
 			return this.checkAlternativeMcpPaths(workspacePath)
 
-			// If not found in .kilocode/, fall back to .mcp.json in root directory
+			// If not found in .schmidtaicoder/, fall back to .mcp.json in root directory
 			const rootMcpPath = path.join(workspacePath, ".mcp.json")
 			try {
 				await fs.access(rootMcpPath)
@@ -1150,7 +1150,7 @@ export class McpHub {
 		try {
 			const client = new Client(
 				{
-					name: "Kilo Code",
+					name: "Schmidt AI Coder",
 					version: this.providerRef.deref()?.context.extension?.packageJSON?.version ?? "1.0.0",
 				},
 				{

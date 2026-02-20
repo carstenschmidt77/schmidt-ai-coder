@@ -65,7 +65,7 @@ describe("RooConfigService", () => {
 			expect(result).toBe(path.join("/mock/home", ".kilocode"))
 		})
 
-		it("should fallback to legacy .roo when it exists and .kilocode does not", () => {
+		it("should fallback to legacy .roo when it exists and .schmidtaicoder does not", () => {
 			mockExistsSync.mockImplementation((p: string) => p === path.join("/mock/home", ".roo"))
 
 			const result = getGlobalRooDirectory()
@@ -88,7 +88,7 @@ describe("RooConfigService", () => {
 			expect(result).toBe(path.join(cwd, ".kilocode"))
 		})
 
-		it("should fallback to legacy .roo when it exists and .kilocode does not", () => {
+		it("should fallback to legacy .roo when it exists and .schmidtaicoder does not", () => {
 			const cwd = "/custom/project/path"
 			mockExistsSync.mockImplementation((p: string) => p === path.join(cwd, ".roo"))
 
@@ -355,11 +355,11 @@ describe("RooConfigService", () => {
 			expect(result).toEqual([])
 		})
 
-		it("should discover .kilocode directories from subfolders", async () => {
-			// Find any file inside .kilocode directories
+		it("should discover .schmidtaicoder directories from subfolders", async () => {
+			// Find any file inside .schmidtaicoder directories
 			mockExecuteRipgrep.mockResolvedValueOnce([
-				{ path: "package-a/.kilocode/rules/rule.md", type: "file" },
-				{ path: "package-b/.kilocode/workflows/rule.md", type: "file" },
+				{ path: "package-a/.schmidtaicoder/rules/rule.md", type: "file" },
+				{ path: "package-b/.schmidtaicoder/workflows/rule.md", type: "file" },
 			])
 
 			const result = await discoverSubfolderRooDirectories("/project/path")
@@ -372,9 +372,9 @@ describe("RooConfigService", () => {
 
 		it("should sort discovered directories alphabetically", async () => {
 			mockExecuteRipgrep.mockResolvedValueOnce([
-				{ path: "zebra/.kilocode/rules/rule.md", type: "file" },
-				{ path: "apple/.kilocode/rules/rule.md", type: "file" },
-				{ path: "mango/.kilocode/rules/rule.md", type: "file" },
+				{ path: "zebra/.schmidtaicoder/rules/rule.md", type: "file" },
+				{ path: "apple/.schmidtaicoder/rules/rule.md", type: "file" },
+				{ path: "mango/.schmidtaicoder/rules/rule.md", type: "file" },
 			])
 
 			const result = await discoverSubfolderRooDirectories("/project/path")
@@ -386,12 +386,12 @@ describe("RooConfigService", () => {
 			])
 		})
 
-		it("should exclude root .kilocode and .roo directories", async () => {
+		it("should exclude root .schmidtaicoder and .roo directories", async () => {
 			// These would match the root dirs, which should be excluded
 			mockExecuteRipgrep.mockResolvedValueOnce([
-				{ path: ".kilocode/rules/rule.md", type: "file" }, // root - excluded
+				{ path: ".schmidtaicoder/rules/rule.md", type: "file" }, // root - excluded
 				{ path: ".roo/rules/rule.md", type: "file" }, // root legacy - excluded
-				{ path: "subfolder/.kilocode/rules/rule.md", type: "file" },
+				{ path: "subfolder/.schmidtaicoder/rules/rule.md", type: "file" },
 			])
 
 			const result = await discoverSubfolderRooDirectories("/project/path")
@@ -402,8 +402,8 @@ describe("RooConfigService", () => {
 
 		it("should handle nested subdirectories", async () => {
 			mockExecuteRipgrep.mockResolvedValueOnce([
-				{ path: "packages/core/.kilocode/rules/rule.md", type: "file" },
-				{ path: "packages/utils/.kilocode/workflows/rule.md", type: "file" },
+				{ path: "packages/core/.schmidtaicoder/rules/rule.md", type: "file" },
+				{ path: "packages/utils/.schmidtaicoder/workflows/rule.md", type: "file" },
 			])
 
 			const result = await discoverSubfolderRooDirectories("/project/path")
@@ -424,22 +424,22 @@ describe("RooConfigService", () => {
 
 		it("should deduplicate config directories from multiple files", async () => {
 			mockExecuteRipgrep.mockResolvedValueOnce([
-				{ path: "package-a/.kilocode/rules/rule1.md", type: "file" },
-				{ path: "package-a/.kilocode/rules/rule2.md", type: "file" },
-				{ path: "package-a/.kilocode/workflows/rule3.md", type: "file" },
+				{ path: "package-a/.schmidtaicoder/rules/rule1.md", type: "file" },
+				{ path: "package-a/.schmidtaicoder/rules/rule2.md", type: "file" },
+				{ path: "package-a/.schmidtaicoder/workflows/rule3.md", type: "file" },
 			])
 
 			const result = await discoverSubfolderRooDirectories("/project/path")
 
-			// Should only include package-a/.kilocode once
+			// Should only include package-a/.schmidtaicoder once
 			expect(result).toEqual([path.join("/project/path", "package-a", ".kilocode")])
 		})
 
-		it("should discover .kilocode/.roo directories with any content", async () => {
+		it("should discover .schmidtaicoder/.roo directories with any content", async () => {
 			// Should find config directories regardless of what's inside them
 			mockExecuteRipgrep.mockResolvedValueOnce([
-				{ path: "package-a/.kilocode/rules/rule.md", type: "file" },
-				{ path: "package-b/.kilocode/workflows/code-rule.md", type: "file" },
+				{ path: "package-a/.schmidtaicoder/rules/rule.md", type: "file" },
+				{ path: "package-b/.schmidtaicoder/workflows/code-rule.md", type: "file" },
 				{ path: "package-c/.roo/rules-architect/arch-rule.md", type: "file" }, // legacy
 				{ path: "package-d/.roo/config/settings.json", type: "file" }, // legacy
 			])
@@ -454,10 +454,10 @@ describe("RooConfigService", () => {
 			])
 		})
 
-		it("should prefer .kilocode over .roo when both exist in the same subfolder", async () => {
+		it("should prefer .schmidtaicoder over .roo when both exist in the same subfolder", async () => {
 			mockExecuteRipgrep.mockResolvedValueOnce([
 				{ path: "package-a/.roo/rules/rule.md", type: "file" },
-				{ path: "package-a/.kilocode/rules/rule.md", type: "file" },
+				{ path: "package-a/.schmidtaicoder/rules/rule.md", type: "file" },
 			])
 
 			const result = await discoverSubfolderRooDirectories("/project/path")
@@ -469,7 +469,7 @@ describe("RooConfigService", () => {
 	describe("getAllRooDirectoriesForCwd", () => {
 		it("should return global, project, and subfolder directories", async () => {
 			mockExistsSync.mockReturnValue(false)
-			mockExecuteRipgrep.mockResolvedValueOnce([{ path: "subfolder/.kilocode/rules/rule.md", type: "file" }])
+			mockExecuteRipgrep.mockResolvedValueOnce([{ path: "subfolder/.schmidtaicoder/rules/rule.md", type: "file" }])
 
 			const result = await getAllRooDirectoriesForCwd("/project/path")
 
@@ -492,8 +492,8 @@ describe("RooConfigService", () => {
 		it("should maintain order: global, project, subfolders (alphabetically)", async () => {
 			mockExistsSync.mockReturnValue(false)
 			mockExecuteRipgrep.mockResolvedValueOnce([
-				{ path: "zebra/.kilocode/rules/rule.md", type: "file" },
-				{ path: "apple/.kilocode/rules/rule.md", type: "file" },
+				{ path: "zebra/.schmidtaicoder/rules/rule.md", type: "file" },
+				{ path: "apple/.schmidtaicoder/rules/rule.md", type: "file" },
 			])
 
 			const result = await getAllRooDirectoriesForCwd("/project/path")
@@ -509,7 +509,7 @@ describe("RooConfigService", () => {
 
 	describe("getAgentsDirectoriesForCwd", () => {
 		it("should return root directory and parent directories of subfolder .roo dirs", async () => {
-			mockExecuteRipgrep.mockResolvedValueOnce([{ path: "package-a/.kilocode/rules/rule.md", type: "file" }])
+			mockExecuteRipgrep.mockResolvedValueOnce([{ path: "package-a/.schmidtaicoder/rules/rule.md", type: "file" }])
 
 			const result = await getAgentsDirectoriesForCwd("/project/path")
 
@@ -529,9 +529,9 @@ describe("RooConfigService", () => {
 
 		it("should include multiple subfolder parent directories", async () => {
 			mockExecuteRipgrep.mockResolvedValueOnce([
-				{ path: "package-a/.kilocode/rules/rule.md", type: "file" },
-				{ path: "package-b/.kilocode/workflows/rule.md", type: "file" },
-				{ path: "packages/core/.kilocode/rules/rule.md", type: "file" },
+				{ path: "package-a/.schmidtaicoder/rules/rule.md", type: "file" },
+				{ path: "package-b/.schmidtaicoder/workflows/rule.md", type: "file" },
+				{ path: "packages/core/.schmidtaicoder/rules/rule.md", type: "file" },
 			])
 
 			const result = await getAgentsDirectoriesForCwd("/project/path")

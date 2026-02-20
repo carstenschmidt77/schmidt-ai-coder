@@ -166,7 +166,7 @@ class RooToolWindowFactory : ToolWindowFactory {
 
             return buildString {
                 append("<html><body style='width: 400px; padding: 8px;'>")
-                append("<h3>Kilo Code Initialization</h3>")
+                append("<h3>Schmidt AI Coder Initialization</h3>")
                 append("<p><b>Status:</b> $initStateText</p>")                
                 append("<h3>System Information</h3>")
                 append("<table>")
@@ -192,7 +192,7 @@ class RooToolWindowFactory : ToolWindowFactory {
                     append("<div style='background-color: #f8d7da; border: 1px solid #f5c6cb; padding: 10px; border-radius: 4px; color: #721c24;'>")
                     append("<b>⚠️ JCEF Not Supported</b><br>")
                     append("Your IDE runtime does not support JCEF. Please use a JCEF-enabled runtime.<br>")
-                    append("<a href='https://kilo.ai/docs/jetbrains-troubleshooting' target='_blank' style='color: #721c24; text-decoration: underline;'>See JetBrains docs for how to enable JCEF in your IDE</a>")
+                    append("<a href='https://www.schmidt-embedded-systems.de/ai/docs/jetbrains-troubleshooting' target='_blank' style='color: #721c24; text-decoration: underline;'>See JetBrains docs for how to enable JCEF in your IDE</a>")
                     append("</div>")
                     append("<br>")
                 }
@@ -245,7 +245,7 @@ class RooToolWindowFactory : ToolWindowFactory {
             }
 
             return buildString {
-                append("Kilo Code Initialization\n")
+                append("Schmidt AI Coder Initialization\n")
                 append("========================\n")
                 append("Status: $initStateText\n")
                 append("\n")
@@ -289,7 +289,7 @@ class RooToolWindowFactory : ToolWindowFactory {
             preferredSize = Dimension(150, 30)
             addActionListener {
                 // TODO: Update to point to actual known issues documentation
-                BrowserUtil.browse("https://kilo.ai/docs")
+                BrowserUtil.browse("https://www.schmidt-embedded-systems.de/ai/docs")
             }
         }
 

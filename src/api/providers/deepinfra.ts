@@ -20,7 +20,7 @@ export class DeepInfraHandler extends RouterProvider implements SingleCompletion
 			options: {
 				...options,
 				openAiHeaders: {
-					"X-Deepinfra-Source": "kilocode",
+					"X-Deepinfra-Source": "schmidt-embedded-systems",
 					"X-Deepinfra-Version": `2025-08-25`,
 				},
 			},

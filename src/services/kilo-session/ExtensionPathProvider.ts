@@ -2,7 +2,7 @@ import * as vscode from "vscode"
 import * as path from "path"
 import { createHash } from "crypto"
 import { existsSync, mkdirSync } from "fs"
-import type { IPathProvider } from "../../shared/kilocode/cli-sessions/types/IPathProvider"
+import type { IPathProvider } from "../../shared/schmidtaicoder/cli-sessions/types/IPathProvider"
 
 export class ExtensionPathProvider implements IPathProvider {
 	private readonly globalStoragePath: string

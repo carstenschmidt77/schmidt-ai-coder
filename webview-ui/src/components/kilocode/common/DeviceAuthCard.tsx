@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { useAppTranslation } from "@/i18n/TranslationContext"
-import { generateQRCode } from "@/utils/kilocode/qrcode"
+import { generateQRCode } from "@/utils/schmidtaicoder/qrcode"
 import { ButtonPrimary } from "./ButtonPrimary"
 import { ButtonSecondary } from "./ButtonSecondary"
 import { vscode } from "@/utils/vscode"

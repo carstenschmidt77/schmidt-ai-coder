@@ -1,9 +1,9 @@
-import { JETBRAIN_PRODUCTS } from "../../../../src/shared/kilocode/wrapper"
+import { JETBRAIN_PRODUCTS } from "../../../../src/shared/schmidtaicoder/wrapper"
 import { getAppUrl } from "@roo-code/types"
 
 type WrapperPropsForWebview =
 	| import("@roo-code/types").KiloCodeWrapperProperties
-	| import("../../../../src/shared/kilocode/wrapper").KiloCodeWrapperProperties // kilocode_change
+	| import("../../../../src/shared/schmidtaicoder/wrapper").KiloCodeWrapperProperties // kilocode_change
 
 const getJetbrainsUrlScheme = (code: string) => {
 	return JETBRAIN_PRODUCTS[code as keyof typeof JETBRAIN_PRODUCTS]?.urlScheme || "jetbrains"

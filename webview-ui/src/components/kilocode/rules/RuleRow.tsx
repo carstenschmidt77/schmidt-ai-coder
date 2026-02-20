@@ -1,6 +1,6 @@
 import { VSCodeButton } from "@vscode/webview-ui-toolkit/react"
 import { vscode } from "@/utils/vscode"
-import { getBasename } from "@/utils/kilocode/path-webview"
+import { getBasename } from "@/utils/schmidtaicoder/path-webview"
 
 const RuleRow: React.FC<{
 	rulePath: string

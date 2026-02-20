@@ -14,12 +14,12 @@ import { ExtensionStateContextProvider, useExtensionState } from "./context/Exte
 import ChatView, { ChatViewRef } from "./components/chat/ChatView"
 import HistoryView from "./components/history/HistoryView"
 import SettingsView, { SettingsViewRef } from "./components/settings/SettingsView"
-import OnboardingView from "./components/kilocode/welcome/OnboardingView" // kilocode_change
-import ProfileView from "./components/kilocode/profile/ProfileView" // kilocode_change
+import OnboardingView from "./components/schmidtaicoder/welcome/OnboardingView" // kilocode_change
+import ProfileView from "./components/schmidtaicoder/profile/ProfileView" // kilocode_change
 import McpView from "./components/mcp/McpView" // kilocode_change
-import AuthView from "./components/kilocode/auth/AuthView" // kilocode_change
+import AuthView from "./components/schmidtaicoder/auth/AuthView" // kilocode_change
 import { MarketplaceView } from "./components/marketplace/MarketplaceView"
-import BottomControls from "./components/kilocode/BottomControls" // kilocode_change
+import BottomControls from "./components/schmidtaicoder/BottomControls" // kilocode_change
 import { MemoryService } from "./services/MemoryService" // kilocode_change
 import { HumanRelayDialog } from "./components/human-relay/HumanRelayDialog"
 import { CheckpointRestoreDialog } from "./components/chat/CheckpointRestoreDialog"
@@ -30,8 +30,8 @@ import ErrorBoundary from "./components/ErrorBoundary"
 import { useAddNonInteractiveClickListener } from "./components/ui/hooks/useNonInteractiveClick"
 import { TooltipProvider } from "./components/ui/tooltip"
 import { STANDARD_TOOLTIP_DELAY } from "./components/ui/standard-tooltip"
-import { useKiloIdentity } from "./utils/kilocode/useKiloIdentity"
-import { MemoryWarningBanner } from "./kilocode/MemoryWarningBanner"
+import { useKiloIdentity } from "./utils/schmidtaicoder/useKiloIdentity"
+import { MemoryWarningBanner } from "./schmidtaicoder/MemoryWarningBanner"
 
 type Tab = "settings" | "history" | "mcp" | "modes" | "chat" | "marketplace" | "account" | "cloud" | "profile" | "auth" // kilocode_change: add "profile" and "auth"
 

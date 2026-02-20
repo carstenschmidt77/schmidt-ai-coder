@@ -3,8 +3,8 @@ import { VSCodeButton } from "@vscode/webview-ui-toolkit/react"
 import { useClickAway } from "react-use"
 import { useTranslation } from "react-i18next"
 import { vscode } from "@/utils/vscode"
-import { getExtension } from "@/utils/kilocode/path-webview"
-import { allowedExtensions } from "@roo/kilocode/rules"
+import { getExtension } from "@/utils/schmidtaicoder/path-webview"
+import { allowedExtensions } from "@roo/schmidtaicoder/rules"
 
 interface NewRuleRowProps {
 	isGlobal: boolean

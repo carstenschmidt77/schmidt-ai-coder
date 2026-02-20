@@ -71,23 +71,23 @@ import {
 	Repeat2,
 } from "lucide-react"
 import { cn } from "@/lib/utils"
-import { SeeNewChangesButtons } from "./kilocode/SeeNewChangesButtons"
+import { SeeNewChangesButtons } from "./schmidtaicoder/SeeNewChangesButtons"
 import { PathTooltip } from "../ui/PathTooltip"
 import { OpenMarkdownPreviewButton } from "./OpenMarkdownPreviewButton"
 
 // kilocode_change start
-import { LowCreditWarning } from "../kilocode/chat/LowCreditWarning"
-import { NewTaskPreview } from "../kilocode/chat/NewTaskPreview"
-import { KiloChatRowGutterBar } from "../kilocode/chat/KiloChatRowGutterBar"
+import { LowCreditWarning } from "../schmidtaicoder/chat/LowCreditWarning"
+import { NewTaskPreview } from "../schmidtaicoder/chat/NewTaskPreview"
+import { KiloChatRowGutterBar } from "../schmidtaicoder/chat/KiloChatRowGutterBar"
 import { StandardTooltip } from "../ui"
-import { FastApplyChatDisplay } from "./kilocode/FastApplyChatDisplay"
-import { InvalidModelWarning } from "../kilocode/chat/InvalidModelWarning"
-import { UnauthorizedWarning } from "../kilocode/chat/UnauthorizedWarning"
+import { FastApplyChatDisplay } from "./schmidtaicoder/FastApplyChatDisplay"
+import { InvalidModelWarning } from "../schmidtaicoder/chat/InvalidModelWarning"
+import { UnauthorizedWarning } from "../schmidtaicoder/chat/UnauthorizedWarning"
 import { formatFileSize } from "@/lib/formatting-utils"
 import ChatTimestamps from "./ChatTimestamps"
 import { removeLeadingNonAlphanumeric } from "@/utils/removeLeadingNonAlphanumeric"
-import { KILOCODE_TOKEN_REQUIRED_ERROR } from "@roo/kilocode/errorUtils"
-import { PromotionWarning } from "../kilocode/chat/PromotionWarning"
+import { KILOCODE_TOKEN_REQUIRED_ERROR } from "@roo/schmidtaicoder/errorUtils"
+import { PromotionWarning } from "../schmidtaicoder/chat/PromotionWarning"
 // kilocode_change end
 
 // Helper function to get previous todos before a specific message
@@ -1277,7 +1277,7 @@ export const ChatRowContent = ({
 							} else {
 								// Non-HTTP-status-code error message - store full text as errorDetails
 								body = t("chat:apiRequest.errorMessage.unknown")
-								docsURL = "https://kilo.ai/support"
+								docsURL = "https://www.schmidt-embedded-systems.de/ai/support"
 							}
 						}
 
@@ -1452,7 +1452,7 @@ export const ChatRowContent = ({
 				case "error":
 					// kilocode_change start: Show login button for KiloCode auth errors
 					const isKiloCodeAuthError =
-						apiConfiguration?.apiProvider === "kilocode" &&
+						apiConfiguration?.apiProvider === "schmidt-embedded-systems" &&
 						message.text?.includes(KILOCODE_TOKEN_REQUIRED_ERROR)
 					return (
 						<ErrorRow

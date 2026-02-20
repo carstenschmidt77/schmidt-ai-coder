@@ -15,7 +15,7 @@ import {
 } from "@/components/ui"
 import { useAppTranslation } from "@/i18n/TranslationContext"
 import { vscode } from "@/utils/vscode"
-import { useTaskWithId } from "@/kilocode/hooks/useTaskHistory"
+import { useTaskWithId } from "@/schmidtaicoder/hooks/useTaskHistory"
 
 interface DeleteTaskDialogProps extends AlertDialogProps {
 	taskId: string

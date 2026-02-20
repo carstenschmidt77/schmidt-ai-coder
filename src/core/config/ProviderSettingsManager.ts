@@ -17,7 +17,7 @@ import {
 import { TelemetryService } from "@roo-code/telemetry"
 
 import { Mode, modes } from "../../shared/modes"
-import { migrateMorphApiKey } from "./kilocode/migrateMorphApiKey"
+import { migrateMorphApiKey } from "./schmidtaicoder/migrateMorphApiKey"
 import { buildApiHandler } from "../../api"
 import { t } from "../../i18n" // kilocode_change - autocomplete profile type system
 
@@ -72,7 +72,7 @@ export class ProviderSettingsManager {
 		apiConfigs: {
 			default: {
 				id: this.defaultConfigId,
-				apiProvider: "kilocode",
+				apiProvider: "schmidt-embedded-systems",
 				kilocodeModel: "minimax/minimax-m2.1:free",
 			},
 		},

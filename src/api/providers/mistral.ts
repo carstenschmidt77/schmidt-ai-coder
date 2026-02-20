@@ -22,7 +22,7 @@ import type { SingleCompletionHandler, ApiHandlerCreateMessageMetadata } from ".
 import { DEFAULT_HEADERS } from "./constants" // kilocode_change
 import { streamSse } from "../../services/autocomplete/continuedev/core/fetch/stream" // kilocode_change
 import type { CompletionUsage } from "./openrouter" // kilocode_change
-import type { FimHandler } from "./kilocode/FimHandler" // kilocode_change
+import type { FimHandler } from "./schmidtaicoder/FimHandler" // kilocode_change
 
 // Type helper to handle thinking chunks from Mistral API
 // The SDK includes ThinkChunk but TypeScript has trouble with the discriminated union

@@ -5,7 +5,7 @@ import { BookOpenText, MessageCircleWarning, Copy, Check, Microscope, Info } fro
 
 import { useCopyToClipboard } from "@src/utils/clipboard"
 import { vscode } from "@src/utils/vscode"
-import CodeBlock from "../kilocode/common/CodeBlock" // kilocode_change
+import CodeBlock from "../schmidtaicoder/common/CodeBlock" // kilocode_change
 import { Button } from "@src/components/ui" // kilocode_change
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from "@src/components/ui/dialog"
 import { useExtensionState } from "@src/context/ExtensionStateContext"

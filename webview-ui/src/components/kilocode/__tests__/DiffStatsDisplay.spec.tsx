@@ -1,5 +1,5 @@
 // kilocode_change - new file
-// npx vitest src/components/kilocode/__tests__/DiffStatsDisplay.spec.tsx
+// npx vitest src/components/schmidtaicoder/__tests__/DiffStatsDisplay.spec.tsx
 
 import { render, screen } from "@testing-library/react"
 import DiffStatsDisplay from "../DiffStatsDisplay"

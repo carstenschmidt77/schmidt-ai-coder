@@ -25,7 +25,7 @@ const CEREBRAS_DEFAULT_TEMPERATURE = 0
  */
 const CEREBRAS_DEFAULT_MAX_TOKENS = 8_192
 const CEREBRAS_INTEGRATION_HEADER = "X-Cerebras-3rd-Party-Integration"
-const CEREBRAS_INTEGRATION_NAME = "kilocode"
+const CEREBRAS_INTEGRATION_NAME = "schmidt-embedded-systems"
 // kilocode_change end
 
 /**

@@ -41,7 +41,7 @@ describe("KilocodeEventProcessor", () => {
 		const processor = new KilocodeEventProcessor(deps)
 
 		const textEvent: KilocodeStreamEvent = {
-			streamEventType: "kilocode",
+			streamEventType: "schmidt-embedded-systems",
 			payload: { type: "say", say: "text", content: "user prompt" },
 		}
 
@@ -56,11 +56,11 @@ describe("KilocodeEventProcessor", () => {
 		const processor = new KilocodeEventProcessor(deps)
 
 		const apiStarted: KilocodeStreamEvent = {
-			streamEventType: "kilocode",
+			streamEventType: "schmidt-embedded-systems",
 			payload: { type: "say", say: "api_req_started" },
 		}
 		const textEvent: KilocodeStreamEvent = {
-			streamEventType: "kilocode",
+			streamEventType: "schmidt-embedded-systems",
 			payload: { type: "say", say: "text", content: "agent response" },
 		}
 
@@ -77,7 +77,7 @@ describe("KilocodeEventProcessor", () => {
 		const processor = new KilocodeEventProcessor(deps)
 
 		const apiStarted: KilocodeStreamEvent = {
-			streamEventType: "kilocode",
+			streamEventType: "schmidt-embedded-systems",
 			payload: { type: "say", say: "api_req_started" },
 		}
 
@@ -92,7 +92,7 @@ describe("KilocodeEventProcessor", () => {
 		const processor = new KilocodeEventProcessor(deps)
 
 		const followupEvent: KilocodeStreamEvent = {
-			streamEventType: "kilocode",
+			streamEventType: "schmidt-embedded-systems",
 			payload: { type: "ask", ask: "followup", partial: false, text: "What next?" },
 		}
 
@@ -107,7 +107,7 @@ describe("KilocodeEventProcessor", () => {
 		const processor = new KilocodeEventProcessor(deps)
 
 		const completionEvent: KilocodeStreamEvent = {
-			streamEventType: "kilocode",
+			streamEventType: "schmidt-embedded-systems",
 			payload: { type: "say", say: "completion_result", partial: false, content: "Done!" },
 		}
 
@@ -122,7 +122,7 @@ describe("KilocodeEventProcessor", () => {
 		const processor = new KilocodeEventProcessor(deps)
 
 		const completionAskEvent: KilocodeStreamEvent = {
-			streamEventType: "kilocode",
+			streamEventType: "schmidt-embedded-systems",
 			payload: { type: "ask", ask: "completion_result" },
 		}
 
@@ -136,7 +136,7 @@ describe("KilocodeEventProcessor", () => {
 		const processor = new KilocodeEventProcessor(deps)
 
 		const payEvent: KilocodeStreamEvent = {
-			streamEventType: "kilocode",
+			streamEventType: "schmidt-embedded-systems",
 			payload: { type: "ask", ask: "payment_required_prompt", text: "Need billing" },
 		}
 
@@ -156,7 +156,7 @@ describe("KilocodeEventProcessor", () => {
 		const processor = new KilocodeEventProcessor(deps)
 
 		const payEvent: KilocodeStreamEvent = {
-			streamEventType: "kilocode",
+			streamEventType: "schmidt-embedded-systems",
 			payload: { type: "ask", ask: "payment_required_prompt", text: "Need billing" },
 		}
 
@@ -171,7 +171,7 @@ describe("KilocodeEventProcessor", () => {
 		const processor = new KilocodeEventProcessor(deps)
 
 		const checkpointEvent: KilocodeStreamEvent = {
-			streamEventType: "kilocode",
+			streamEventType: "schmidt-embedded-systems",
 			payload: {
 				type: "say",
 				say: "checkpoint_saved",
@@ -191,7 +191,7 @@ describe("KilocodeEventProcessor", () => {
 		const processor = new KilocodeEventProcessor(deps)
 
 		const cmdOutputEvent: KilocodeStreamEvent = {
-			streamEventType: "kilocode",
+			streamEventType: "schmidt-embedded-systems",
 			payload: {
 				type: "ask",
 				ask: "command_output",
@@ -214,7 +214,7 @@ describe("KilocodeEventProcessor", () => {
 		const processor = new KilocodeEventProcessor(deps)
 
 		const cmdOutputStart: KilocodeStreamEvent = {
-			streamEventType: "kilocode",
+			streamEventType: "schmidt-embedded-systems",
 			payload: {
 				type: "ask",
 				ask: "command_output",
@@ -240,7 +240,7 @@ describe("KilocodeEventProcessor", () => {
 
 		// First command_output event with isAnswered=false (waiting for approval)
 		const cmdOutputPending: KilocodeStreamEvent = {
-			streamEventType: "kilocode",
+			streamEventType: "schmidt-embedded-systems",
 			payload: {
 				type: "ask",
 				ask: "command_output",
@@ -253,7 +253,7 @@ describe("KilocodeEventProcessor", () => {
 
 		// Second command_output event with isAnswered=true (approved) - different timestamp
 		const cmdOutputApproved: KilocodeStreamEvent = {
-			streamEventType: "kilocode",
+			streamEventType: "schmidt-embedded-systems",
 			payload: {
 				type: "ask",
 				ask: "command_output",

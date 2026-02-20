@@ -9,7 +9,7 @@ import BottomButton from "../BottomButton"
 import KiloRulesWorkflowsView from "./KiloRulesWorkflowsView"
 import ModesView from "@src/components/modes/ModesView"
 import McpView from "@src/components/mcp/McpView"
-import InstalledSkillsView from "@src/components/kilocode/settings/InstalledSkillsView"
+import InstalledSkillsView from "@src/components/schmidtaicoder/settings/InstalledSkillsView"
 
 const KiloRulesToggleModal: React.FC = () => {
 	const { t } = useTranslation()

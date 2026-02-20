@@ -140,7 +140,7 @@ export const ImageGenerationSettings = ({
 							value={currentProvider}
 							onChange={(e: any) => handleProviderChange(e.target.value)}
 							className="w-full">
-							<VSCodeOption value="kilocode" className="py-2 px-3">
+							<VSCodeOption value="schmidt-embedded-systems" className="py-2 px-3">
 								Kilo Gateway
 							</VSCodeOption>
 							<VSCodeOption value="openrouter" className="py-2 px-3">
@@ -159,14 +159,14 @@ export const ImageGenerationSettings = ({
 								{t("settings:experimental.IMAGE_GENERATION.apiProvider")}
 							</label>
 							<VSCodeDropdown
-								value={isUsingOpenRouter ? "openrouter" : "kilocode"}
+								value={isUsingOpenRouter ? "openrouter" : "schmidt-embedded-systems"}
 								onChange={(e: any) => {
 									console.log("onChange", Boolean(e.target.value))
 									setIsUsingOpenRouter(e.target.value === "openrouter")
 								}}
 								className="w-full">
-								<VSCodeOption className="py-2 px-3" value="kilocode">
-									Kilo Code
+								<VSCodeOption className="py-2 px-3" value="schmidt-embedded-systems">
+									Schmidt AI Coder
 								</VSCodeOption>
 								<VSCodeOption className="py-2 px-3" value="openrouter">
 									OpenRouter

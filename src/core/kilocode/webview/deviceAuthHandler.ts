@@ -1,5 +1,5 @@
 import * as vscode from "vscode"
-import { DeviceAuthService } from "../../../services/kilocode/DeviceAuthService"
+import { DeviceAuthService } from "../../../services/schmidtaicoder/DeviceAuthService"
 import type { ExtensionMessage } from "../../../shared/ExtensionMessage"
 
 /**
@@ -12,7 +12,7 @@ export interface DeviceAuthHandlerCallbacks {
 }
 
 /**
- * Handles device authorization flow for Kilo Code authentication
+ * Handles device authorization flow for Schmidt AI Coder authentication
  * This class encapsulates all device auth logic to keep ClineProvider clean
  */
 export class DeviceAuthHandler {
@@ -62,7 +62,7 @@ export class DeviceAuthHandler {
 				})
 
 				this.callbacks.showInformationMessage(
-					`Kilo Code successfully configured! Authenticated as ${userEmail}`,
+					`Schmidt AI Coder successfully configured! Authenticated as ${userEmail}`,
 				)
 
 				// Clean up

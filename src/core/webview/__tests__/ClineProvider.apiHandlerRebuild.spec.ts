@@ -145,7 +145,7 @@ vi.mock("@roo-code/cloud", () => ({
 	getRooCodeApiUrl: vi.fn().mockReturnValue("https://app.roocode.com"),
 }))
 
-vi.mock("../../../shared/kilocode/cli-sessions/core/SessionManager", () => ({
+vi.mock("../../../shared/schmidtaicoder/cli-sessions/core/SessionManager", () => ({
 	SessionManager: {
 		init: vi.fn().mockReturnValue({
 			startTimer: vi.fn(),

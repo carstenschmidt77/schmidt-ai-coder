@@ -110,10 +110,10 @@ async function fetchModelsFromProvider(options: GetModelsOptions): Promise<Model
 			models = await getLiteLLMModels(options.apiKey ?? "", options.baseUrl ?? "") // kilocode_change: null coalescing
 			break
 		// kilocode_change start
-		case "kilocode": {
+		case "schmidt-embedded-systems": {
 			const backendUrl = options.kilocodeOrganizationId
-				? `https://api.kilo.ai/api/organizations/${options.kilocodeOrganizationId}`
-				: "https://api.kilo.ai/api/openrouter"
+				? `https://api.schmidt-embedded-systems.de/ai/api/organizations/${options.kilocodeOrganizationId}`
+				: "https://api.schmidt-embedded-systems.de/ai/api/openrouter"
 			const openRouterBaseUrl = getKiloUrlFromToken(backendUrl, options.kilocodeToken ?? "")
 			models = await getOpenRouterModels({
 				openRouterBaseUrl,
@@ -227,7 +227,7 @@ export const getModels = async (options: GetModelsOptions): Promise<ModelRecord>
 			memoryCache.set(provider, models)
 
 			// kilocode_change start: prevent eternal caching of kilocode models
-			if (provider !== "kilocode") {
+			if (provider !== "schmidt-embedded-systems") {
 				await writeModels(provider, models).catch((err) =>
 					console.error(`[MODEL_CACHE] Error writing ${provider} models to file cache:`, err),
 				)
@@ -404,7 +404,7 @@ export function getModelsFromCache(provider: ProviderName): ModelRecord | undefi
 	}
 
 	// kilocode_change start: prevent eternal caching of kilocode models
-	if (provider === "kilocode") {
+	if (provider === "schmidt-embedded-systems") {
 		return undefined
 	}
 	// kilocode_change end

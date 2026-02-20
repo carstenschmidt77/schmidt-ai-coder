@@ -4,7 +4,7 @@ import { getEffectiveProtocol, isNativeProtocol } from "@roo-code/types"
 // kilocode_change start
 import { getFastApplyEditingInstructions } from "../tools/edit-file"
 import { type ClineProviderState } from "../../webview/ClineProvider"
-import { getFastApplyModelType, isFastApplyAvailable } from "../../tools/kilocode/editFileTool"
+import { getFastApplyModelType, isFastApplyAvailable } from "../../tools/schmidtaicoder/editFileTool"
 // kilocode_change end
 import { getShell } from "../../../utils/shell"
 

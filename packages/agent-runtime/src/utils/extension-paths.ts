@@ -59,10 +59,10 @@ export function resolveExtensionPaths(customPath?: string): ExtensionPaths {
 		return { extensionRootPath, extensionBundlePath }
 	}
 
-	// 4. Production CLI: extension bundled at dist/kilocode/
+	// 4. Production CLI: extension bundled at dist/schmidtaicoder/
 	const currentDir = path.dirname(fileURLToPath(import.meta.url))
 	const distDir = currentDir.endsWith("utils") ? path.resolve(currentDir, "..") : currentDir
-	const extensionRootPath = path.join(distDir, "kilocode")
+	const extensionRootPath = path.join(distDir, "schmidt-embedded-systems")
 	const extensionBundlePath = path.join(extensionRootPath, "dist", "extension.js")
 
 	if (!existsSync(extensionBundlePath)) {

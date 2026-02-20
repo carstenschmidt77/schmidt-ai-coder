@@ -52,7 +52,7 @@ export const dynamicProviders = [
 	"litellm",
 	// kilocode_change start
 	"apertis",
-	"kilocode",
+	"schmidt-embedded-systems",
 	"ovhcloud",
 	"gemini",
 	"inception",
@@ -160,7 +160,7 @@ export const providerNames = [
 	"qwen-code",
 	"roo",
 	// kilocode_change start
-	"kilocode",
+	"schmidt-embedded-systems",
 	"minimax",
 	"virtual-quota-fallback",
 	// Note: apertis, synthetic, inception are in dynamicProviders, no need to duplicate here
@@ -626,7 +626,7 @@ export const providerSettingsSchemaDiscriminated = z.discriminatedUnion("apiProv
 	xaiSchema.merge(z.object({ apiProvider: z.literal("xai") })),
 	// kilocode_change start
 	apertisSchema.merge(z.object({ apiProvider: z.literal("apertis") })),
-	kilocodeSchema.merge(z.object({ apiProvider: z.literal("kilocode") })),
+	kilocodeSchema.merge(z.object({ apiProvider: z.literal("schmidt-embedded-systems") })),
 	virtualQuotaFallbackSchema.merge(z.object({ apiProvider: z.literal("virtual-quota-fallback") })),
 	syntheticSchema.merge(z.object({ apiProvider: z.literal("synthetic") })),
 	inceptionSchema.merge(z.object({ apiProvider: z.literal("inception") })),
@@ -966,7 +966,7 @@ export const MODELS_BY_PROVIDER: Record<
 	// kilocode_change start
 	ovhcloud: { id: "ovhcloud", label: "OVHcloud AI Endpoints", models: [] },
 	inception: { id: "inception", label: "Inception", models: [] },
-	kilocode: { id: "kilocode", label: "Kilocode", models: [] },
+	kilocode: { id: "schmidt-embedded-systems", label: "Kilocode", models: [] },
 	"virtual-quota-fallback": { id: "virtual-quota-fallback", label: "Virtual Quota Fallback", models: [] },
 	apertis: { id: "apertis", label: "Apertis", models: [] },
 	zenmux: { id: "zenmux", label: "ZenMux", models: [] }, // kilocode_change

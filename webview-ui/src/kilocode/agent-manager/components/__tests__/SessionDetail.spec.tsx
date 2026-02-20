@@ -154,7 +154,7 @@ describe("SessionDetail", () => {
 			it("session has parallelMode.enabled=true AND status=running with branch name", () => {
 				const session = createSession({
 					status: "running",
-					parallelMode: { enabled: true, branch: "kilocode/my-feature" },
+					parallelMode: { enabled: true, branch: "schmidtaicoder/my-feature" },
 				})
 
 				renderWithStore(session, {
@@ -164,7 +164,7 @@ describe("SessionDetail", () => {
 				expect(mockChatInputProps).toHaveBeenCalledWith(
 					expect.objectContaining({
 						showFinishToBranch: true,
-						worktreeBranchName: "kilocode/my-feature",
+						worktreeBranchName: "schmidtaicoder/my-feature",
 					}),
 				)
 			})
@@ -261,7 +261,7 @@ describe("SessionDetail", () => {
 			it("passes branch name when available", () => {
 				const session = createSession({
 					status: "running",
-					parallelMode: { enabled: true, branch: "kilocode/feature-123" },
+					parallelMode: { enabled: true, branch: "schmidtaicoder/feature-123" },
 				})
 
 				renderWithStore(session, {
@@ -270,7 +270,7 @@ describe("SessionDetail", () => {
 
 				expect(mockChatInputProps).toHaveBeenCalledWith(
 					expect.objectContaining({
-						worktreeBranchName: "kilocode/feature-123",
+						worktreeBranchName: "schmidtaicoder/feature-123",
 					}),
 				)
 			})

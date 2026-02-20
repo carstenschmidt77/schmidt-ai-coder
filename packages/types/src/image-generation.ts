@@ -23,12 +23,12 @@ export const IMAGE_GENERATION_MODELS: ImageGenerationModel[] = [
 	{ value: "black-forest-labs/flux.2-flex", label: "Black Forest Labs FLUX.2 Flex", provider: "openrouter" },
 	{ value: "black-forest-labs/flux.2-pro", label: "Black Forest Labs FLUX.2 Pro", provider: "openrouter" },
 	// kilocode_change start: disable roo cloud models, add openrouter models with kilocode provider
-	{ value: "google/gemini-2.5-flash-image", label: "Gemini 2.5 Flash Image", provider: "kilocode" },
-	{ value: "google/gemini-3-pro-image-preview", label: "Gemini 3 Pro Image Preview", provider: "kilocode" },
-	{ value: "openai/gpt-5-image", label: "GPT-5 Image", provider: "kilocode" },
-	{ value: "openai/gpt-5-image-mini", label: "GPT-5 Image Mini", provider: "kilocode" },
-	{ value: "black-forest-labs/flux.2-flex", label: "Black Forest Labs FLUX.2 Flex", provider: "kilocode" },
-	{ value: "black-forest-labs/flux.2-pro", label: "Black Forest Labs FLUX.2 Pro", provider: "kilocode" },
+	{ value: "google/gemini-2.5-flash-image", label: "Gemini 2.5 Flash Image", provider: "schmidt-embedded-systems" },
+	{ value: "google/gemini-3-pro-image-preview", label: "Gemini 3 Pro Image Preview", provider: "schmidt-embedded-systems" },
+	{ value: "openai/gpt-5-image", label: "GPT-5 Image", provider: "schmidt-embedded-systems" },
+	{ value: "openai/gpt-5-image-mini", label: "GPT-5 Image Mini", provider: "schmidt-embedded-systems" },
+	{ value: "black-forest-labs/flux.2-flex", label: "Black Forest Labs FLUX.2 Flex", provider: "schmidt-embedded-systems" },
+	{ value: "black-forest-labs/flux.2-pro", label: "Black Forest Labs FLUX.2 Pro", provider: "schmidt-embedded-systems" },
 	// kilocode_change end
 ]
 
@@ -40,7 +40,7 @@ export const IMAGE_GENERATION_MODEL_IDS = IMAGE_GENERATION_MODELS.map((m) => m.v
 /**
  * Image generation provider type
  */
-export type ImageGenerationProvider = "openrouter" | "kilocode" // kilocode_change: remove roo, add kilocode
+export type ImageGenerationProvider = "openrouter" | "schmidt-embedded-systems" // kilocode_change: remove roo, add kilocode
 
 /**
  * Get the image generation provider with backwards compatibility
@@ -52,5 +52,5 @@ export function getImageGenerationProvider(
 	explicitProvider: ImageGenerationProvider | undefined,
 	hasExistingModel: boolean,
 ): ImageGenerationProvider {
-	return explicitProvider !== undefined ? explicitProvider : hasExistingModel ? "openrouter" : "kilocode" // kilocode_change: remove roo, add kilocode
+	return explicitProvider !== undefined ? explicitProvider : hasExistingModel ? "openrouter" : "schmidt-embedded-systems" // kilocode_change: remove roo, add kilocode
 }

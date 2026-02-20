@@ -48,7 +48,7 @@ class ReflectUtilsStatusBarTest {
             "test-extension",       // extensionId
             "test-entry",           // entryId
             "Test Name",            // name
-            "Autocompletions provided by mistralai/codestral-2508 via Kilo Gateway.", // text
+            "Autocompletions provided by mistralai/codestral-2508 via Schmidt AI Gateway.", // text
             null,                   // tooltip
             false,                  // showProgress
             null,                   // command
@@ -98,7 +98,7 @@ class ReflectUtilsStatusBarTest {
 
         // Simulate a MarkdownString object being passed as tooltip
         val markdownTooltip = mapOf(
-            "value" to "Autocompletions provided by mistralai/codestral-2508 via Kilo Gateway.",
+            "value" to "Autocompletions provided by mistralai/codestral-2508 via Schmidt AI Gateway.",
             "isTrusted" to true,
             "supportThemeIcons" to false,
             "supportHtml" to false,

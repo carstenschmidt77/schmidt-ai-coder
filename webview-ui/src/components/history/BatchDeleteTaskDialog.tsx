@@ -13,7 +13,7 @@ import {
 } from "@/components/ui"
 import { vscode } from "@/utils/vscode"
 import { AlertDialogProps } from "@radix-ui/react-alert-dialog"
-import { useTaskWithId } from "@/kilocode/hooks/useTaskHistory"
+import { useTaskWithId } from "@/schmidtaicoder/hooks/useTaskHistory"
 
 interface BatchDeleteTaskDialogProps extends AlertDialogProps {
 	taskIds: string[]

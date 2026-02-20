@@ -18,10 +18,10 @@ import { ensureSettingsDirectoryExists } from "../../utils/globalContext"
 import { t } from "../../i18n"
 // kilocode_change start
 import { getKiloUrlFromToken } from "@roo-code/types"
-import { X_KILOCODE_ORGANIZATIONID, X_KILOCODE_TESTER } from "../../shared/kilocode/headers"
+import { X_KILOCODE_ORGANIZATIONID, X_KILOCODE_TESTER } from "../../shared/schmidtaicoder/headers"
 // kilocode_change end
 
-const ROOMODES_FILENAME = ".kilocodemodes"
+const ROOMODES_FILENAME = ".schmidtaicodermodes"
 
 // Type definitions for import/export functionality
 interface RuleFile {
@@ -315,7 +315,7 @@ export class CustomModesManager {
 					return
 				}
 
-				// Get modes from .kilocodemodes if it exists (takes precedence)
+				// Get modes from .schmidtaicodermodes if it exists (takes precedence)
 				const roomodesPath = await this.getWorkspaceRoomodes()
 				const roomodesModes = roomodesPath ? await this.loadModesFromFile(roomodesPath) : []
 
@@ -367,7 +367,7 @@ export class CustomModesManager {
 					this.clearCache()
 					await this.onUpdate()
 				} catch (error) {
-					console.error(`[CustomModesManager] Error handling .kilocodemodes file change:`, error)
+					console.error(`[CustomModesManager] Error handling .schmidtaicodermodes file change:`, error)
 				}
 			}
 
@@ -410,7 +410,7 @@ export class CustomModesManager {
 		const settingsPath = await this.getCustomModesFilePath()
 		const settingsModes = await this.loadModesFromFile(settingsPath)
 
-		// Get modes from .kilocodemodes if it exists
+		// Get modes from .schmidtaicodermodes if it exists
 		const roomodesPath = await this.getWorkspaceRoomodes()
 		const roomodesModes = roomodesPath ? await this.loadModesFromFile(roomodesPath) : []
 
@@ -1071,7 +1071,7 @@ export class CustomModesManager {
 			}
 
 			const url = getKiloUrlFromToken(
-				`https://api.kilo.ai/api/organizations/${organizationId}/modes`,
+				`https://api.schmidt-embedded-systems.de/ai/api/organizations/${organizationId}/modes`,
 				kilocodeToken,
 			)
 			const response = await axios.get(url, { headers })

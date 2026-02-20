@@ -9,7 +9,7 @@ import { isToolAllowedForMode } from "../../../core/tools/validateToolUse"
 
 // kilocode_change start
 import { ClineProviderState } from "../../webview/ClineProvider"
-import { isFastApplyAvailable } from "../../tools/kilocode/editFileTool"
+import { isFastApplyAvailable } from "../../tools/schmidtaicoder/editFileTool"
 import { ManagedIndexer } from "../../../services/code-index/managed/ManagedIndexer"
 // kilocode_change end
 

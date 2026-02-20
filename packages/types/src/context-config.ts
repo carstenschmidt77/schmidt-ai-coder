@@ -2,7 +2,7 @@
 
 /**
  * All discoverable configuration types that affect agent behavior.
- * These are things that can be discovered from .kilocode directories.
+ * These are things that can be discovered from .schmidtaicoder directories.
  */
 export type ContextConfigType = "skill" | "workflow" | "command" | "rule" | "mcp"
 

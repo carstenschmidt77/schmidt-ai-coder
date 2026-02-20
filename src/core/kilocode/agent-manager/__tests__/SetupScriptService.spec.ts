@@ -94,7 +94,7 @@ describe("SetupScriptService", () => {
 	})
 
 	describe("createDefaultScript", () => {
-		it("creates .kilocode directory if it does not exist", async () => {
+		it("creates .schmidtaicoder directory if it does not exist", async () => {
 			vi.mocked(fs.existsSync).mockReturnValue(false)
 			vi.mocked(fs.promises.mkdir).mockResolvedValue(undefined)
 			vi.mocked(fs.promises.writeFile).mockResolvedValue(undefined)

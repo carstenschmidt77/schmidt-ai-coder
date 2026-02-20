@@ -63,8 +63,8 @@ class MainThreadWebviews(val project: Project) : MainThreadWebviewsShape {
         logger.info("Setting Webview HTML: handle=$handle, length=${value.length}")
         webviewHandle = handle
         try {
-            // Replace vscode-file protocol format, using regex to match from vscode-file:/ to /kilocode/ part
-            val modifiedHtml = value.replace(Regex("vscode-file:/.*?/kilocode/"), "/")
+            // Replace vscode-file protocol format, using regex to match from vscode-file:/ to /schmidtaicoder/ part
+            val modifiedHtml = value.replace(Regex("vscode-file:/.*?/schmidtaicoder/"), "/")
             logger.info("Replaced vscode-file protocol path format")
 
             // Send HTML content update event through EventBus

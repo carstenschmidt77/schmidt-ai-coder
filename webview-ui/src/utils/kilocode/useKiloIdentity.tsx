@@ -12,13 +12,13 @@ export function useKiloIdentity(kilocodeToken: string, machineId: string) {
 				const tokenFromMessage = payload?.data?.kilocodeToken || ""
 				const email = payload?.data?.user?.email || ""
 				if (!success) {
-					console.error("KILOTEL: Failed to identify Kilo user, message doesn't indicate success:", payload)
+					console.error("KILOTEL: Failed to identify Schmidt AI user, message doesn't indicate success:", payload)
 				} else if (tokenFromMessage !== kilocodeToken) {
-					console.error("KILOTEL: Failed to identify Kilo user, token mismatch:", payload)
+					console.error("KILOTEL: Failed to identify Schmidt AI user, token mismatch:", payload)
 				} else if (!email) {
-					console.error("KILOTEL: Failed to identify Kilo user, email missing:", payload)
+					console.error("KILOTEL: Failed to identify Schmidt AI user, email missing:", payload)
 				} else {
-					console.debug("KILOTEL: Kilo user identified:", email)
+					console.debug("KILOTEL: Schmidt AI user identified:", email)
 					setKiloIdentity(email)
 					window.removeEventListener("message", handleMessage)
 				}
@@ -32,7 +32,7 @@ export function useKiloIdentity(kilocodeToken: string, machineId: string) {
 				type: "fetchProfileDataRequest",
 			})
 		} else {
-			console.debug("KILOTEL: no Kilo user")
+			console.debug("KILOTEL: no Schmidt AI user")
 			setKiloIdentity("")
 		}
 

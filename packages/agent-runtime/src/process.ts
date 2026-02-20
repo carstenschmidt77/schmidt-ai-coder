@@ -23,7 +23,7 @@
  * import { fork } from "child_process"
  *
  * const agentProcess = fork(
- *   require.resolve("@kilocode/agent-runtime/process"),
+ *   require.resolve("@schmidtaicoder/agent-runtime/process"),
  *   [],
  *   {
  *     env: {

@@ -50,7 +50,7 @@ describe("AgentManagerProvider CLI spawning", () => {
 
 		const mockWorkspaceFolder = { uri: { fsPath: "/tmp/workspace" } }
 		const mockProvider = {
-			getState: vi.fn().mockResolvedValue({ apiConfiguration: { apiProvider: "kilocode" } }),
+			getState: vi.fn().mockResolvedValue({ apiConfiguration: { apiProvider: "schmidt-embedded-systems" } }),
 		}
 
 		mockWindow = {
@@ -92,7 +92,7 @@ describe("AgentManagerProvider CLI spawning", () => {
 			WorktreeManager: vi.fn().mockImplementation(() => ({
 				createWorktree: vi.fn().mockResolvedValue({
 					branch: "test-branch-123",
-					path: "/tmp/workspace/.kilocode/worktrees/test-branch-123",
+					path: "/tmp/workspace/.schmidtaicoder/worktrees/test-branch-123",
 					parentBranch: "main",
 				}),
 				commitChanges: vi.fn().mockResolvedValue({ success: true }),
@@ -235,14 +235,14 @@ describe("AgentManagerProvider CLI spawning", () => {
 
 		// Non-chat event should be logged but not added
 		;(provider as any).handleKilocodeEvent(sessionId, {
-			streamEventType: "kilocode",
+			streamEventType: "schmidt-embedded-systems",
 			payload: { event: "session_created" },
 		})
 		expect((provider as any).sessionMessages.get(sessionId)).toEqual([])
 
 		// Tool ask with metadata should produce text
 		;(provider as any).handleKilocodeEvent(sessionId, {
-			streamEventType: "kilocode",
+			streamEventType: "schmidt-embedded-systems",
 			payload: {
 				timestamp: 1,
 				type: "ask",
@@ -262,7 +262,7 @@ describe("AgentManagerProvider CLI spawning", () => {
 		registry.createSession(sessionId, "checkpoint")
 		;(provider as any).sessionMessages.set(sessionId, [])
 		;(provider as any).handleKilocodeEvent(sessionId, {
-			streamEventType: "kilocode",
+			streamEventType: "schmidt-embedded-systems",
 			payload: {
 				timestamp: 2,
 				type: "say",
@@ -285,7 +285,7 @@ describe("AgentManagerProvider CLI spawning", () => {
 
 		// Enable text handling
 		;(provider as any).handleKilocodeEvent(sessionId, {
-			streamEventType: "kilocode",
+			streamEventType: "schmidt-embedded-systems",
 			payload: { type: "say", say: "api_req_started" },
 		})
 
@@ -296,8 +296,8 @@ describe("AgentManagerProvider CLI spawning", () => {
 			content: "hello",
 		}
 
-		;(provider as any).handleKilocodeEvent(sessionId, { streamEventType: "kilocode", payload })
-		;(provider as any).handleKilocodeEvent(sessionId, { streamEventType: "kilocode", payload })
+		;(provider as any).handleKilocodeEvent(sessionId, { streamEventType: "schmidt-embedded-systems", payload })
+		;(provider as any).handleKilocodeEvent(sessionId, { streamEventType: "schmidt-embedded-systems", payload })
 
 		const messages = (provider as any).sessionMessages.get(sessionId)
 		expect(messages).toHaveLength(1)
@@ -312,7 +312,7 @@ describe("AgentManagerProvider CLI spawning", () => {
 
 		// say:text before api_req_started -> skipped
 		;(provider as any).handleKilocodeEvent(sessionId, {
-			streamEventType: "kilocode",
+			streamEventType: "schmidt-embedded-systems",
 			payload: {
 				type: "say",
 				say: "text",
@@ -322,7 +322,7 @@ describe("AgentManagerProvider CLI spawning", () => {
 
 		// api_req_started toggles echo filter
 		;(provider as any).handleKilocodeEvent(sessionId, {
-			streamEventType: "kilocode",
+			streamEventType: "schmidt-embedded-systems",
 			payload: {
 				type: "say",
 				say: "api_req_started",
@@ -331,7 +331,7 @@ describe("AgentManagerProvider CLI spawning", () => {
 
 		// Now allow text
 		;(provider as any).handleKilocodeEvent(sessionId, {
-			streamEventType: "kilocode",
+			streamEventType: "schmidt-embedded-systems",
 			payload: {
 				type: "say",
 				say: "text",
@@ -352,13 +352,13 @@ describe("AgentManagerProvider CLI spawning", () => {
 
 		// Enable text handling
 		;(provider as any).handleKilocodeEvent(sessionId, {
-			streamEventType: "kilocode",
+			streamEventType: "schmidt-embedded-systems",
 			payload: { type: "say", say: "api_req_started" },
 		})
 
 		// Empty partial is skipped
 		;(provider as any).handleKilocodeEvent(sessionId, {
-			streamEventType: "kilocode",
+			streamEventType: "schmidt-embedded-systems",
 			payload: {
 				type: "say",
 				say: "text",
@@ -368,7 +368,7 @@ describe("AgentManagerProvider CLI spawning", () => {
 
 		// Partial with content
 		;(provider as any).handleKilocodeEvent(sessionId, {
-			streamEventType: "kilocode",
+			streamEventType: "schmidt-embedded-systems",
 			payload: {
 				type: "say",
 				say: "text",
@@ -380,7 +380,7 @@ describe("AgentManagerProvider CLI spawning", () => {
 
 		// Final overwrites partial
 		;(provider as any).handleKilocodeEvent(sessionId, {
-			streamEventType: "kilocode",
+			streamEventType: "schmidt-embedded-systems",
 			payload: {
 				type: "say",
 				say: "text",
@@ -434,7 +434,7 @@ describe("AgentManagerProvider CLI spawning", () => {
 			text: JSON.stringify({
 				title: "Low credit",
 				message: "Balance too low",
-				buyCreditsUrl: "https://kilo.ai/billing",
+				buyCreditsUrl: "https://www.schmidt-embedded-systems.de/ai/billing",
 			}),
 		}
 
@@ -452,13 +452,13 @@ describe("AgentManagerProvider CLI spawning", () => {
 				text: JSON.stringify({
 					title: "Payment Required",
 					message: "Please add credits",
-					buyCreditsUrl: "https://kilo.ai/billing",
+					buyCreditsUrl: "https://www.schmidt-embedded-systems.de/ai/billing",
 				}),
 			}
 			const result = (provider as any).parsePaymentRequiredPayload(payload)
 			expect(result.title).toBe("Payment Required")
 			expect(result.message).toBe("Please add credits")
-			expect(result.buyCreditsUrl).toBe("https://kilo.ai/billing")
+			expect(result.buyCreditsUrl).toBe("https://www.schmidt-embedded-systems.de/ai/billing")
 		})
 
 		it("uses fallback title when not provided in JSON", () => {
@@ -606,7 +606,7 @@ describe("AgentManagerProvider gitUrl filtering", () => {
 			createTerminal: vi.fn().mockReturnValue({ show: vi.fn(), sendText: vi.fn(), dispose: vi.fn() }),
 		}
 		const mockProvider = {
-			getState: vi.fn().mockResolvedValue({ apiConfiguration: { apiProvider: "kilocode" } }),
+			getState: vi.fn().mockResolvedValue({ apiConfiguration: { apiProvider: "schmidt-embedded-systems" } }),
 		}
 
 		vi.doMock("vscode", () => ({
@@ -873,7 +873,7 @@ describe("AgentManagerProvider telemetry", () => {
 			createTerminal: vi.fn().mockReturnValue({ show: vi.fn(), sendText: vi.fn(), dispose: vi.fn() }),
 		}
 		const mockProvider = {
-			getState: vi.fn().mockResolvedValue({ apiConfiguration: { apiProvider: "kilocode" } }),
+			getState: vi.fn().mockResolvedValue({ apiConfiguration: { apiProvider: "schmidt-embedded-systems" } }),
 		}
 
 		vi.doMock("vscode", () => ({
@@ -1091,7 +1091,7 @@ describe("AgentManagerProvider telemetry", () => {
 
 			const mockWorkspaceFolder = { uri: { fsPath: "/tmp/workspace" } }
 			const mockProvider = {
-				getState: vi.fn().mockResolvedValue({ apiConfiguration: { apiProvider: "kilocode" } }),
+				getState: vi.fn().mockResolvedValue({ apiConfiguration: { apiProvider: "schmidt-embedded-systems" } }),
 			}
 
 			const mockShowInformationMessage = vi.fn().mockResolvedValue(undefined)
@@ -1131,7 +1131,7 @@ describe("AgentManagerProvider telemetry", () => {
 				WorktreeManager: vi.fn().mockImplementation(() => ({
 					createWorktree: vi.fn().mockResolvedValue({
 						branch: "test-branch-123",
-						path: "/tmp/workspace/.kilocode/worktrees/test-branch-123",
+						path: "/tmp/workspace/.schmidtaicoder/worktrees/test-branch-123",
 						parentBranch: "main",
 					}),
 					commitChanges: vi.fn().mockResolvedValue({ success: true }),
@@ -1229,7 +1229,7 @@ describe("AgentManagerProvider telemetry", () => {
 
 			const mockWorkspaceFolder = { uri: { fsPath: "/tmp/workspace" } }
 			const mockProvider = {
-				getState: vi.fn().mockResolvedValue({ apiConfiguration: { apiProvider: "kilocode" } }),
+				getState: vi.fn().mockResolvedValue({ apiConfiguration: { apiProvider: "schmidt-embedded-systems" } }),
 			}
 
 			const mockShowInformationMessage = vi.fn().mockResolvedValue(undefined)
@@ -1269,7 +1269,7 @@ describe("AgentManagerProvider telemetry", () => {
 				WorktreeManager: vi.fn().mockImplementation(() => ({
 					createWorktree: vi.fn().mockResolvedValue({
 						branch: "test-branch-123",
-						path: "/tmp/workspace/.kilocode/worktrees/test-branch-123",
+						path: "/tmp/workspace/.schmidtaicoder/worktrees/test-branch-123",
 						parentBranch: "main",
 					}),
 					commitChanges: vi.fn().mockResolvedValue({ success: true }),
@@ -1363,7 +1363,7 @@ describe("AgentManagerProvider telemetry", () => {
 
 			const mockWorkspaceFolder = { uri: { fsPath: "/tmp/workspace" } }
 			const mockProvider = {
-				getState: vi.fn().mockResolvedValue({ apiConfiguration: { apiProvider: "kilocode" } }),
+				getState: vi.fn().mockResolvedValue({ apiConfiguration: { apiProvider: "schmidt-embedded-systems" } }),
 			}
 
 			const mockShowInformationMessage = vi.fn().mockResolvedValue(undefined)
@@ -1403,7 +1403,7 @@ describe("AgentManagerProvider telemetry", () => {
 				WorktreeManager: vi.fn().mockImplementation(() => ({
 					createWorktree: vi.fn().mockResolvedValue({
 						branch: "test-branch-123",
-						path: "/tmp/workspace/.kilocode/worktrees/test-branch-123",
+						path: "/tmp/workspace/.schmidtaicoder/worktrees/test-branch-123",
 						parentBranch: "main",
 					}),
 					commitChanges: vi.fn().mockResolvedValue({ success: true }),

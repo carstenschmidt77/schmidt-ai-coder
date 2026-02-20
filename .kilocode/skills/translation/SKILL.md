@@ -1,13 +1,13 @@
 ---
 name: translation
-description: Guidelines for translating and localizing the Kilo Code extension, including language-specific rules for German, Simplified Chinese, and Traditional Chinese.
+description: Guidelines for translating and localizing the Schmidt AI Coder extension, including language-specific rules for German, Simplified Chinese, and Traditional Chinese.
 ---
 
 # Translation Guidelines
 
 This file provides guidance to agents when working with translations in this repository.
 
-For the translation workflow, use the `/add-missing-translations` command or see `.kilocode/workflows/add-missing-translations.md`.
+For the translation workflow, use the `/add-missing-translations` command or see `.schmidtaicoder/workflows/add-missing-translations.md`.
 
 ---
 
@@ -310,7 +310,7 @@ For the translation workflow, use the `/add-missing-translations` command or see
 | Original                        | Avoid                                                         | Preferred                                            |
 | ------------------------------- | ------------------------------------------------------------- | ---------------------------------------------------- |
 | `"dragFiles"`                   | `"按住shift拖动文件"`                                         | `"Shift+拖拽文件"`                                   |
-| `"description"`                 | `"启用后，Kilo Code 将能够与 MCP 服务器交互以获取高级功能。"` | `"启用后 Kilo Code 可与 MCP 服务交互获取高级功能。"` |
+| `"description"`                 | `"启用后，Schmidt AI Coder 将能够与 MCP 服务器交互以获取高级功能。"` | `"启用后 Schmidt AI Coder 可与 MCP 服务交互获取高级功能。"` |
 | `"cannotUndo"`                  | `"此操作无法撤消。"`                                          | `"此操作不可逆。"`                                   |
 | `"hold shift to drag in files"` | `"按住shift拖动文件"`                                         | `"Shift+拖拽文件"`                                   |
 | `"Double click to edit"`        | `"双击进行编辑"`                                              | `"双击编辑"`                                         |

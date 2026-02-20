@@ -49,7 +49,7 @@ class TerminalInstance(
 ) : Disposable {
 
     companion object {
-        private const val DEFAULT_TERMINAL_NAME = "kilo"
+        private const val DEFAULT_TERMINAL_NAME = "schmidt"
         private const val TERMINAL_TOOL_WINDOW_ID = "Terminal"
     }
 

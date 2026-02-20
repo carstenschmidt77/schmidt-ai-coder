@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
-import { TabbedCodeIndexPopover, TabbedCodeIndexPopoverTabs } from "@/components/chat/kilocode/TabbedCodeIndexPopover"
+import { TabbedCodeIndexPopover, TabbedCodeIndexPopoverTabs } from "@/components/chat/schmidtaicoder/TabbedCodeIndexPopover"
 
 const meta = {
 	title: "Chat/TabbedCodeIndexPopover",

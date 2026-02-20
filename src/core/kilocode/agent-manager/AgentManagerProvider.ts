@@ -40,7 +40,7 @@ import {
 } from "./telemetry"
 import type { ClineProvider } from "../../webview/ClineProvider"
 import { extractSessionConfigs, MAX_VERSION_COUNT } from "./multiVersionUtils"
-import { SessionManager } from "../../../shared/kilocode/cli-sessions/core/SessionManager"
+import { SessionManager } from "../../../shared/schmidtaicoder/cli-sessions/core/SessionManager"
 import { WorkspaceGitService } from "./WorkspaceGitService"
 import { SessionTerminalManager } from "./SessionTerminalManager"
 import { startSessionMessageSchema, type StartSessionMessage } from "./types"
@@ -66,7 +66,7 @@ interface StdinAskResponseMessage {
  * Each agent runs as a CLI process using `kilocode --auto --json`.
  */
 export class AgentManagerProvider implements vscode.Disposable {
-	public static readonly viewType = "kilo-code.AgentManagerPanel"
+	public static readonly viewType = "schmidt-ai-coder.AgentManagerPanel"
 
 	private panel: vscode.WebviewPanel | undefined
 	private disposables: vscode.Disposable[] = []
@@ -280,8 +280,8 @@ export class AgentManagerProvider implements vscode.Disposable {
 		)
 
 		this.panel.iconPath = {
-			light: vscode.Uri.joinPath(this.context.extensionUri, "assets", "icons", "kilo-light.svg"),
-			dark: vscode.Uri.joinPath(this.context.extensionUri, "assets", "icons", "kilo-dark.svg"),
+			light: vscode.Uri.joinPath(this.context.extensionUri, "assets", "icons", "schmidt-ai-light.svg"),
+			dark: vscode.Uri.joinPath(this.context.extensionUri, "assets", "icons", "schmidt-ai-dark.svg"),
 		}
 
 		this.panel.webview.html =
@@ -436,7 +436,7 @@ export class AgentManagerProvider implements vscode.Disposable {
 					SessionManager.init()
 						?.shareSession(message.sessionId as string)
 						.then((result) => {
-							const shareUrl = `https://app.kilo.ai/share/${result.share_id}`
+							const shareUrl = `https://app.schmidt-embedded-systems.de/ai/share/${result.share_id}`
 
 							void vscode.env.clipboard.writeText(shareUrl)
 							vscode.window.showInformationMessage(
@@ -889,7 +889,7 @@ export class AgentManagerProvider implements vscode.Disposable {
 	 */
 	private handleCliEvent(sessionId: string, event: StreamEvent): void {
 		switch (event.streamEventType) {
-			case "kilocode": {
+			case "schmidt-embedded-systems": {
 				// Filter out replayed events from history (older than process start time)
 				// We allow timestamp <= 1000 because 'welcome' events often have timestamp: 1
 				const processStartTime = this.processStartTimes.get(sessionId) ?? 0
@@ -1666,8 +1666,8 @@ export class AgentManagerProvider implements vscode.Disposable {
 			const state = await this.provider.getState()
 			const { apiConfiguration } = state
 
-			// Determine the provider - default to "kilocode" if not set
-			const providerName = apiConfiguration.apiProvider || "kilocode"
+			// Determine the provider - default to "schmidt-embedded-systems" if not set
+			const providerName = apiConfiguration.apiProvider || "schmidt-embedded-systems"
 
 			// Check if this provider supports model fetching via router
 			if (!isRouterName(providerName)) {
@@ -1848,7 +1848,7 @@ export class AgentManagerProvider implements vscode.Disposable {
 			"agent-manager.css",
 		])
 
-		const scriptUri = `http://${localServerUrl}/src/kilocode/agent-manager/index.tsx`
+		const scriptUri = `http://${localServerUrl}/src/schmidtaicoder/agent-manager/index.tsx`
 
 		return /*html*/ `
 			<!DOCTYPE html>
@@ -2016,7 +2016,7 @@ export class AgentManagerProvider implements vscode.Disposable {
 		const actionLabel = t("kilocode:agentManager.actions.getHelp")
 		vscode.window.showErrorMessage(errorMessage, actionLabel).then((selection) => {
 			if (selection === actionLabel) {
-				void vscode.env.openExternal(vscode.Uri.parse("https://kilo.ai/docs"))
+				void vscode.env.openExternal(vscode.Uri.parse("https://www.schmidt-embedded-systems.de/ai/docs"))
 			}
 		})
 	}

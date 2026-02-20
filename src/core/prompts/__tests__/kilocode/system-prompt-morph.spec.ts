@@ -145,7 +145,7 @@ vi.mock("../../../utils/shell", () => ({
 }))
 
 // Mock the isFastApplyAvailable function
-vi.mock("../../../tools/kilocode/editFileTool", () => ({
+vi.mock("../../../tools/schmidtaicoder/editFileTool", () => ({
 	isFastApplyAvailable: vi.fn(),
 	getFastApplyModelType: vi.fn(),
 }))
@@ -187,13 +187,13 @@ describe.skip("SYSTEM_PROMPT", () => {
 	beforeEach(async () => {
 		vi.clearAllMocks()
 		// Reset the mock to return false by default
-		const { isFastApplyAvailable } = await import("../../../tools/kilocode/editFileTool")
+		const { isFastApplyAvailable } = await import("../../../tools/schmidtaicoder/editFileTool")
 		vi.mocked(isFastApplyAvailable).mockReturnValue(false)
 	})
 
 	it("should exclude traditional editing tools and include Fast Apply instructions when morphFastApply is enabled", async () => {
 		// Mock isFastApplyAvailable to return true for this test
-		const { isFastApplyAvailable } = await import("../../../tools/kilocode/editFileTool")
+		const { isFastApplyAvailable } = await import("../../../tools/schmidtaicoder/editFileTool")
 		vi.mocked(isFastApplyAvailable).mockReturnValue(true)
 
 		const experimentsWithMorph = {

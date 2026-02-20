@@ -1,5 +1,5 @@
 {
-	"name": "@kilo-code/jetbrains-plugin",
+	"name": "@schmidt-ai-coder/jetbrains-plugin",
 	"license": "Apache-2.0",
 	"type": "module",
 	"devDependencies": {
@@ -15,7 +15,7 @@
 		"bundle": "./gradlew buildPlugin -PdebugMode=release",
 		"bundle:name": "node scripts/get_bundle_name.js",
 		"clean:kilocode": "npx del-cli ./plugins/kilocode --force && npx mkdirp ./plugins/kilocode",
-		"copy:kilocode": "npx cpy '../../bin-unpacked/extension/**' './plugins/kilocode/extension' --parents",
+		"copy:kilocode": "npx cpy '../../bin-unpacked/extension/**' './plugins/schmidtaicoder/extension' --parents",
 		"clean:resource-kilocode": "npx del-cli ../resources/kilocode --force",
 		"copy:resource-kilocode": "npx cpy '../../bin-unpacked/extension/**' '../resources/kilocode' --parents",
 		"clean:resource-host": "npx del-cli ../resources/runtime --force",

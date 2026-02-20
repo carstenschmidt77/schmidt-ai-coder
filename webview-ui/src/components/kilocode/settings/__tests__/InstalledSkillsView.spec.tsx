@@ -288,7 +288,7 @@ describe("InstalledSkillsView", () => {
 		render(<InstalledSkillsView />)
 
 		const link = screen.getByTestId("vscode-link")
-		expect(link).toHaveAttribute("href", "https://kilo.ai/docs/features/skills")
+		expect(link).toHaveAttribute("href", "https://www.schmidt-embedded-systems.de/ai/docs/features/skills")
 	})
 
 	it("handles empty skills array in skillsData message", async () => {

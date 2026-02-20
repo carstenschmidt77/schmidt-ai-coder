@@ -7,7 +7,7 @@ import { cn } from "@src/lib/utils"
 import { prettyModelName } from "../../../utils/prettyModelName"
 import { useProviderModels } from "../hooks/useProviderModels"
 import { getModelIdKey, getSelectedModelId } from "../hooks/useSelectedModel"
-import { useGroupedModelIds } from "@/components/ui/hooks/kilocode/usePreferredModels"
+import { useGroupedModelIds } from "@/components/ui/hooks/schmidtaicoder/usePreferredModels"
 
 interface ModelSelectorProps {
 	currentApiConfigName?: string

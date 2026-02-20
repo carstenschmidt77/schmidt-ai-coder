@@ -1,5 +1,5 @@
 import { z } from "zod"
-import { kiloCodeMetaDataSchema } from "./kilocode/kilocode.js"
+import { kiloCodeMetaDataSchema } from "./schmidtaicoder/kilocode.js"
 
 /**
  * ClineAsk

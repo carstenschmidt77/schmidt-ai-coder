@@ -17,7 +17,7 @@ vi.mock("@/i18n/TranslationContext", () => ({
 // Create a mock function that can be controlled per test
 const mockUseGroupedModelIds = vi.fn()
 
-vi.mock("@/components/ui/hooks/kilocode/usePreferredModels", () => ({
+vi.mock("@/components/ui/hooks/schmidtaicoder/usePreferredModels", () => ({
 	useGroupedModelIds: () => mockUseGroupedModelIds(),
 }))
 

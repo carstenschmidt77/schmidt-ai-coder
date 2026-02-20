@@ -18,7 +18,7 @@ import {
 	fastApplyModelSchema,
 	autocompleteServiceSettingsSchema,
 	fastApplyApiProviderSchema,
-} from "./kilocode/kilocode.js"
+} from "./schmidtaicoder/kilocode.js"
 
 /**
  * Default delay in milliseconds after writes to allow diagnostics to detect potential problems.
@@ -64,7 +64,7 @@ export const globalSettingsSchema = z.object({
 	dismissedUpsells: z.array(z.string()).optional(),
 
 	// Image generation settings (experimental) - flattened for simplicity
-	imageGenerationProvider: z.enum(["openrouter", "kilocode"]).optional(), // kilocode_change: Updated from "roo" to "kilocode"
+	imageGenerationProvider: z.enum(["openrouter", "schmidt-embedded-systems"]).optional(), // kilocode_change: Updated from "roo" to "schmidt-embedded-systems"
 	openRouterImageApiKey: z.string().optional(),
 	openRouterImageGenerationSelectedModel: z.string().optional(),
 	kiloCodeImageApiKey: z.string().optional(),

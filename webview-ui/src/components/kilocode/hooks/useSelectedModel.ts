@@ -49,7 +49,7 @@ export const getModelIdKey = ({
 		case "vscode-lm": {
 			return "vsCodeLmModelSelector"
 		}
-		case "kilocode": {
+		case "schmidt-embedded-systems": {
 			return "kilocodeModel"
 		}
 		// kilocode_change start

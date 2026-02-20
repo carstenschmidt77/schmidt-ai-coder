@@ -7,7 +7,7 @@ const baseProviderSchema = z.object({
 
 // Kilocode provider
 export const kilocodeProviderSchema = baseProviderSchema.extend({
-	provider: z.literal("kilocode"),
+	provider: z.literal("schmidt-embedded-systems"),
 	kilocodeModel: z.string().optional(),
 	kilocodeToken: z.string().optional(),
 	kilocodeOrganizationId: z.string().optional(),

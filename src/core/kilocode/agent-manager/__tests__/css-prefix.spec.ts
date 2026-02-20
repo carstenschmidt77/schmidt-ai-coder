@@ -14,10 +14,10 @@ import { describe, it, expect } from "vitest"
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
-// CSS file is in webview-ui, navigate from src/core/kilocode/agent-manager/__tests__
+// CSS file is in webview-ui, navigate from src/core/schmidtaicoder/agent-manager/__tests__
 const CSS_FILE = path.resolve(
 	__dirname,
-	"../../../../../webview-ui/src/kilocode/agent-manager/components/AgentManagerApp.css",
+	"../../../../../webview-ui/src/schmidtaicoder/agent-manager/components/AgentManagerApp.css",
 )
 
 describe("Agent Manager CSS Prefix", () => {

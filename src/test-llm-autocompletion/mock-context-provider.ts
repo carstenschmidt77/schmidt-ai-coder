@@ -35,7 +35,7 @@ export function createTestAutocompleteModel(llmClient: LLMClient, modelId: strin
 
 		supportsFim: () => supportsFim,
 		getModelName: () => modelId,
-		getProviderDisplayName: () => "kilocode",
+		getProviderDisplayName: () => "schmidt-embedded-systems",
 		hasValidCredentials: () => true,
 		getRolloutHash_IfLoggedInToKilo: () => undefined,
 

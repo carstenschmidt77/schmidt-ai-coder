@@ -52,7 +52,7 @@
 		}
 	},
 	"commitMessage": {
-		"activated": "Generátor zpráv pro commit Kilo Code aktivován",
+		"activated": "Generátor zpráv pro commit Schmidt AI Coder aktivován",
 		"gitNotFound": "⚠️ Git repozitář nebyl nalezen nebo git není dostupný",
 		"gitInitError": "⚠️ Chyba inicializace Gitu: {{error}}",
 		"generating": "Kilo: Generuji zprávu commitu...",
@@ -64,7 +64,7 @@
 		"providerRegistered": "Kilo: Poskytovatel zpráv commitů zaregistrován",
 		"errors": {
 			"noProject": "Žádný projekt k dispozici",
-			"connectionFailed": "Nepodařilo se připojit k rozšíření Kilo Code",
+			"connectionFailed": "Nepodařilo se připojit k rozšíření Schmidt AI Coder",
 			"timeout": "Časový limit požadavku vypršel po 30 sekundách",
 			"invalidResponse": "Neplatný formát odpovědi obdržen od rozšíření",
 			"missingMessage": "Z rozšíření nebyla přijata žádná zpráva o commitu",
@@ -88,7 +88,7 @@
 		},
 		"progress": {
 			"title": "Generování Commit Message",
-			"connecting": "Připojování k Kilo Code...",
+			"connecting": "Připojování k Schmidt AI Coder...",
 			"analyzing": "Analyzuji změny...",
 			"generating": "Generuji zprávu commitu..."
 		},
@@ -129,14 +129,14 @@
 	},
 	"autocomplete": {
 		"statusBar": {
-			"enabled": "$(kilo-logo) Autocomplete",
+			"enabled": "$(schmidt-ai-logo) Autocomplete",
 			"snoozed": "pozastaveno",
 			"warning": "$(warning) Autocomplete",
 			"tooltip": {
-				"basic": "Kilo Code Autocomplete",
-				"disabled": "Kilo Code Autocomplete (zakázáno)",
-				"noCredits": "**Na tvém účtu nejsou žádné kredity**\n\nTvůj účet Kilo Code nemá žádné kredity. Pro použití automatického doplňování prosím přidej kredity na svůj účet.\n\n[Otevřít Nastavení](command:kilo-code.settingsButtonClicked)",
-				"noUsableProvider": "**Není nakonfigurován žádný model automatického doplňování**\n\nPro povolení automatického doplňování přidej profil s jedním z těchto podporovaných poskytovatelů: {{providers}}.\n\n[Otevřít Nastavení](command:kilo-code.settingsButtonClicked)",
+				"basic": "Schmidt AI Coder Autocomplete",
+				"disabled": "Schmidt AI Coder Autocomplete (zakázáno)",
+				"noCredits": "**Na tvém účtu nejsou žádné kredity**\n\nTvůj účet Schmidt AI Coder nemá žádné kredity. Pro použití automatického doplňování prosím přidej kredity na svůj účet.\n\n[Otevřít Nastavení](command:schmidt-ai-coder.settingsButtonClicked)",
+				"noUsableProvider": "**Není nakonfigurován žádný model automatického doplňování**\n\nPro povolení automatického doplňování přidej profil s jedním z těchto podporovaných poskytovatelů: {{providers}}.\n\n[Otevřít Nastavení](command:schmidt-ai-coder.settingsButtonClicked)",
 				"sessionTotal": "Celkové náklady relace:",
 				"provider": "Poskytovatel:",
 				"model": "Model:",
@@ -150,36 +150,36 @@
 				"lessThanCent": "<$0.01"
 			}
 		},
-		"toggleMessage": "Kilo Code Autocomplete {{status}}",
+		"toggleMessage": "Schmidt AI Coder Autocomplete {{status}}",
 		"progress": {
-			"title": "Kilo Code",
+			"title": "Schmidt AI Coder",
 			"analyzing": "Analyzuji tvůj kód...",
 			"generating": "Generuji navrhované úpravy...",
 			"processing": "Zpracovávám navrhované úpravy...",
 			"showing": "Zobrazuji navrhované úpravy..."
 		},
 		"input": {
-			"title": "Kilo Code: Rychlý úkol",
+			"title": "Schmidt AI Coder: Rychlý úkol",
 			"placeholder": "např. 'refaktoruj tuto funkci, aby byla efektivnější'"
 		},
 		"commands": {
-			"generateSuggestions": "Kilo Code: Generovat navrhované úpravy",
+			"generateSuggestions": "Schmidt AI Coder: Generovat navrhované úpravy",
 			"displaySuggestions": "Zobrazit navrhované úpravy",
 			"cancelSuggestions": "Zrušit navrhované úpravy",
 			"applyCurrentSuggestion": "Použít aktuální navrhovanou úpravu",
 			"applyAllSuggestions": "Použít všechny navrhované úpravy",
-			"category": "Kilo Code"
+			"category": "Schmidt AI Coder"
 		},
 		"codeAction": {
-			"title": "Kilo Code: Navrhované úpravy"
+			"title": "Schmidt AI Coder: Navrhované úpravy"
 		},
 		"chatParticipant": {
-			"fullName": "Kilo Code Agent",
+			"fullName": "Schmidt AI Coder Agent",
 			"name": "Agent",
 			"description": "Mohu ti pomoci s rychlými úkoly a navrženými úpravami."
 		},
 		"incompatibilityExtensionPopup": {
-			"message": "Kilo Code Autocomplete je blokováno konfliktem s GitHub Copilot. Pro vyřešení tohoto problému musíš zakázat inline návrhy Copilot.",
+			"message": "Schmidt AI Coder Autocomplete je blokováno konfliktem s GitHub Copilot. Pro vyřešení tohoto problému musíš zakázat inline návrhy Copilot.",
 			"disableCopilot": "Zakázat Copilot",
 			"disableInlineAssist": "Zakázat Autocomplete"
 		}

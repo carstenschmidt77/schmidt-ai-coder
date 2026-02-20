@@ -30,10 +30,10 @@ describe("SessionPersistenceManager", () => {
 		vi.clearAllMocks()
 
 		mockPathProvider = {
-			getTasksDir: vi.fn().mockReturnValue("/home/user/.kilocode/tasks"),
+			getTasksDir: vi.fn().mockReturnValue("/home/user/.schmidtaicoder/tasks"),
 			getSessionFilePath: vi
 				.fn()
-				.mockImplementation((workspaceDir: string) => `${workspaceDir}/.kilocode/session.json`),
+				.mockImplementation((workspaceDir: string) => `${workspaceDir}/.schmidtaicoder/session.json`),
 		}
 
 		stateManager = new SessionStateManager()
@@ -102,7 +102,7 @@ describe("SessionPersistenceManager", () => {
 
 			expect(mkdirSync).toHaveBeenCalledWith("/workspace/.kilocode", { recursive: true })
 			expect(writeFileSync).toHaveBeenCalledWith(
-				"/workspace/.kilocode/session.json",
+				"/workspace/.schmidtaicoder/session.json",
 				expect.stringContaining('"sessionId": "session-456"'),
 			)
 		})

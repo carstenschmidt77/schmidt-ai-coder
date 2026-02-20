@@ -14,7 +14,7 @@ import { safeJsonParse } from "@roo/core"
 
 import { cn } from "@src/lib/utils"
 import { Button } from "@src/components/ui"
-import CodeBlock from "../kilocode/common/CodeBlock" // kilocode_change
+import CodeBlock from "../schmidtaicoder/common/CodeBlock" // kilocode_change
 import McpToolRow from "../mcp/McpToolRow"
 
 import { Markdown } from "./Markdown"

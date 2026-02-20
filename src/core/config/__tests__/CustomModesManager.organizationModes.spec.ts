@@ -78,7 +78,7 @@ describe("CustomModesManager - Organization Modes", () => {
 	const mockStoragePath = `${path.sep}mock${path.sep}settings`
 	const mockSettingsPath = path.join(mockStoragePath, "settings", GlobalFileNames.customModes)
 	const mockWorkspacePath = path.resolve("/mock/workspace")
-	const mockRoomodes = path.join(mockWorkspacePath, ".kilocodemodes")
+	const mockRoomodes = path.join(mockWorkspacePath, ".schmidtaicodermodes")
 
 	beforeEach(() => {
 		vi.clearAllMocks()
@@ -169,7 +169,7 @@ describe("CustomModesManager - Organization Modes", () => {
 			const modes = await manager.fetchOrganizationModes("test-token", "org-123")
 
 			expect(axios.get).toHaveBeenCalledWith(
-				"https://api.kilo.ai/api/organizations/org-123/modes",
+				"https://api.schmidt-embedded-systems.de/ai/api/organizations/org-123/modes",
 				expect.objectContaining({
 					headers: expect.objectContaining({
 						Authorization: "Bearer test-token",

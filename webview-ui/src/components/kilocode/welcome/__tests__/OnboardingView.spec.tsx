@@ -1,12 +1,12 @@
 // kilocode_change - new file
-// npx vitest src/components/kilocode/welcome/__tests__/OnboardingView.spec.tsx
+// npx vitest src/components/schmidtaicoder/welcome/__tests__/OnboardingView.spec.tsx
 
 import { render, screen, fireEvent } from "@/utils/test-utils"
 import OnboardingView from "../OnboardingView"
 
 // Mock Logo component
 vi.mock("../../common/Logo", () => ({
-	default: () => <div data-testid="kilo-logo">Kilo Logo</div>,
+	default: () => <div data-testid="schmidt-ai-logo">Kilo Logo</div>,
 }))
 
 describe("OnboardingView", () => {
@@ -18,7 +18,7 @@ describe("OnboardingView", () => {
 		vi.clearAllMocks()
 	})
 
-	it("renders the Kilo logo", () => {
+	it("renders the Schmidt AI logo", () => {
 		render(
 			<OnboardingView
 				onSelectFreeModels={mockOnSelectFreeModels}
@@ -27,7 +27,7 @@ describe("OnboardingView", () => {
 			/>,
 		)
 
-		expect(screen.getByTestId("kilo-logo")).toBeInTheDocument()
+		expect(screen.getByTestId("schmidt-ai-logo")).toBeInTheDocument()
 	})
 
 	it("renders the title", () => {

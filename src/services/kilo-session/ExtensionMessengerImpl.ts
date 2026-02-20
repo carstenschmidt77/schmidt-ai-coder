@@ -1,5 +1,5 @@
-import type { IExtensionMessenger } from "../../shared/kilocode/cli-sessions/types/IExtensionMessenger"
-import type { WebviewMessage } from "../../shared/kilocode/cli-sessions/types/IExtensionMessenger"
+import type { IExtensionMessenger } from "../../shared/schmidtaicoder/cli-sessions/types/IExtensionMessenger"
+import type { WebviewMessage } from "../../shared/schmidtaicoder/cli-sessions/types/IExtensionMessenger"
 import type { ExtensionMessage } from "../../shared/ExtensionMessage"
 import type { ClineProvider } from "../../core/webview/ClineProvider"
 import { singleCompletionHandler } from "../../utils/single-completion-handler"

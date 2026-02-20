@@ -1,5 +1,5 @@
 import * as vscode from "vscode"
-import type { ILogger } from "../../shared/kilocode/cli-sessions/types/ILogger"
+import type { ILogger } from "../../shared/schmidtaicoder/cli-sessions/types/ILogger"
 
 export class ExtensionLoggerAdapter implements ILogger {
 	constructor(private readonly outputChannel: vscode.OutputChannel) {}

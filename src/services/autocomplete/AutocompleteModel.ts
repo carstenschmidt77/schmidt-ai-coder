@@ -67,7 +67,7 @@ export class AutocompleteModel {
 			if (!selectedProfile) continue
 			const profile = await providerSettingsManager.getProfile({ id: selectedProfile.id })
 
-			if (provider === "kilocode") {
+			if (provider === "schmidt-embedded-systems") {
 				// For all other providers, assume they are usable
 				if (!profile.kilocodeToken) continue
 				const hasBalance = await checkKilocodeBalance(profile.kilocodeToken, profile.kilocodeOrganizationId)

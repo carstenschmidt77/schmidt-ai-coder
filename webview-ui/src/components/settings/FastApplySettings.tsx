@@ -27,8 +27,8 @@ export const FastApplySettings = ({
 						setCachedStateField("fastApplyApiProvider", (e.target as any)?.value || "current")
 					}
 					className="w-full">
-					<VSCodeOption className="py-2 px-3" value="kilocode">
-						Kilo Code
+					<VSCodeOption className="py-2 px-3" value="schmidt-embedded-systems">
+						Schmidt AI Coder
 					</VSCodeOption>
 					<VSCodeOption className="py-2 px-3" value="openrouter">
 						OpenRouter

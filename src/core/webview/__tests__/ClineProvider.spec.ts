@@ -348,7 +348,7 @@ vi.mock("@roo-code/cloud", () => ({
 	getRooCodeApiUrl: vi.fn().mockReturnValue("https://app.roocode.com"),
 }))
 
-vi.mock("../../../shared/kilocode/cli-sessions/core/SessionManager", () => ({
+vi.mock("../../../shared/schmidtaicoder/cli-sessions/core/SessionManager", () => ({
 	SessionManager: {
 		init: vi.fn().mockReturnValue({
 			startTimer: vi.fn(),
@@ -567,7 +567,7 @@ describe("ClineProvider", () => {
 			shouldShowAnnouncement: false,
 			apiConfiguration: {
 				// kilocode_change start
-				apiProvider: "kilocode",
+				apiProvider: "schmidt-embedded-systems",
 				kilocodeModel: openRouterDefaultModelId,
 				kilocodeToken: "kilocode-token",
 				// kilocode_change end
@@ -2408,7 +2408,7 @@ describe("Project MCP Settings", () => {
 		expect(safeWriteJson).toHaveBeenCalledWith("/test/workspace/.roo/mcp.json", { mcpServers: {} })
 
 		// Check that openFile was called
-		expect(openFileSpy).toHaveBeenCalledWith("/test/workspace/.kilocode/mcp.json")
+		expect(openFileSpy).toHaveBeenCalledWith("/test/workspace/.schmidtaicoder/mcp.json")
 	})
 
 	test("handles openProjectMcpSettings when workspace is not open", async () => {
@@ -2444,7 +2444,7 @@ describe("Project MCP Settings", () => {
 		// Verify error message was shown
 		expect(vscode.window.showErrorMessage).toHaveBeenCalledWith(
 			// kilocode_change
-			expect.stringContaining("Failed to create or open .kilocode/mcp.json"),
+			expect.stringContaining("Failed to create or open .schmidtaicoder/mcp.json"),
 		)
 	})
 })
@@ -2967,7 +2967,7 @@ describe("ClineProvider - Router Models", () => {
 			type: "singleRouterModelFetchResponse",
 			success: false,
 			error: "Kilocode-OpenRouter API error",
-			values: { provider: "kilocode" },
+			values: { provider: "schmidt-embedded-systems" },
 		})
 
 		expect(mockPostMessage).toHaveBeenCalledWith({

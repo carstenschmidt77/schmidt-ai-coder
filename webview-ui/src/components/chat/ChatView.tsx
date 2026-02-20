@@ -31,7 +31,7 @@ import { useSelectedModel } from "@src/components/ui/hooks/useSelectedModel"
 import { StandardTooltip } from "@src/components/ui"
 
 // import VersionIndicator from "../common/VersionIndicator" // kilocode_change: unused
-import { OrganizationSelector } from "../kilocode/common/OrganizationSelector"
+import { OrganizationSelector } from "../schmidtaicoder/common/OrganizationSelector"
 // import { useTaskSearch } from "../history/useTaskSearch" // kilocode_change: unused
 // import { CloudUpsellDialog } from "@src/components/cloud/CloudUpsellDialog" // kilocode_change: unused
 
@@ -43,14 +43,14 @@ import BrowserSessionStatusRow from "./BrowserSessionStatusRow"
 import ChatRow from "./ChatRow"
 import { ChatTextArea } from "./ChatTextArea"
 // import TaskHeader from "./TaskHeader"// kilocode_change
-import KiloTaskHeader from "../kilocode/KiloTaskHeader" // kilocode_change
+import KiloTaskHeader from "../schmidtaicoder/KiloTaskHeader" // kilocode_change
 import AutoApproveMenu from "./AutoApproveMenu"
-import BottomControls from "../kilocode/BottomControls" // kilocode_change
+import BottomControls from "../schmidtaicoder/BottomControls" // kilocode_change
 import SystemPromptWarning from "./SystemPromptWarning"
 // import ProfileViolationWarning from "./ProfileViolationWarning" kilocode_change: unused
 import { CheckpointWarning } from "./CheckpointWarning"
-import { IdeaSuggestionsBox } from "../kilocode/chat/IdeaSuggestionsBox" // kilocode_change
-import { KilocodeNotifications } from "../kilocode/KilocodeNotifications" // kilocode_change
+import { IdeaSuggestionsBox } from "../schmidtaicoder/chat/IdeaSuggestionsBox" // kilocode_change
+import { KilocodeNotifications } from "../schmidtaicoder/KilocodeNotifications" // kilocode_change
 import { QueuedMessages } from "./QueuedMessages"
 import { ReviewScopeSelector, type ReviewScopeInfo } from "./ReviewScopeSelector" // kilocode_change: Review mode
 import { buildDocLink } from "@/utils/docLinks"
@@ -73,18 +73,18 @@ export const MAX_IMAGES_PER_MESSAGE = 20 // This is the Anthropic limit.
 
 const isMac = navigator.platform.toUpperCase().indexOf("MAC") >= 0
 
-// kilocode_change start: KiloLogo component
-const KiloLogo = () => {
+// kilocode_change start: SchmidtAILogo component
+const SchmidtAILogo = () => {
 	const iconsBaseUri = (window as any).ICONS_BASE_URI || ""
 	const isLightTheme =
 		document.body.classList.contains("vscode-light") ||
 		document.body.classList.contains("vscode-high-contrast-light")
-	const iconFile = isLightTheme ? "kilo-light.svg" : "kilo-dark.svg"
+	const iconFile = isLightTheme ? "schmidt-ai-light.svg" : "schmidt-ai-dark.svg"
 	return (
 		<div className="flex items-center justify-center" style={{ width: "56px", height: "56px", margin: "0 auto" }}>
 			<img
 				src={`${iconsBaseUri}/${iconFile}`}
-				alt="Kilo Code"
+				alt="Schmidt AI Coder"
 				className="w-full h-full object-contain"
 				style={{ opacity: 0.85 }}
 			/>
@@ -1729,7 +1729,7 @@ const ChatViewComponent: React.ForwardRefRenderFunction<ChatViewRef, ChatViewPro
 							</div>
 						)}
 						<div className="flex flex-grow flex-col justify-center gap-2">
-							<KiloLogo />
+							<SchmidtAILogo />
 							{/* kilocode_change end */}
 							<p className="text-vscode-editor-foreground leading-normal font-vscode-font-family text-center text-balance max-w-[380px] mx-auto my-0">
 								<Trans

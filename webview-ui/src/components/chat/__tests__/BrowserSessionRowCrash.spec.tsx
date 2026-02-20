@@ -46,7 +46,7 @@ vi.mock("@src/context/ExtensionStateContext", () => ({
 	}),
 }))
 
-vi.mock("../kilocode/common/CodeBlock", () => ({
+vi.mock("../schmidtaicoder/common/CodeBlock", () => ({
 	default: ({ source }: { source: string }) => <div>{source}</div>,
 }))
 

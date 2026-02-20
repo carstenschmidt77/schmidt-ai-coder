@@ -83,7 +83,7 @@ export class InceptionLabsHandler extends RouterProvider implements SingleComple
 			options: {
 				...options,
 				openAiHeaders: {
-					"X-Inceptionlabs-Source": "kilocode",
+					"X-Inceptionlabs-Source": "schmidt-embedded-systems",
 					"X-Inceptionlabs-Version": `2025-10-31`,
 				},
 			},

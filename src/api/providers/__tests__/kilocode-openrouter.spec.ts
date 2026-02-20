@@ -27,7 +27,7 @@ import {
 	X_KILOCODE_MACHINEID,
 	X_KILOCODE_MODE,
 	X_KILOCODE_FEATURE,
-} from "../../../shared/kilocode/headers"
+} from "../../../shared/schmidtaicoder/headers"
 import { streamSse } from "../../../services/autocomplete/continuedev/core/fetch/stream"
 
 // Mock the stream module
@@ -56,7 +56,7 @@ vitest.mock("../fetchers/modelCache", () => ({
 vitest.mock("../fetchers/modelEndpointCache", () => ({
 	getModelEndpoints: vitest.fn().mockResolvedValue({}),
 }))
-vitest.mock("../kilocode/getKilocodeDefaultModel", () => ({
+vitest.mock("../schmidtaicoder/getKilocodeDefaultModel", () => ({
 	getKilocodeDefaultModel: vitest.fn().mockResolvedValue("anthropic/claude-sonnet-4"),
 }))
 

@@ -7,8 +7,8 @@ import { SectionHeader } from "@src/components/settings/SectionHeader"
 import { Section } from "@src/components/settings/Section"
 import ModesView from "@src/components/modes/ModesView"
 import McpView from "@src/components/mcp/McpView"
-import KiloRulesWorkflowsView from "@src/components/kilocode/rules/KiloRulesWorkflowsView"
-import InstalledSkillsView from "@src/components/kilocode/settings/InstalledSkillsView"
+import KiloRulesWorkflowsView from "@src/components/schmidtaicoder/rules/KiloRulesWorkflowsView"
+import InstalledSkillsView from "@src/components/schmidtaicoder/settings/InstalledSkillsView"
 
 const StyledTabButton = styled.button<{ isActive: boolean }>`
 	background: none;

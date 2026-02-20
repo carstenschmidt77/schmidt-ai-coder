@@ -54,7 +54,7 @@ apply("genPlatform.gradle")
 ext {
     set("debugMode", project.findProperty("debugMode") ?: "none")
     set("debugResource", project.projectDir.resolve("../resources").absolutePath)
-    set("vscodePlugin", project.findProperty("vscodePlugin") ?: "kilocode")
+    set("vscodePlugin", project.findProperty("vscodePlugin") ?: "schmidt-embedded-systems")
 }
 
 project.afterEvaluate {
@@ -156,7 +156,7 @@ tasks {
     register("generateConfigProperties") {
         description = "Generate properties file containing plugin configuration"
         doLast {
-            val configDir = File("$projectDir/src/main/resources/ai/kilocode/jetbrains/plugin/config")
+            val configDir = File("$projectDir/src/main/resources/ai/schmidtaicoder/jetbrains/plugin/config")
             configDir.mkdirs()
 
             val configFile = File(configDir, "plugin.properties")

@@ -1,6 +1,6 @@
 # JetBrains Plugin Development Setup
 
-This directory contains the JetBrains plugin implementation for Kilo Code, including both the IntelliJ plugin (Kotlin) and the Extension Host (Node.js/TypeScript).
+This directory contains the JetBrains plugin implementation for Schmidt AI Coder, including both the IntelliJ plugin (Kotlin) and the Extension Host (Node.js/TypeScript).
 
 ## Prerequisites
 
@@ -176,7 +176,7 @@ cd jetbrains/plugin
 pnpm build
 
 # Or with Turbo from project root
-pnpm --filter @kilo-code/jetbrains-host build
+pnpm --filter @schmidt-ai-coder/jetbrains-host build
 ```
 
 ## Turbo Integration

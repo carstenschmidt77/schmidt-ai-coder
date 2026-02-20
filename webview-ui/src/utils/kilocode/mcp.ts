@@ -1,5 +1,5 @@
 // kilocode_change: imported from Cline
-import { McpMarketplaceCatalog } from "../../../../src/shared/kilocode/mcp"
+import { McpMarketplaceCatalog } from "../../../../src/shared/schmidtaicoder/mcp"
 
 /**
  * Attempts to convert an MCP server name to its display name using the marketplace catalog

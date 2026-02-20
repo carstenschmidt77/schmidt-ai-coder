@@ -38,7 +38,7 @@ describe("parseCliChunk", () => {
 		const result = parseCliChunk('{"timestamp":123,"source":"extension","type":"say"}\n')
 		expect(result.events).toHaveLength(1)
 		expect(result.events[0]).toEqual({
-			streamEventType: "kilocode",
+			streamEventType: "schmidt-embedded-systems",
 			payload: {
 				timestamp: 123,
 				source: "extension",
@@ -174,7 +174,7 @@ describe("parseCliChunk", () => {
 			worktreeBranch: "feature/test-branch",
 		})
 		expect(result2.events[1]).toMatchObject({
-			streamEventType: "kilocode",
+			streamEventType: "schmidt-embedded-systems",
 		})
 	})
 
@@ -185,7 +185,7 @@ describe("parseCliChunk", () => {
 		expect(result.events).toHaveLength(2)
 		expect(result.events[0]).toMatchObject({ streamEventType: "status" })
 		expect(result.events[1]).toMatchObject({
-			streamEventType: "kilocode",
+			streamEventType: "schmidt-embedded-systems",
 			payload: { type: "ask", timestamp: 2 },
 		})
 	})
@@ -200,7 +200,7 @@ describe("parseCliChunk", () => {
 		const result = parseCliChunk(',"source":"extension","type":"say"}\n', '{"timestamp":123')
 		expect(result.events).toHaveLength(1)
 		expect(result.events[0]).toEqual({
-			streamEventType: "kilocode",
+			streamEventType: "schmidt-embedded-systems",
 			payload: {
 				timestamp: 123,
 				source: "extension",
@@ -213,7 +213,7 @@ describe("parseCliChunk", () => {
 		const input = '\x1b[2K\x1b[1A\x1b[2K\x1b[G{"timestamp":123,"source":"extension","type":"say"}\n'
 		const result = parseCliChunk(input)
 		expect(result.events).toHaveLength(1)
-		expect(result.events[0]).toMatchObject({ streamEventType: "kilocode", payload: { timestamp: 123 } })
+		expect(result.events[0]).toMatchObject({ streamEventType: "schmidt-embedded-systems", payload: { timestamp: 123 } })
 	})
 
 	it("should parse concatenated JSON objects on a single line", () => {
@@ -254,7 +254,7 @@ describe("parseCliChunk", () => {
 		const result = parseCliChunk(input)
 		expect(result.events).toHaveLength(1)
 		expect(result.events[0]).toMatchObject({
-			streamEventType: "kilocode",
+			streamEventType: "schmidt-embedded-systems",
 			payload: { content: "Hello" },
 		})
 	})
@@ -272,7 +272,7 @@ describe("CliOutputParser class", () => {
 		const result2 = parser.parse(',"source":"extension","type":"say"}\n')
 		expect(result2.events).toHaveLength(1)
 		expect(result2.events[0]).toMatchObject({
-			streamEventType: "kilocode",
+			streamEventType: "schmidt-embedded-systems",
 			payload: { timestamp: 123 },
 		})
 	})
@@ -319,8 +319,8 @@ describe("CliOutputParser class", () => {
 		events.push(...final.events)
 
 		expect(events).toHaveLength(3)
-		expect(events[0]).toMatchObject({ streamEventType: "kilocode", payload: { content: "Hello" } })
-		expect(events[1]).toMatchObject({ streamEventType: "kilocode", payload: { content: "Hello World" } })
+		expect(events[0]).toMatchObject({ streamEventType: "schmidt-embedded-systems", payload: { content: "Hello" } })
+		expect(events[1]).toMatchObject({ streamEventType: "schmidt-embedded-systems", payload: { content: "Hello World" } })
 		expect(events[2]).toMatchObject({ streamEventType: "status" })
 	})
 

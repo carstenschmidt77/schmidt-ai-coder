@@ -123,7 +123,7 @@ class WecoderPlugin : StartupActivity.DumbAware {
         val osArch = System.getProperty("os.arch")
 
         LOG.info(
-            "Initializing Kilo Code plugin for project: ${project.name}, " +
+            "Initializing Schmidt AI Coder plugin for project: ${project.name}, " +
                 "OS: $osName $osVersion ($osArch), " +
                 "IDE: ${appInfo.fullApplicationName} (build ${appInfo.build}), " +
                 "Plugin version: $pluginVersion, " +
@@ -143,15 +143,15 @@ class WecoderPlugin : StartupActivity.DumbAware {
             Disposer.register(
                 project,
                 Disposable {
-                    LOG.info("Disposing Kilo Code plugin for project: ${project.name}")
+                    LOG.info("Disposing Schmidt AI Coder plugin for project: ${project.name}")
                     pluginService.dispose()
                     // SystemObjectProvider is now project-scoped and will be disposed automatically
                 },
             )
 
-            LOG.info("Kilo Code plugin initialized successfully for project: ${project.name}")
+            LOG.info("Schmidt AI Coder plugin initialized successfully for project: ${project.name}")
         } catch (e: Exception) {
-            LOG.error("Failed to initialize Kilo Code plugin", e)
+            LOG.error("Failed to initialize Schmidt AI Coder plugin", e)
         }
     }
 }
@@ -237,7 +237,7 @@ class WecoderPluginService(private var currentProject: Project) : Disposable {
             try {
                 // Read debug mode setting from config file
                 val properties = Properties()
-                val configStream: InputStream? = WecoderPluginService::class.java.getResourceAsStream("/ai/kilocode/jetbrains/plugin/config/plugin.properties")
+                val configStream: InputStream? = WecoderPluginService::class.java.getResourceAsStream("/ai/schmidtaicoder/jetbrains/plugin/config/plugin.properties")
 
                 if (configStream != null) {
                     properties.load(configStream)

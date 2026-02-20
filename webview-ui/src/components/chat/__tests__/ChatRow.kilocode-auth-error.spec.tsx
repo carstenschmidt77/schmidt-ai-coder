@@ -84,7 +84,7 @@ describe("ChatRow - KiloCode auth error login button", () => {
 			text: "Cannot complete request, make sure you are connected and logged in with the selected provider.\n\nKiloCode token + baseUrl is required to fetch models",
 		}
 
-		renderChatRow(message, { apiProvider: "kilocode" })
+		renderChatRow(message, { apiProvider: "schmidt-embedded-systems" })
 
 		expect(screen.getByText("Login")).toBeInTheDocument()
 	})
@@ -110,7 +110,7 @@ describe("ChatRow - KiloCode auth error login button", () => {
 			text: "Some other error message",
 		}
 
-		renderChatRow(message, { apiProvider: "kilocode" })
+		renderChatRow(message, { apiProvider: "schmidt-embedded-systems" })
 
 		expect(screen.queryByText("Login")).not.toBeInTheDocument()
 	})
@@ -123,7 +123,7 @@ describe("ChatRow - KiloCode auth error login button", () => {
 			text: "Cannot complete request, make sure you are connected and logged in with the selected provider.\n\nKiloCode token + baseUrl is required to fetch models",
 		}
 
-		renderChatRow(message, { apiProvider: "kilocode" })
+		renderChatRow(message, { apiProvider: "schmidt-embedded-systems" })
 
 		const loginButton = screen.getByText("Login")
 		fireEvent.click(loginButton)

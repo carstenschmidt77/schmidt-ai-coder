@@ -82,10 +82,10 @@ import { About } from "./About"
 import { Section } from "./Section"
 import PromptsSettings from "./PromptsSettings"
 import deepEqual from "fast-deep-equal" // kilocode_change
-import { AutocompleteServiceSettingsView } from "../kilocode/settings/AutocompleteServiceSettings" // kilocode_change
+import { AutocompleteServiceSettingsView } from "../schmidtaicoder/settings/AutocompleteServiceSettings" // kilocode_change
 import { SlashCommandsSettings } from "./SlashCommandsSettings"
 import { UISettings } from "./UISettings"
-import AgentBehaviourView from "../kilocode/settings/AgentBehaviourView" // kilocode_change - new combined view
+import AgentBehaviourView from "../schmidtaicoder/settings/AgentBehaviourView" // kilocode_change - new combined view
 // import ModesView from "../modes/ModesView" // kilocode_change - now used inside AgentBehaviourView
 // import McpView from "../mcp/McpView" // kilocode_change: own view
 import { SettingsSearch } from "./SettingsSearch"

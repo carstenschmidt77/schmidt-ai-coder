@@ -227,7 +227,7 @@ export const EmptyWithNotificationsAndHistory: Story = {
 				},
 			],
 			apiConfiguration: {
-				apiProvider: "kilocode", // Set to kilocode to show notifications
+				apiProvider: "schmidt-embedded-systems", // Set to kilocode to show notifications
 				apiModelId: "claude-3-5-sonnet-20241022",
 				apiKey: "mock-key",
 			},

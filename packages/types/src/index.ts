@@ -33,8 +33,8 @@ export * from "./tool-params.js"
 export * from "./type-fu.js"
 export * from "./vscode-extension-host.js"
 export * from "./vscode.js"
-export * from "./kilocode/kilocode.js"
-export * from "./kilocode/device-auth.js" // kilocode_change
+export * from "./schmidtaicoder/kilocode.js"
+export * from "./schmidtaicoder/device-auth.js" // kilocode_change
 export * from "./usage-tracker.js" // kilocode_change
 
 export * from "./providers/index.js"

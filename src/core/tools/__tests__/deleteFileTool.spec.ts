@@ -5,7 +5,7 @@ import type { MockedFunction } from "vitest"
 import fs from "fs/promises"
 import * as path from "path"
 
-import { deleteFileTool } from "../kilocode/deleteFileTool"
+import { deleteFileTool } from "../schmidtaicoder/deleteFileTool"
 import { Task } from "../../task/Task"
 import { ToolUse, ToolResponse } from "../../../shared/tools"
 import { isPathOutsideWorkspace } from "../../../utils/pathUtils"
@@ -163,7 +163,7 @@ describe("deleteFileTool", () => {
 			expect(mockedFsUnlink).toHaveBeenCalled()
 		})
 
-		it("should reject files in .kilocodeignore", async () => {
+		it("should reject files in .schmidtaicodeignore", async () => {
 			await executeDeleteFileTool({}, { accessAllowed: false })
 
 			// Normalize path for cross-platform compatibility

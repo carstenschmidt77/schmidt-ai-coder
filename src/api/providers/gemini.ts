@@ -30,7 +30,7 @@ import { getModelParams } from "../transform/model-params"
 
 import type { SingleCompletionHandler, ApiHandlerCreateMessageMetadata } from "../index"
 import { BaseProvider } from "./base-provider"
-import { throwMaxCompletionTokensReachedError } from "./kilocode/verifyFinishReason"
+import { throwMaxCompletionTokensReachedError } from "./schmidtaicoder/verifyFinishReason"
 import { getGeminiModels } from "./fetchers/gemini" // kilocode_change
 
 type GeminiHandlerOptions = ApiHandlerOptions & {

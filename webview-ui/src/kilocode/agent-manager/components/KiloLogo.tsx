@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react"
 const getIsLightThemeFromEditor = () =>
 	document.body.classList.contains("vscode-light") || document.body.classList.contains("vscode-high-contrast-light")
 
-export const KiloLogo = () => {
+export const SchmidtAILogo = () => {
 	const [isLightTheme, setIsLightTheme] = useState(getIsLightThemeFromEditor)
 
 	useEffect(() => {
@@ -14,7 +14,7 @@ export const KiloLogo = () => {
 		return () => observer.disconnect()
 	}, [])
 
-	const fillColor = isLightTheme ? "#1a1a18" : "#f8f674"
+	const fillColor = isLightTheme ? "#005CBF" : "#007BFF"
 
 	return (
 		<svg
@@ -25,7 +25,7 @@ export const KiloLogo = () => {
 			width="100%"
 			height="100%"
 			style={{ display: "block" }}>
-			<g id="Kilo_Code_Branding" data-name="Kilo Code Branding">
+			<g id="Kilo_Code_Branding" data-name="Schmidt AI Coder Branding">
 				<path
 					id="Logo_Outline_-_White"
 					data-name="Logo Outline - White"

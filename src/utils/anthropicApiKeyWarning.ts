@@ -12,7 +12,7 @@ export function checkAnthropicApiKeyConflict(): void {
 		return
 	}
 
-	const config = vscode.workspace.getConfiguration("kilo-code")
+	const config = vscode.workspace.getConfiguration("schmidt-ai-coder")
 	const provider = config.get<string>("apiProvider")
 
 	if (provider === "claude-code") {
@@ -26,7 +26,7 @@ function showAnthropicApiKeyWarning(): void {
 
 	vscode.window.showWarningMessage(msg, "More Info", "Got it").then((choice) => {
 		if (choice === "More Info") {
-			vscode.env.openExternal(vscode.Uri.parse("https://github.com/Kilo-Org/kilocode/issues/2026"))
+			vscode.env.openExternal(vscode.Uri.parse("https://github.com/schmidt-embedded-systems/schmidt-ai-coder/issues/2026"))
 		}
 		// User dismissed or clicked "Got it" - nothing else to do
 	})

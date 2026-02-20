@@ -500,9 +500,9 @@ async function main() {
 
 // Check for required environment variables
 function checkEnvironment() {
-	const provider = process.env.LLM_PROVIDER || "kilocode"
+	const provider = process.env.LLM_PROVIDER || "schmidt-embedded-systems"
 
-	if (provider !== "kilocode") {
+	if (provider !== "schmidt-embedded-systems") {
 		console.error(`\n❌ Error: Only kilocode provider is supported. Got: ${provider}`)
 		process.exit(1)
 	}

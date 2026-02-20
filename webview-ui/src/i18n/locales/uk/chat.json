@@ -1,5 +1,5 @@
 {
-	"greeting": "Що Kilo Code може зробити для тебе?",
+	"greeting": "Що Schmidt AI Coder може зробити для тебе?",
 	"task": {
 		"title": "Завдання",
 		"seeMore": "Дивитися більше",
@@ -20,7 +20,7 @@
 		"sharePublicly": "Поділитися публічно",
 		"sharePubliclyDescription": "Будь-хто з посиланням має доступ",
 		"connectToCloud": "Підключитися до Cloud",
-		"connectToCloudDescription": "Увійдіть до Kilo Code Cloud для обміну завданнями",
+		"connectToCloudDescription": "Увійдіть до Schmidt AI Coder Cloud для обміну завданнями",
 		"sharingDisabledByOrganization": "Обмін вимкнено організацією",
 		"shareSuccessOrganization": "Посилання організації скопійовано до буфера обміну",
 		"shareSuccessPublic": "Публічне посилання скопійовано до буфера обміну",
@@ -132,7 +132,7 @@
 		},
 		"modelAgnostic": {
 			"title": "Використовуй власну модель без націноки чи прив'язки",
-			"description": "Використовуй ключ свого провайдера або навіть запускай локальний інференс — Kilo за це не стягує плату"
+			"description": "Використовуй ключ свого провайдера або навіть запускай локальний інференс — Schmidt AI за це не стягує плату"
 		}
 	},
 	"selectMode": "Вибери режим для взаємодії",
@@ -144,7 +144,7 @@
 		"title": "Режими",
 		"marketplace": "Ринок режимів",
 		"settings": "Налаштування режимів",
-		"description": "Спеціалізовані персони, які налаштовують поведінку Kilo Code.",
+		"description": "Спеціалізовані персони, які налаштовують поведінку Schmidt AI Coder.",
 		"searchPlaceholder": "Пошук режимів...",
 		"noResults": "Результатів не знайдено",
 		"organizationModes": "Режими організації"
@@ -233,52 +233,52 @@
 		"tokens": "токени"
 	},
 	"instructions": {
-		"wantsToFetch": "Kilo Code хоче отримати детальні інструкції для допомоги з поточним завданням"
+		"wantsToFetch": "Schmidt AI Coder хоче отримати детальні інструкції для допомоги з поточним завданням"
 	},
 	"fileOperations": {
-		"wantsToRead": "Kilo Code хоче прочитати цей файл:",
-		"wantsToReadMultiple": "Kilo Code хоче прочитати кілька файлів:",
-		"wantsToReadAndXMore": "Kilo Code хоче прочитати цей файл і ще {{count}}:",
-		"wantsToReadOutsideWorkspace": "Kilo Code хоче прочитати цей файл за межами робочого простору:",
-		"didRead": "Kilo Code прочитав цей файл:",
-		"wantsToEdit": "Kilo Code хоче редагувати цей файл:",
-		"wantsToEditOutsideWorkspace": "Kilo Code хоче редагувати цей файл за межами робочого простору:",
-		"wantsToEditProtected": "Kilo Code хоче редагувати захищений файл конфігурації:",
-		"wantsToApplyBatchChanges": "Kilo Code хоче застосувати зміни до кількох файлів:",
-		"wantsToGenerateImage": "Kilo Code хоче згенерувати зображення:",
-		"wantsToGenerateImageOutsideWorkspace": "Kilo Code хоче згенерувати зображення поза робочою областю:",
-		"wantsToGenerateImageProtected": "Kilo Code хоче згенерувати зображення у захищеному місці:",
-		"didGenerateImage": "Kilo Code згенерував зображення:",
-		"wantsToCreate": "Kilo Code хоче створити новий файл:",
-		"wantsToSearchReplace": "Kilo Code хоче шукати та замінити в цьому файлі:",
-		"didSearchReplace": "Kilo Code виконав пошук і заміну в цьому файлі:",
-		"wantsToInsert": "Kilo Code хоче вставити вміст у цей файл:",
-		"wantsToInsertWithLineNumber": "Kilo Code хоче вставити вміст у цей файл на рядку {{lineNumber}}:",
-		"wantsToInsertAtEnd": "Kilo Code хоче додати вміст в кінець цього файлу:",
-		"wantsToDelete": "Kilo Code хоче видалити цей файл",
-		"wantsToDeleteDirectory": "Kilo Code хоче видалити цю директорію"
+		"wantsToRead": "Schmidt AI Coder хоче прочитати цей файл:",
+		"wantsToReadMultiple": "Schmidt AI Coder хоче прочитати кілька файлів:",
+		"wantsToReadAndXMore": "Schmidt AI Coder хоче прочитати цей файл і ще {{count}}:",
+		"wantsToReadOutsideWorkspace": "Schmidt AI Coder хоче прочитати цей файл за межами робочого простору:",
+		"didRead": "Schmidt AI Coder прочитав цей файл:",
+		"wantsToEdit": "Schmidt AI Coder хоче редагувати цей файл:",
+		"wantsToEditOutsideWorkspace": "Schmidt AI Coder хоче редагувати цей файл за межами робочого простору:",
+		"wantsToEditProtected": "Schmidt AI Coder хоче редагувати захищений файл конфігурації:",
+		"wantsToApplyBatchChanges": "Schmidt AI Coder хоче застосувати зміни до кількох файлів:",
+		"wantsToGenerateImage": "Schmidt AI Coder хоче згенерувати зображення:",
+		"wantsToGenerateImageOutsideWorkspace": "Schmidt AI Coder хоче згенерувати зображення поза робочою областю:",
+		"wantsToGenerateImageProtected": "Schmidt AI Coder хоче згенерувати зображення у захищеному місці:",
+		"didGenerateImage": "Schmidt AI Coder згенерував зображення:",
+		"wantsToCreate": "Schmidt AI Coder хоче створити новий файл:",
+		"wantsToSearchReplace": "Schmidt AI Coder хоче шукати та замінити в цьому файлі:",
+		"didSearchReplace": "Schmidt AI Coder виконав пошук і заміну в цьому файлі:",
+		"wantsToInsert": "Schmidt AI Coder хоче вставити вміст у цей файл:",
+		"wantsToInsertWithLineNumber": "Schmidt AI Coder хоче вставити вміст у цей файл на рядку {{lineNumber}}:",
+		"wantsToInsertAtEnd": "Schmidt AI Coder хоче додати вміст в кінець цього файлу:",
+		"wantsToDelete": "Schmidt AI Coder хоче видалити цей файл",
+		"wantsToDeleteDirectory": "Schmidt AI Coder хоче видалити цю директорію"
 	},
 	"directoryOperations": {
-		"wantsToViewTopLevel": "Kilo Code хоче переглянути файли верхнього рівня в цій директорії:",
-		"didViewTopLevel": "Kilo Code переглянув файли верхнього рівня в цій директорії:",
-		"wantsToViewTopLevelOutsideWorkspace": "Kilo Code хоче переглянути файли верхнього рівня в цій директорії (за межами робочого простору):",
-		"didViewTopLevelOutsideWorkspace": "Kilo Code переглянув файли верхнього рівня в цій директорії (за межами робочого простору):",
-		"wantsToViewRecursive": "Kilo Code хоче рекурсивно переглянути всі файли в цій директорії:",
-		"didViewRecursive": "Kilo Code рекурсивно переглянув всі файли в цій директорії:",
-		"wantsToViewRecursiveOutsideWorkspace": "Kilo Code хоче рекурсивно переглянути всі файли в цій директорії (за межами робочого простору):",
-		"didViewRecursiveOutsideWorkspace": "Kilo Code рекурсивно переглянув всі файли в цій директорії (за межами робочого простору):",
-		"wantsToViewDefinitions": "Kilo Code хоче переглянути назви визначень вихідного коду, що використовуються в цій директорії:",
-		"didViewDefinitions": "Kilo Code переглянув назви визначень вихідного коду, що використовуються в цій директорії:",
-		"wantsToViewDefinitionsOutsideWorkspace": "Kilo Code хоче переглянути назви визначень вихідного коду, що використовуються в цій директорії (за межами робочого простору):",
-		"didViewDefinitionsOutsideWorkspace": "Kilo Code переглянув назви визначень вихідного коду, що використовуються в цій директорії (за межами робочого простору):",
-		"wantsToSearch": "Kilo Code хоче шукати в цій директорії <code>{{regex}}</code>:",
-		"didSearch": "Kilo Code шукав у цій директорії <code>{{regex}}</code>:",
-		"wantsToSearchOutsideWorkspace": "Kilo Code хоче шукати в цій директорії (за межами робочого простору) <code>{{regex}}</code>:",
-		"didSearchOutsideWorkspace": "Kilo Code шукав у цій директорії (за межами робочого простору) <code>{{regex}}</code>:"
+		"wantsToViewTopLevel": "Schmidt AI Coder хоче переглянути файли верхнього рівня в цій директорії:",
+		"didViewTopLevel": "Schmidt AI Coder переглянув файли верхнього рівня в цій директорії:",
+		"wantsToViewTopLevelOutsideWorkspace": "Schmidt AI Coder хоче переглянути файли верхнього рівня в цій директорії (за межами робочого простору):",
+		"didViewTopLevelOutsideWorkspace": "Schmidt AI Coder переглянув файли верхнього рівня в цій директорії (за межами робочого простору):",
+		"wantsToViewRecursive": "Schmidt AI Coder хоче рекурсивно переглянути всі файли в цій директорії:",
+		"didViewRecursive": "Schmidt AI Coder рекурсивно переглянув всі файли в цій директорії:",
+		"wantsToViewRecursiveOutsideWorkspace": "Schmidt AI Coder хоче рекурсивно переглянути всі файли в цій директорії (за межами робочого простору):",
+		"didViewRecursiveOutsideWorkspace": "Schmidt AI Coder рекурсивно переглянув всі файли в цій директорії (за межами робочого простору):",
+		"wantsToViewDefinitions": "Schmidt AI Coder хоче переглянути назви визначень вихідного коду, що використовуються в цій директорії:",
+		"didViewDefinitions": "Schmidt AI Coder переглянув назви визначень вихідного коду, що використовуються в цій директорії:",
+		"wantsToViewDefinitionsOutsideWorkspace": "Schmidt AI Coder хоче переглянути назви визначень вихідного коду, що використовуються в цій директорії (за межами робочого простору):",
+		"didViewDefinitionsOutsideWorkspace": "Schmidt AI Coder переглянув назви визначень вихідного коду, що використовуються в цій директорії (за межами робочого простору):",
+		"wantsToSearch": "Schmidt AI Coder хоче шукати в цій директорії <code>{{regex}}</code>:",
+		"didSearch": "Schmidt AI Coder шукав у цій директорії <code>{{regex}}</code>:",
+		"wantsToSearchOutsideWorkspace": "Schmidt AI Coder хоче шукати в цій директорії (за межами робочого простору) <code>{{regex}}</code>:",
+		"didSearchOutsideWorkspace": "Schmidt AI Coder шукав у цій директорії (за межами робочого простору) <code>{{regex}}</code>:"
 	},
 	"codebaseSearch": {
-		"wantsToSearch": "Kilo Code хоче шукати в кодовій базі <code>{{query}}</code>:",
-		"wantsToSearchWithPath": "Kilo Code хоче шукати в кодовій базі <code>{{query}}</code> в <code>{{path}}</code>:",
+		"wantsToSearch": "Schmidt AI Coder хоче шукати в кодовій базі <code>{{query}}</code>:",
+		"wantsToSearchWithPath": "Schmidt AI Coder хоче шукати в кодовій базі <code>{{query}}</code> в <code>{{path}}</code>:",
 		"didSearch_one": "Знайдено 1 результат",
 		"didSearch_other": "Знайдено {{count}} результатів",
 		"resultTooltip": "Оцінка схожості: {{score}} (клікни для відкриття файлу)"
@@ -305,24 +305,24 @@
 	"response": "Відповідь",
 	"arguments": "Аргументи",
 	"text": {
-		"rooSaid": "Kilo сказав"
+		"rooSaid": "Schmidt AI сказав"
 	},
 	"feedback": {
 		"youSaid": "Ти сказав"
 	},
 	"mcp": {
-		"wantsToUseTool": "Kilo Code хоче використати інструмент на сервері MCP {{serverName}}:",
-		"wantsToAccessResource": "Kilo Code хоче отримати доступ до ресурсу на сервері MCP {{serverName}}:"
+		"wantsToUseTool": "Schmidt AI Coder хоче використати інструмент на сервері MCP {{serverName}}:",
+		"wantsToAccessResource": "Schmidt AI Coder хоче отримати доступ до ресурсу на сервері MCP {{serverName}}:"
 	},
 	"modes": {
-		"wantsToSwitch": "Kilo Code хоче перейти в режим {{mode}}",
-		"wantsToSwitchWithReason": "Kilo Code хоче перейти в режим {{mode}}, тому що: {{reason}}",
-		"didSwitch": "Kilo Code перейшов у режим {{mode}}",
-		"didSwitchWithReason": "Kilo Code перейшов у режим {{mode}}, тому що: {{reason}}"
+		"wantsToSwitch": "Schmidt AI Coder хоче перейти в режим {{mode}}",
+		"wantsToSwitchWithReason": "Schmidt AI Coder хоче перейти в режим {{mode}}, тому що: {{reason}}",
+		"didSwitch": "Schmidt AI Coder перейшов у режим {{mode}}",
+		"didSwitchWithReason": "Schmidt AI Coder перейшов у режим {{mode}}, тому що: {{reason}}"
 	},
 	"subtasks": {
-		"wantsToCreate": "Kilo Code хоче створити нове підзавдання в режимі {{mode}}:",
-		"wantsToFinish": "Kilo Code хоче завершити це підзавдання",
+		"wantsToCreate": "Schmidt AI Coder хоче створити нове підзавдання в режимі {{mode}}:",
+		"wantsToFinish": "Schmidt AI Coder хоче завершити це підзавдання",
 		"newTaskContent": "Інструкції підзавдання",
 		"completionContent": "Підзавдання завершено",
 		"resultContent": "Результати підзавдання",
@@ -330,7 +330,7 @@
 		"completionInstructions": "Підзавдання завершено! Ти можеш переглянути результати та запропонувати будь-які виправлення або наступні кроки. Якщо все виглядає добре, підтверди, щоб повернути результат до батьківського завдання."
 	},
 	"questions": {
-		"hasQuestion": "Kilo Code має питання:"
+		"hasQuestion": "Schmidt AI Coder має питання:"
 	},
 	"taskCompleted": "Завдання виконано",
 	"error": "Помилка",
@@ -352,14 +352,14 @@
 	"diffError": {
 		"title": "Редагування не вдалося"
 	},
-	"troubleMessage": "Kilo Code має проблеми...",
+	"troubleMessage": "Schmidt AI Coder має проблеми...",
 	"powershell": {
 		"issues": "Схоже, у тебе проблеми з Windows PowerShell, будь ласка, подивись це"
 	},
 	"autoApprove": {
 		"title": "Автосхвалення:",
 		"none": "Немає",
-		"description": "Автосхвалення дозволяє Kilo Code виконувати дії без запиту дозволу. Увімкни лише для дій, яким ти повністю довіряєш. Більш детальна конфігурація доступна в <settingsLink>Налаштуваннях</settingsLink>.",
+		"description": "Автосхвалення дозволяє Schmidt AI Coder виконувати дії без запиту дозволу. Увімкни лише для дій, яким ти повністю довіряєш. Більш детальна конфігурація доступна в <settingsLink>Налаштуваннях</settingsLink>.",
 		"selectOptionsFirst": "Спочатку вибери принаймні один варіант нижче, щоб увімкнути автосхвалення",
 		"toggleAriaLabel": "Перемкнути автосхвалення",
 		"disabledAriaLabel": "Автосхвалення вимкнено - спочатку вибери варіанти",
@@ -428,7 +428,7 @@
 	},
 	"browser": {
 		"session": "Сесія браузера",
-		"rooWantsToUse": "Kilo Code хоче використати браузер:",
+		"rooWantsToUse": "Schmidt AI Coder хоче використати браузер:",
 		"active": "Активний",
 		"consoleLogs": "Логи консолі",
 		"noNewLogs": "(Немає нових логів)",
@@ -497,18 +497,18 @@
 	"profileViolationWarning": "Поточний профіль несумісний з налаштуваннями твоєї організації",
 	"shellIntegration": {
 		"title": "Попередження про виконання команди",
-		"description": "Твоя команда виконується без інтеграції оболонки терміналу VSCode. Щоб прибрати це попередження, ти можеш вимкнути інтеграцію оболонки в розділі <strong>Terminal</strong> <settingsLink>налаштувань Kilo Code</settingsLink> або усунути проблеми з інтеграцією терміналу VSCode, використовуючи посилання нижче.",
+		"description": "Твоя команда виконується без інтеграції оболонки терміналу VSCode. Щоб прибрати це попередження, ти можеш вимкнути інтеграцію оболонки в розділі <strong>Terminal</strong> <settingsLink>налаштувань Schmidt AI Coder</settingsLink> або усунути проблеми з інтеграцією терміналу VSCode, використовуючи посилання нижче.",
 		"troubleshooting": "Натисни тут для документації з інтеграції оболонки."
 	},
 	"ask": {
 		"autoApprovedRequestLimitReached": {
 			"title": "Досягнуто ліміт автосхвалених запитів",
-			"description": "Kilo Code досяг автосхваленого ліміту {{count}} API запит(ів). Хочеш скинути лічильник і продовжити завдання?",
+			"description": "Schmidt AI Coder досяг автосхваленого ліміту {{count}} API запит(ів). Хочеш скинути лічильник і продовжити завдання?",
 			"button": "Скинути і продовжити"
 		},
 		"autoApprovedCostLimitReached": {
 			"title": "Досягнуто ліміт автоматично схвалених витрат",
-			"description": "Kilo Code досяг ліміту автоматично схвалених витрат ${{count}}. Хочете скинути витрати і продовжити завдання?",
+			"description": "Schmidt AI Coder досяг ліміту автоматично схвалених витрат ${{count}}. Хочете скинути витрати і продовжити завдання?",
 			"button": "Скинути і продовжити"
 		}
 	},
@@ -556,8 +556,8 @@
 	},
 	"generateCommitMessage": "Згенерувати повідомлення коміту",
 	"slashCommand": {
-		"wantsToRun": "Kilo Code хоче виконати slash команду:",
-		"didRun": "Kilo Code виконав slash команду:"
+		"wantsToRun": "Schmidt AI Coder хоче виконати slash команду:",
+		"didRun": "Schmidt AI Coder виконав slash команду:"
 	},
 	"contextMenu": {
 		"noResults": "Результатів немає",

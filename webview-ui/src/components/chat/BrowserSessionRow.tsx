@@ -8,7 +8,7 @@ import type { ClineMessage, BrowserAction, BrowserActionResult, ClineSayBrowserA
 import { vscode } from "@src/utils/vscode"
 import { useExtensionState } from "@src/context/ExtensionStateContext"
 
-import CodeBlock from "../kilocode/common/CodeBlock" // kilocode_change
+import CodeBlock from "../schmidtaicoder/common/CodeBlock" // kilocode_change
 import { ProgressIndicator } from "./ProgressIndicator"
 import { Button, StandardTooltip } from "@src/components/ui"
 import { getViewportCoordinate as getViewportCoordinateShared, prettyKey } from "@roo/browserUtils"

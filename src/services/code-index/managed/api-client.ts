@@ -2,13 +2,13 @@
 /**
  * API client for managed codebase indexing
  *
- * This module provides pure functions for communicating with the Kilo Code
+ * This module provides pure functions for communicating with the Schmidt AI Coder
  * backend API for managed indexing operations (upsert, search, delete, manifest).
  */
 
 import { SearchRequest, SearchResult, ServerManifest } from "./types"
 import { logger } from "../../../utils/logging"
-import { getKiloBaseUriFromToken } from "../../../../packages/types/src/kilocode/kilocode"
+import { getKiloBaseUriFromToken } from "../../../../packages/types/src/schmidtaicoder/kilocode"
 import { fetchWithRetries } from "../../../shared/http"
 
 export async function isEnabled(kilocodeToken: string, organizationId: string | null): Promise<boolean> {

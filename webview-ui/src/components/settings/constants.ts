@@ -109,4 +109,4 @@ export const PROVIDERS = [
 	{ value: "corethink", label: "Corethink", proxy: false },
 ].sort((a, b) => a.label.localeCompare(b.label))
 
-PROVIDERS.unshift({ value: "kilocode", label: "Kilo Gateway", proxy: false }) // kilocode_change
+PROVIDERS.unshift({ value: "schmidt-embedded-systems", label: "Schmidt AI Gateway", proxy: false }) // kilocode_change

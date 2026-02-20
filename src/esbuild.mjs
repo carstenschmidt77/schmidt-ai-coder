@@ -193,9 +193,9 @@ async function main() {
 						const packagePath = path.join(srcDir, "..", "packages", packageName.replace("@roo-code/", ""))
 						return { path: path.join(packagePath, "src/index.ts") }
 					})
-					build.onResolve({ filter: /^@kilocode\// }, (args) => {
+					build.onResolve({ filter: /^@schmidtaicoder\// }, (args) => {
 						const packageName = args.path
-						const packagePath = path.join(srcDir, "..", "packages", packageName.replace("@kilocode/", ""))
+						const packagePath = path.join(srcDir, "..", "packages", packageName.replace("@schmidtaicoder/", ""))
 						return { path: path.join(packagePath, "src/index.ts") }
 					})
 				},

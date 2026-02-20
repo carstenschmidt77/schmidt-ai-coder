@@ -1,5 +1,5 @@
 /**
- * RuntimeProcessHandler - Spawns agent processes using @kilocode/agent-runtime
+ * RuntimeProcessHandler - Spawns agent processes using @schmidtaicoder/agent-runtime
  *
  * This handler uses Node.js fork() to spawn agent-runtime processes instead of
  * the CLI. Communication is via Node.js IPC (process.send/process.on('message'))
@@ -149,7 +149,7 @@ export class RuntimeProcessHandler {
 
 	/**
 	 * Filter out control messages that should not be displayed in the chat.
-	 * - ask:completion_result: Control message for state machine, renders as empty "Kilo said"
+	 * - ask:completion_result: Control message for state machine, renders as empty "Schmidt AI said"
 	 */
 	private filterDisplayableMessages(messages: ClineMessage[]): ClineMessage[] {
 		return messages.filter((msg) => {
@@ -191,7 +191,7 @@ export class RuntimeProcessHandler {
 
 		// Development: Try require.resolve for workspace dependency
 		try {
-			const entryPath = require.resolve("@kilocode/agent-runtime/process")
+			const entryPath = require.resolve("@schmidtaicoder/agent-runtime/process")
 			return entryPath
 		} catch {
 			// Fallback: use relative path from monorepo root (development only)
@@ -581,7 +581,7 @@ export class RuntimeProcessHandler {
 			)
 
 			// Mark api_req_started as already sent for resumed sessions
-			// This prevents an empty "Kilo said" message when we receive the loaded history
+			// This prevents an empty "Schmidt AI said" message when we receive the loaded history
 			this.sentApiReqStarted.add(sessionId)
 
 			// Store pending continuation - will be sent when we see ask:resume_task or ask:resume_completed_task
@@ -687,7 +687,7 @@ export class RuntimeProcessHandler {
 					this.callbacks.onLog(`[ExtMsg] ${sessionId}: sending synthetic api_req_started`)
 					this.sentApiReqStarted.add(sessionId)
 					const stateEvent: KilocodeStreamEvent = {
-						streamEventType: "kilocode",
+						streamEventType: "schmidt-embedded-systems",
 						payload: {
 							ts: Date.now(),
 							type: "say",

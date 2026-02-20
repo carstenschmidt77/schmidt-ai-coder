@@ -217,7 +217,7 @@ export const getModelsByProvider = ({
 				defaultModel: vscodeLlmDefaultModelId,
 			}
 		}
-		case "kilocode": {
+		case "schmidt-embedded-systems": {
 			return {
 				models: routerModels.kilocode,
 				defaultModel: kilocodeDefaultModel,

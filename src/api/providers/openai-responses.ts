@@ -20,7 +20,7 @@ import { BaseProvider } from "./base-provider"
 import type { SingleCompletionHandler, ApiHandlerCreateMessageMetadata } from "../index"
 import { getApiRequestTimeout } from "./utils/timeout-config"
 import { handleOpenAIError } from "./utils/openai-error-handler"
-import { normalizeObjectAdditionalPropertiesFalse } from "./kilocode/openai-strict-schema" // kilocode_change
+import { normalizeObjectAdditionalPropertiesFalse } from "./schmidtaicoder/openai-strict-schema" // kilocode_change
 import { isMcpTool } from "../../utils/mcp-name"
 
 export type OpenAiResponsesModel = ReturnType<OpenAiCompatibleResponsesHandler["getModel"]>

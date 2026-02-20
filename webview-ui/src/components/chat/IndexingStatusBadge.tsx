@@ -12,7 +12,7 @@ import { PopoverTrigger, StandardTooltip, Button } from "@src/components/ui"
 
 import { CodeIndexPopover } from "./CodeIndexPopover" // kilocode_change
 import { useManagedIndexerState, useIsIndexing } from "./hooks/useManagedIndexerState" // kilocode_change
-import { ManagedCodeIndexPopover } from "./kilocode/ManagedCodeIndexPopover" // kilocode_change
+import { ManagedCodeIndexPopover } from "./schmidtaicoder/ManagedCodeIndexPopover" // kilocode_change
 
 interface IndexingStatusBadgeProps {
 	className?: string

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback, useRef, useMemo } from "react"
-import { KiloShareModesBanner } from "../kilocode/KiloShareModesBanner" // kilocode_change
+import { KiloShareModesBanner } from "../schmidtaicoder/KiloShareModesBanner" // kilocode_change
 import {
 	VSCodeCheckbox,
 	VSCodeRadioGroup,
@@ -51,7 +51,7 @@ import {
 } from "@src/components/ui"
 import { DeleteModeDialog } from "@src/components/modes/DeleteModeDialog"
 import { useEscapeKey } from "@src/hooks/useEscapeKey"
-import { OrganizationModeWarning } from "../kilocode/OrganizationModeWarning"
+import { OrganizationModeWarning } from "../schmidtaicoder/OrganizationModeWarning"
 import { SectionHeader } from "../settings/SectionHeader"
 
 // Get all available groups that should show in prompts view
@@ -662,7 +662,7 @@ const ModesView = ({ hideHeader = false }: { hideHeader?: boolean }) => {
 												e.preventDefault() // Prevent blur
 												vscode.postMessage({
 													type: "openFile",
-													text: "./.kilocodemodes",
+													text: "./.schmidtaicodermodes",
 													values: {
 														create: true,
 														content: JSON.stringify({ customModes: [] }, null, 2),
@@ -1299,7 +1299,7 @@ const ModesView = ({ hideHeader = false }: { hideHeader?: boolean }) => {
 											// Open or create an empty file
 											vscode.postMessage({
 												type: "openFile",
-												text: `./.kilocode/rules-${currentMode.slug}/rules.md`, // kilocode_change
+												text: `./.schmidtaicoder/rules-${currentMode.slug}/rules.md`, // kilocode_change
 												values: {
 													create: true,
 													content: "",
@@ -1392,7 +1392,7 @@ const ModesView = ({ hideHeader = false }: { hideHeader?: boolean }) => {
 
 															vscode.postMessage({
 																type: "openFile",
-																text: `./.kilocode/system-prompt-${currentMode.slug}`, // kilocode_change
+																text: `./.schmidtaicoder/system-prompt-${currentMode.slug}`, // kilocode_change
 																values: {
 																	create: true,
 																	content: "",
@@ -1461,7 +1461,7 @@ const ModesView = ({ hideHeader = false }: { hideHeader?: boolean }) => {
 										onClick={() =>
 											vscode.postMessage({
 												type: "openFile",
-												text: "./.kilocode/rules/rules.md",
+												text: "./.schmidtaicoder/rules/rules.md",
 												values: {
 													create: true,
 													content: "",

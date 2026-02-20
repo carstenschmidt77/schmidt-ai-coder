@@ -1,10 +1,10 @@
 import { render, screen, fireEvent, waitFor } from "@testing-library/react"
 import { describe, it, expect, vi, beforeEach } from "vitest"
-import { useTaskHistory } from "@/kilocode/hooks/useTaskHistory"
+import { useTaskHistory } from "@/schmidtaicoder/hooks/useTaskHistory"
 import { useExtensionState } from "@/context/ExtensionStateContext"
 import { vscode } from "@/utils/vscode"
 
-vi.mock("@/kilocode/hooks/useTaskHistory")
+vi.mock("@/schmidtaicoder/hooks/useTaskHistory")
 vi.mock("@/context/ExtensionStateContext")
 vi.mock("@/utils/vscode", () => ({
 	vscode: {

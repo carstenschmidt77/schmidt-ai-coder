@@ -67,12 +67,12 @@ export const formatResponse = {
 			return JSON.stringify({
 				status: "error",
 				type: "access_denied",
-				message: "Access blocked by .kilocodeignore",
+				message: "Access blocked by .schmidtaicodeignore",
 				path: path,
-				suggestion: "Try to continue without this file, or ask the user to update the .kilocodeignore file",
+				suggestion: "Try to continue without this file, or ask the user to update the .schmidtaicodeignore file",
 			})
 		}
-		return `Access to ${path} is blocked by the .kilocodeignore file settings. You must try to continue in the task without using this file, or ask the user to update the .kilocodeignore file.`
+		return `Access to ${path} is blocked by the .schmidtaicodeignore file settings. You must try to continue in the task without using this file, or ask the user to update the .schmidtaicodeignore file.`
 	},
 
 	noToolsUsed: (protocol?: ToolProtocol) => {

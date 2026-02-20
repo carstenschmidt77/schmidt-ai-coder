@@ -3,14 +3,14 @@ import * as vscode from "vscode"
 import { z } from "zod"
 import { AutocompleteServiceManager } from "./AutocompleteServiceManager"
 import { ClineProvider } from "../../core/webview/ClineProvider"
-import { getKiloCodeWrapperProperties } from "../../core/kilocode/wrapper"
+import { getKiloCodeWrapperProperties } from "../../core/schmidtaicoder/wrapper"
 import { languageForFilepath } from "./continuedev/core/autocomplete/constants/AutocompleteLanguageInfo"
 import { AutocompleteContextProvider } from "./types"
 import { FimPromptBuilder } from "./classic-auto-complete/FillInTheMiddle"
 import { HoleFiller } from "./classic-auto-complete/HoleFiller"
 import { MockTextDocument } from "../mocking/MockTextDocument"
 
-const GET_INLINE_COMPLETIONS_COMMAND = "kilo-code.jetbrains.getInlineCompletions"
+const GET_INLINE_COMPLETIONS_COMMAND = "schmidt-ai-coder.jetbrains.getInlineCompletions"
 
 // Zod schemas for validation
 const PositionSchema = z.object({

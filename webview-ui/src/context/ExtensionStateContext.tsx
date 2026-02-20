@@ -28,7 +28,7 @@ import { checkExistKey } from "@roo/checkExistApiConfig"
 import { Mode, defaultModeSlug, defaultPrompts } from "@roo/modes"
 import { CustomSupportPrompts } from "@roo/support-prompt"
 import { experimentDefault } from "@roo/experiments"
-import { McpMarketplaceCatalog } from "../../../src/shared/kilocode/mcp" // kilocode_change
+import { McpMarketplaceCatalog } from "../../../src/shared/schmidtaicoder/mcp" // kilocode_change
 
 import { vscode } from "@src/utils/vscode"
 import { convertTextMateToHljs } from "@src/utils/textMateToHljs"

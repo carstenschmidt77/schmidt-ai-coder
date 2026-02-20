@@ -59,8 +59,8 @@ import {
 // kilocode_change start
 import { KilocodeOpenrouterHandler } from "./providers/kilocode-openrouter"
 import { InceptionLabsHandler } from "./providers/inception"
-import type { FimHandler } from "./providers/kilocode/FimHandler" // kilocode_change
-export type { FimHandler } from "./providers/kilocode/FimHandler"
+import type { FimHandler } from "./providers/schmidtaicoder/FimHandler" // kilocode_change
+export type { FimHandler } from "./providers/schmidtaicoder/FimHandler"
 // kilocode_change end
 import { NativeOllamaHandler } from "./providers/native-ollama"
 
@@ -96,14 +96,14 @@ export interface ApiHandlerCreateMessageMetadata {
 	/**
 	 * KiloCode-specific: The project ID for the current workspace (derived from git origin remote).
 	 * Used by KiloCodeOpenrouterHandler for backend tracking. Ignored by other providers.
-	 * @kilocode-only
+	 * @schmidtaicoder-only
 	 */
 	projectId?: string
 	/**
 	 * KiloCode-specific: Feature attribution for microdollar usage tracking.
 	 * When set, overrides the default feature detection in customRequestOptions().
 	 * Examples: 'parallel-agent', 'autocomplete'
-	 * @kilocode-only
+	 * @schmidtaicoder-only
 	 */
 	feature?: string
 	// kilocode_change end
@@ -175,7 +175,7 @@ export function buildApiHandler(configuration: ProviderSettings): ApiHandler {
 
 	switch (apiProvider) {
 		// kilocode_change start
-		case "kilocode":
+		case "schmidt-embedded-systems":
 			return new KilocodeOpenrouterHandler(options)
 		case "virtual-quota-fallback":
 			return new VirtualQuotaFallbackHandler(options)

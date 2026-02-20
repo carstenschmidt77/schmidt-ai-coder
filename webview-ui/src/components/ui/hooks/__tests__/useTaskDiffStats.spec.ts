@@ -3,7 +3,7 @@
 
 import { renderHook } from "@testing-library/react"
 import type { ClineMessage } from "@roo-code/types"
-import { useTaskDiffStats } from "../kilocode/useTaskDiffStats"
+import { useTaskDiffStats } from "../schmidtaicoder/useTaskDiffStats"
 
 describe("useTaskDiffStats", () => {
 	describe("basic functionality", () => {

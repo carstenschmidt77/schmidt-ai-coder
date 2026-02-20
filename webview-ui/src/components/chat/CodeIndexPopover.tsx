@@ -43,8 +43,8 @@ import {
 import { useRooPortal } from "@src/components/ui/hooks/useRooPortal"
 import { useEscapeKey } from "@src/hooks/useEscapeKey"
 // kilocode_change start
-import { EmbeddingBatchSizeSlider } from "./kilocode/EmbeddingBatchSizeSlider"
-import { MaxBatchRetriesSlider } from "./kilocode/MaxBatchRetriesSlider"
+import { EmbeddingBatchSizeSlider } from "./schmidtaicoder/EmbeddingBatchSizeSlider"
+import { MaxBatchRetriesSlider } from "./schmidtaicoder/MaxBatchRetriesSlider"
 // kilocode_change end
 import {
 	useOpenRouterModelProviders,

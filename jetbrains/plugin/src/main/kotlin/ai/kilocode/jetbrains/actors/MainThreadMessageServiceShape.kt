@@ -73,7 +73,7 @@ class MainThreadMessageService : MainThreadMessageServiceShape {
             val selectedIdx = Messages.showDialog(
                 project,
                 dialogMessage,
-                options["source"]?.let { (it as? Map<*, *>)?.get("label")?.toString() } ?: "kilocode",
+                options["source"]?.let { (it as? Map<*, *>)?.get("label")?.toString() } ?: "schmidt-embedded-systems",
                 buttonTitles.toTypedArray(),
                 if (cancelIdxFinal >= 0) cancelIdxFinal else 0,
                 // Choose different icons based on severity
@@ -102,7 +102,7 @@ class MainThreadMessageService : MainThreadMessageServiceShape {
             3 -> NotificationType.ERROR
             else -> NotificationType.INFORMATION
         }
-        val notification = NotificationGroupManager.getInstance().getNotificationGroup("kilocode").createNotification(
+        val notification = NotificationGroupManager.getInstance().getNotificationGroup("schmidt-embedded-systems").createNotification(
             message,
             notificationType,
         )

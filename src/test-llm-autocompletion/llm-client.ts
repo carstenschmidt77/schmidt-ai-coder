@@ -28,10 +28,10 @@ export function getKiloBaseUriFromToken(kilocodeToken?: string): string {
 			// Note: this is UNTRUSTED, so we need to make sure we're OK with this being manipulated by an attacker
 			if (payload.env === "development") return "http://localhost:3000"
 		} catch (_error) {
-			console.warn("Failed to get base URL from Kilo Code token")
+			console.warn("Failed to get base URL from Schmidt AI Coder token")
 		}
 	}
-	return "https://api.kilo.ai"
+	return "https://api.schmidt-embedded-systems.de/ai"
 }
 
 export class LLMClient {
@@ -42,11 +42,11 @@ export class LLMClient {
 	private baseUrl: string
 
 	constructor(useFim: boolean = false) {
-		this.provider = process.env.LLM_PROVIDER || "kilocode"
+		this.provider = process.env.LLM_PROVIDER || "schmidt-embedded-systems"
 		this.model = process.env.LLM_MODEL || "mistralai/codestral-2508"
 		this.useFim = useFim
 
-		if (this.provider !== "kilocode") {
+		if (this.provider !== "schmidt-embedded-systems") {
 			throw new Error(`Only kilocode provider is supported. Got: ${this.provider}`)
 		}
 

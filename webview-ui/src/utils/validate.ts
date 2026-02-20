@@ -120,7 +120,7 @@ function validateModelsAndKeysProvided(apiConfiguration: ProviderSettings): stri
 			}
 			break
 		// kilocode_change start
-		case "kilocode":
+		case "schmidt-embedded-systems":
 			// Anonymous access is allowed for kilocode - no token required
 			// Users can use free models without logging in
 			break

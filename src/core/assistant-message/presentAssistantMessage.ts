@@ -44,13 +44,13 @@ import { codebaseSearchTool } from "../tools/CodebaseSearchTool"
 import { formatResponse } from "../prompts/responses"
 
 import { yieldPromise } from "../kilocode"
-import { evaluateGatekeeperApproval } from "./kilocode/gatekeeper"
-import { editFileTool as fastEditFileTool, isFastApplyAvailable } from "../tools/kilocode/editFileTool"
-import { deleteFileTool } from "../tools/kilocode/deleteFileTool"
-import { newRuleTool } from "../tools/kilocode/newRuleTool"
-import { reportBugTool } from "../tools/kilocode/reportBugTool"
-import { condenseTool } from "../tools/kilocode/condenseTool"
-import { captureAskApproval } from "./kilocode/captureAskApprovalEvent"
+import { evaluateGatekeeperApproval } from "./schmidtaicoder/gatekeeper"
+import { editFileTool as fastEditFileTool, isFastApplyAvailable } from "../tools/schmidtaicoder/editFileTool"
+import { deleteFileTool } from "../tools/schmidtaicoder/deleteFileTool"
+import { newRuleTool } from "../tools/schmidtaicoder/newRuleTool"
+import { reportBugTool } from "../tools/schmidtaicoder/reportBugTool"
+import { condenseTool } from "../tools/schmidtaicoder/condenseTool"
+import { captureAskApproval } from "./schmidtaicoder/captureAskApprovalEvent"
 
 /**
  * Processes and presents assistant message content to the user interface.

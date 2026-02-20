@@ -7,11 +7,11 @@ import { getCodeActionCommand } from "../utils/commands"
 import { EditorUtils } from "../integrations/editor/EditorUtils"
 
 export const TITLES: Record<CodeActionName, string> = {
-	EXPLAIN: "Explain with Kilo Code",
-	FIX: "Fix with Kilo Code",
-	IMPROVE: "Improve with Kilo Code",
-	ADD_TO_CONTEXT: "Add to Kilo Code",
-	NEW_TASK: "New Kilo Code Task",
+	EXPLAIN: "Explain with Schmidt AI Coder",
+	FIX: "Fix with Schmidt AI Coder",
+	IMPROVE: "Improve with Schmidt AI Coder",
+	ADD_TO_CONTEXT: "Add to Schmidt AI Coder",
+	NEW_TASK: "New Schmidt AI Coder Task",
 } as const
 
 export class CodeActionProvider implements vscode.CodeActionProvider {

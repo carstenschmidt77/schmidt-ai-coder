@@ -49,7 +49,7 @@ import {
 import DynamicTextArea from "react-textarea-autosize"
 import { cn } from "../../../lib/utils"
 import { StandardTooltip } from "../../../components/ui"
-import { KiloLogo } from "./KiloLogo"
+import { SchmidtAILogo } from "./SchmidtAILogo"
 
 export function SessionDetail() {
 	const { t } = useTranslation("agentManager")
@@ -478,7 +478,7 @@ function NewAgentForm() {
 			<div
 				className="text-[var(--vscode-editor-foreground)]"
 				style={{ width: 48, height: 48, margin: "0 auto 16px auto" }}>
-				<KiloLogo />
+				<SchmidtAILogo />
 			</div>
 			<div style={{ width: "100%", maxWidth: "100%", minWidth: "280px" }}>
 				<div

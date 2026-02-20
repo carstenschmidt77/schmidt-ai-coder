@@ -1,5 +1,5 @@
 import * as vscode from "vscode"
-import { JETBRAIN_PRODUCTS, KiloCodeWrapperProperties } from "../../shared/kilocode/wrapper"
+import { JETBRAIN_PRODUCTS, KiloCodeWrapperProperties } from "../../shared/schmidtaicoder/wrapper"
 import { TelemetrySetting } from "@roo-code/types"
 
 export const getKiloCodeWrapperProperties = (): KiloCodeWrapperProperties => {
@@ -19,7 +19,7 @@ export const getKiloCodeWrapperProperties = (): KiloCodeWrapperProperties => {
 		kiloCodeWrapperJetbrains = kiloCodeWrapperCode !== "cli"
 		kiloCodeWrapperTitle =
 			kiloCodeWrapperCode === "cli"
-				? "Kilo Code CLI"
+				? "Schmidt AI Coder CLI"
 				: JETBRAIN_PRODUCTS[kiloCodeWrapperCode as keyof typeof JETBRAIN_PRODUCTS]?.name || "JetBrains IDE"
 	}
 

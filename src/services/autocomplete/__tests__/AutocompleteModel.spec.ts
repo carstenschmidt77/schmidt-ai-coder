@@ -137,7 +137,7 @@ describe("AutocompleteModel", () => {
 
 		it("should skip kilocode provider when balance is zero and use openrouter instead", async () => {
 			const profiles = [
-				{ id: "1", name: "kilocode-profile", apiProvider: "kilocode" },
+				{ id: "1", name: "kilocode-profile", apiProvider: "schmidt-embedded-systems" },
 				{ id: "2", name: "openrouter-profile", apiProvider: "openrouter" },
 			] as any
 
@@ -149,7 +149,7 @@ describe("AutocompleteModel", () => {
 					return {
 						id: "1",
 						name: "kilocode-profile",
-						apiProvider: "kilocode",
+						apiProvider: "schmidt-embedded-systems",
 						kilocodeToken: "test-token",
 					} as any
 				} else if (args.id === "2") {
@@ -195,7 +195,7 @@ describe("AutocompleteModel", () => {
 
 		it("should use kilocode provider when balance is greater than zero", async () => {
 			const profiles = [
-				{ id: "1", name: "kilocode-profile", apiProvider: "kilocode" },
+				{ id: "1", name: "kilocode-profile", apiProvider: "schmidt-embedded-systems" },
 				{ id: "2", name: "openrouter-profile", apiProvider: "openrouter" },
 			] as any
 
@@ -207,7 +207,7 @@ describe("AutocompleteModel", () => {
 					return {
 						id: "1",
 						name: "kilocode-profile",
-						apiProvider: "kilocode",
+						apiProvider: "schmidt-embedded-systems",
 						kilocodeToken: "test-token",
 					} as any
 				} else if (args.id === "2") {
@@ -253,7 +253,7 @@ describe("AutocompleteModel", () => {
 
 		it("should handle kilocode provider with no token", async () => {
 			const profiles = [
-				{ id: "1", name: "kilocode-profile", apiProvider: "kilocode" },
+				{ id: "1", name: "kilocode-profile", apiProvider: "schmidt-embedded-systems" },
 				{ id: "2", name: "openrouter-profile", apiProvider: "openrouter" },
 			] as any
 
@@ -265,7 +265,7 @@ describe("AutocompleteModel", () => {
 					return {
 						id: "1",
 						name: "kilocode-profile",
-						apiProvider: "kilocode",
+						apiProvider: "schmidt-embedded-systems",
 						kilocodeToken: "", // No token
 					} as any
 				} else if (args.id === "2") {
@@ -311,7 +311,7 @@ describe("AutocompleteModel", () => {
 		})
 
 		it("should set hasKilocodeProfileWithNoBalance when kilocode profile exists but has no balance", async () => {
-			const profiles = [{ id: "1", name: "kilocode-profile", apiProvider: "kilocode" }] as any
+			const profiles = [{ id: "1", name: "kilocode-profile", apiProvider: "schmidt-embedded-systems" }] as any
 
 			vi.mocked(mockProviderSettingsManager.listConfig).mockResolvedValue(profiles)
 
@@ -319,7 +319,7 @@ describe("AutocompleteModel", () => {
 			vi.mocked(mockProviderSettingsManager.getProfile).mockResolvedValue({
 				id: "1",
 				name: "kilocode-profile",
-				apiProvider: "kilocode",
+				apiProvider: "schmidt-embedded-systems",
 				kilocodeToken: "test-token",
 			} as any)
 
@@ -348,7 +348,7 @@ describe("AutocompleteModel", () => {
 		})
 
 		it("should not set hasKilocodeProfileWithNoBalance when kilocode profile has balance", async () => {
-			const profiles = [{ id: "1", name: "kilocode-profile", apiProvider: "kilocode" }] as any
+			const profiles = [{ id: "1", name: "kilocode-profile", apiProvider: "schmidt-embedded-systems" }] as any
 
 			vi.mocked(mockProviderSettingsManager.listConfig).mockResolvedValue(profiles)
 
@@ -356,7 +356,7 @@ describe("AutocompleteModel", () => {
 			vi.mocked(mockProviderSettingsManager.getProfile).mockResolvedValue({
 				id: "1",
 				name: "kilocode-profile",
-				apiProvider: "kilocode",
+				apiProvider: "schmidt-embedded-systems",
 				kilocodeToken: "test-token",
 			} as any)
 
@@ -401,7 +401,7 @@ describe("AutocompleteModel", () => {
 		})
 
 		it("should clear hasKilocodeProfileWithNoBalance on reload", async () => {
-			const profiles = [{ id: "1", name: "kilocode-profile", apiProvider: "kilocode" }] as any
+			const profiles = [{ id: "1", name: "kilocode-profile", apiProvider: "schmidt-embedded-systems" }] as any
 
 			vi.mocked(mockProviderSettingsManager.listConfig).mockResolvedValue(profiles)
 
@@ -409,7 +409,7 @@ describe("AutocompleteModel", () => {
 			vi.mocked(mockProviderSettingsManager.getProfile).mockResolvedValue({
 				id: "1",
 				name: "kilocode-profile",
-				apiProvider: "kilocode",
+				apiProvider: "schmidt-embedded-systems",
 				kilocodeToken: "test-token",
 			} as any)
 

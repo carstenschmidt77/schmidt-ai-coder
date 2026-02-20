@@ -1,16 +1,16 @@
 // kilocode_change - new file
 import { getKiloUrlFromToken } from "@roo-code/types"
-import { X_KILOCODE_ORGANIZATIONID, X_KILOCODE_TESTER } from "../../shared/kilocode/headers"
-import { KiloOrganization, KiloOrganizationSchema } from "../../shared/kilocode/organization"
+import { X_KILOCODE_ORGANIZATIONID, X_KILOCODE_TESTER } from "../../shared/schmidtaicoder/headers"
+import { KiloOrganization, KiloOrganizationSchema } from "../../shared/schmidtaicoder/organization"
 import { CompactLogger } from "../../utils/logging/CompactLogger"
 import { fetchWithRetries } from "../../shared/http"
 
 /**
- * Service for fetching and managing Kilo Code organization settings
+ * Service for fetching and managing Schmidt AI Coder organization settings
  */
 export class OrganizationService {
 	/**
-	 * Fetches organization details from the Kilo Code API
+	 * Fetches organization details from the Schmidt AI Coder API
 	 * @param kilocodeToken - The authentication token
 	 * @param organizationId - The organization ID
 	 * @param kilocodeTesterWarningsDisabledUntil - Timestamp for suppressing tester warnings
@@ -39,7 +39,7 @@ export class OrganizationService {
 				headers[X_KILOCODE_TESTER] = "SUPPRESS"
 			}
 
-			const url = getKiloUrlFromToken(`https://api.kilo.ai/api/organizations/${organizationId}`, kilocodeToken)
+			const url = getKiloUrlFromToken(`https://api.schmidt-embedded-systems.de/ai/api/organizations/${organizationId}`, kilocodeToken)
 
 			const response = await fetchWithRetries({
 				url,

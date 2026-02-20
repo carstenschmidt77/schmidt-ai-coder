@@ -5,7 +5,7 @@ import { useAppTranslation } from "@src/i18n/TranslationContext"
 
 // import { useTaskSearch } from "./useTaskSearch" // kilocode_change
 import TaskItem from "./TaskItem"
-import { useTaskHistory } from "@/kilocode/hooks/useTaskHistory"
+import { useTaskHistory } from "@/schmidtaicoder/hooks/useTaskHistory"
 
 const HistoryPreview = ({ taskHistoryVersion }: { taskHistoryVersion: number } /*kilocode_change*/) => {
 	// kilocode_change start

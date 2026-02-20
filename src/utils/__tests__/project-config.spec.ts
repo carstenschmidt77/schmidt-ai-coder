@@ -51,7 +51,7 @@ describe("project-config", () => {
 	})
 
 	describe("getProjectConfig", () => {
-		it("returns config from .kilocode/config.json", async () => {
+		it("returns config from .schmidtaicoder/config.json", async () => {
 			const kilocodeDir = path.join(tempDir, ".kilocode")
 			await fs.mkdir(kilocodeDir, { recursive: true })
 			await fs.writeFile(

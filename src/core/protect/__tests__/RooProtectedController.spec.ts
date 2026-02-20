@@ -129,7 +129,7 @@ describe("RooProtectedController", () => {
 	describe("getProtectionMessage", () => {
 		it("should return appropriate protection message", () => {
 			const message = controller.getProtectionMessage()
-			expect(message).toBe("This is a Kilo Code configuration file and requires approval for modifications")
+			expect(message).toBe("This is a Schmidt AI Coder configuration file and requires approval for modifications")
 		})
 	})
 
@@ -150,10 +150,10 @@ describe("RooProtectedController", () => {
 			const patterns = RooProtectedController.getProtectedPatterns()
 
 			expect(patterns).toEqual([
-				".kilocodeignore",
-				".kilocodemodes",
+				".schmidtaicodeignore",
+				".schmidtaicodermodes",
 				".kilocoderules",
-				".kilocode/**",
+				".schmidtaicoder/**",
 				".kilocodeprotected",
 				".rooignore",
 				".roomodes",

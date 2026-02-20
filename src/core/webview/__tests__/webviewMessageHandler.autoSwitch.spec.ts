@@ -157,14 +157,14 @@ describe("webviewMessageHandler - Automatic Organization Switching", () => {
 			// Verify models were flushed and refetched (via upsertApiConfiguration handler)
 			expect(flushModels).toHaveBeenCalledWith(
 				{
-					provider: "kilocode",
+					provider: "schmidt-embedded-systems",
 					kilocodeOrganizationId: "org-1",
 					kilocodeToken: "test-token",
 				},
 				true,
 			)
 			expect(getModels).toHaveBeenCalledWith({
-				provider: "kilocode",
+				provider: "schmidt-embedded-systems",
 				kilocodeOrganizationId: "org-1",
 				kilocodeToken: "test-token",
 			})
@@ -232,7 +232,7 @@ describe("webviewMessageHandler - Automatic Organization Switching", () => {
 			// Verify flushModels was called (via upsertApiConfiguration)
 			expect(flushModels).toHaveBeenCalledWith(
 				{
-					provider: "kilocode",
+					provider: "schmidt-embedded-systems",
 					kilocodeOrganizationId: "org-1",
 					kilocodeToken: "test-token",
 				},
@@ -241,7 +241,7 @@ describe("webviewMessageHandler - Automatic Organization Switching", () => {
 
 			// Verify getModels was called with organization ID (via upsertApiConfiguration)
 			expect(getModels).toHaveBeenCalledWith({
-				provider: "kilocode",
+				provider: "schmidt-embedded-systems",
 				kilocodeOrganizationId: "org-1",
 				kilocodeToken: "test-token",
 			})

@@ -78,7 +78,7 @@ const InstalledSkillsView = () => {
 				<p>
 					{t("kilocode:skills.description")}{" "}
 					<VSCodeLink
-						href="https://kilo.ai/docs/features/skills"
+						href="https://www.schmidt-embedded-systems.de/ai/docs/features/skills"
 						style={{ display: "inline" }}
 						className="text-xs">
 						{t("kilocode:docs")}

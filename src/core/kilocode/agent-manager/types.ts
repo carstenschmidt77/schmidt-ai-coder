@@ -1,11 +1,11 @@
 /**
  * Agent Manager Types
  *
- * Re-exports types from @kilocode/core-schemas for consistency
+ * Re-exports types from @schmidtaicoder/core-schemas for consistency
  * and backward compatibility.
  */
 
-import type { Session as RemoteSession } from "../../../shared/kilocode/cli-sessions/core/SessionClient"
+import type { Session as RemoteSession } from "../../../shared/schmidtaicoder/cli-sessions/core/SessionClient"
 
 // Re-export all agent manager types from core-schemas
 export {
@@ -33,7 +33,7 @@ export {
 	type AvailableModel,
 	type AvailableMode,
 	type StartSessionMessage,
-} from "@kilocode/core-schemas"
+} from "@schmidtaicoder/core-schemas"
 
 // Re-export remote session shape from shared session client for consistency
 export type { RemoteSession }

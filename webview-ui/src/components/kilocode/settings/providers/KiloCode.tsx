@@ -9,7 +9,7 @@ import { ModelPicker } from "../../../settings/ModelPicker"
 import { vscode } from "@src/utils/vscode"
 import { OrganizationSelector } from "../../common/OrganizationSelector"
 import { getAppUrl } from "@roo-code/types"
-import { useKiloIdentity } from "@src/utils/kilocode/useKiloIdentity"
+import { useKiloIdentity } from "@src/utils/schmidtaicoder/useKiloIdentity"
 
 type KiloCodeProps = {
 	apiConfiguration: ProviderSettings
@@ -45,7 +45,7 @@ export const KiloCode = ({
 
 	// Use the existing hook to get user identity
 	const userIdentity = useKiloIdentity(apiConfiguration.kilocodeToken || "", "")
-	const isKiloCodeAiUser = userIdentity.endsWith("@kilo.ai")
+	const isKiloCodeAiUser = userIdentity.endsWith("@schmidt-embedded-systems.de/ai")
 
 	const areKilocodeWarningsDisabled = apiConfiguration.kilocodeTesterWarningsDisabledUntil
 		? apiConfiguration.kilocodeTesterWarningsDisabledUntil > Date.now()
@@ -119,14 +119,14 @@ export const KiloCode = ({
 				apiConfiguration={apiConfiguration}
 				setApiConfigurationField={setApiConfigurationField}
 				defaultModelId={kilocodeDefaultModel}
-				models={routerModels?.kilocode ?? {}}
+				models={routerModels?.schmidtaicoder ?? {}}
 				modelIdKey="kilocodeModel"
-				serviceName="Kilo Code"
+				serviceName="Schmidt AI Coder"
 				serviceUrl={getAppUrl()}
 				organizationAllowList={organizationAllowList}
 			/>
 
-			{/* KILOCODE-TESTER warnings setting - only visible for @kilo.ai users */}
+			{/* KILOCODE-TESTER warnings setting - only visible for @schmidt-embedded-systems.de/ai users */}
 			{isKiloCodeAiUser && (
 				<div className="mb-4">
 					<label className="block font-medium mb-2">Disable KILOCODE-TESTER warnings</label>

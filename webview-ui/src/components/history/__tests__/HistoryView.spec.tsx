@@ -13,8 +13,8 @@ vi.mock("@src/i18n/TranslationContext", () => ({
 	}),
 }))
 
-vi.mock("@/kilocode/hooks/useTaskHistory")
-import { useTaskHistory } from "@/kilocode/hooks/useTaskHistory"
+vi.mock("@/schmidtaicoder/hooks/useTaskHistory")
+import { useTaskHistory } from "@/schmidtaicoder/hooks/useTaskHistory"
 
 const mockTaskHistory = [
 	{

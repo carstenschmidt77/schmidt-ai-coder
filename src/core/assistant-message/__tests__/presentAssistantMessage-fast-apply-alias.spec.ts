@@ -22,7 +22,7 @@ vi.mock("@roo-code/telemetry", () => ({
 	},
 }))
 
-vi.mock("../../tools/kilocode/editFileTool", async (importOriginal) => {
+vi.mock("../../tools/schmidtaicoder/editFileTool", async (importOriginal) => {
 	const actual = (await importOriginal()) as any
 	return {
 		...actual,

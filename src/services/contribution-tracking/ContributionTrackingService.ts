@@ -81,7 +81,7 @@ export class ContributionTrackingService {
 	}
 
 	/**
-	 * Fetch a new short-lived token from the Kilo backend
+	 * Fetch a new short-lived token from the Schmidt AI backend
 	 * @param organizationId - The organization ID to get a token for
 	 * @param kilocodeToken - The main Kilocode authentication token
 	 * @returns The token provision response
@@ -89,7 +89,7 @@ export class ContributionTrackingService {
 	private async fetchToken(organizationId: string, kilocodeToken: string): Promise<TokenProvisionResponse> {
 		try {
 			const url = getKiloUrlFromToken(
-				`https://api.kilo.ai/api/organizations/${organizationId}/user-tokens`,
+				`https://api.schmidt-embedded-systems.de/ai/api/organizations/${organizationId}/user-tokens`,
 				kilocodeToken,
 			)
 

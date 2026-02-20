@@ -140,7 +140,7 @@ import { TemperatureControl } from "./TemperatureControl"
 import { RateLimitSecondsControl } from "./RateLimitSecondsControl"
 import { ConsecutiveMistakeLimitControl } from "./ConsecutiveMistakeLimitControl"
 import { BedrockCustomArn } from "./providers/BedrockCustomArn"
-import { KiloCode } from "../kilocode/settings/providers/KiloCode" // kilocode_change
+import { KiloCode } from "../schmidtaicoder/settings/providers/KiloCode" // kilocode_change
 import { RooBalanceDisplay } from "./providers/RooBalanceDisplay"
 import { buildDocLink } from "@src/utils/docLinks"
 import { KiloProviderRouting, KiloProviderRoutingManagedByOrganization } from "./providers/KiloProviderRouting"
@@ -596,7 +596,7 @@ const ApiOptions = ({
 			{errorMessage && <ApiErrorMessage errorMessage={errorMessage} />}
 
 			{/* kilocode_change start */}
-			{selectedProvider === "kilocode" && (
+			{selectedProvider === "schmidt-embedded-systems" && (
 				<KiloCode
 					apiConfiguration={apiConfiguration}
 					setApiConfigurationField={setApiConfigurationField}
@@ -1091,7 +1091,7 @@ const ApiOptions = ({
 
 			{
 				// kilocode_change start
-				(selectedProvider === "kilocode" || selectedProvider === "openrouter") &&
+				(selectedProvider === "schmidt-embedded-systems" || selectedProvider === "openrouter") &&
 					(apiConfiguration.kilocodeOrganizationId ? (
 						<KiloProviderRoutingManagedByOrganization
 							organizationId={apiConfiguration.kilocodeOrganizationId}

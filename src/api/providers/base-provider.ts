@@ -7,7 +7,7 @@ import { ApiStream } from "../transform/stream"
 import { countTokens } from "../../utils/countTokens"
 import { isMcpTool } from "../../utils/mcp-name"
 
-import { normalizeObjectAdditionalPropertiesFalse } from "./kilocode/openai-strict-schema" // kilocode_change
+import { normalizeObjectAdditionalPropertiesFalse } from "./schmidtaicoder/openai-strict-schema" // kilocode_change
 
 /**
  * Base class for API providers that implements common functionality.

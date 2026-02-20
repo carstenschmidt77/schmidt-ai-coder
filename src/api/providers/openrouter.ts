@@ -37,7 +37,7 @@ import { getModelEndpoints } from "./fetchers/modelEndpointCache"
 
 import { DEFAULT_HEADERS } from "./constants"
 import { BaseProvider } from "./base-provider"
-import { verifyFinishReason } from "./kilocode/verifyFinishReason"
+import { verifyFinishReason } from "./schmidtaicoder/verifyFinishReason"
 
 // kilocode_change start
 type OpenRouterProviderParams = {
@@ -49,14 +49,14 @@ type OpenRouterProviderParams = {
 }
 
 import { safeJsonParse } from "@roo-code/core" // kilocode_change
-import { isAnyRecognizedKiloCodeError } from "../../shared/kilocode/errorUtils"
+import { isAnyRecognizedKiloCodeError } from "../../shared/schmidtaicoder/errorUtils"
 import { OpenAIError } from "openai"
 // kilocode_change end
 
 import type { ApiHandlerCreateMessageMetadata, SingleCompletionHandler } from "../index"
 import { handleOpenAIError } from "./utils/openai-error-handler"
 import { generateImageWithProvider, ImageGenerationResult } from "./utils/image-generation"
-import { KiloCodeChunkSchema } from "./kilocode/chunk-schema"
+import { KiloCodeChunkSchema } from "./schmidtaicoder/chunk-schema"
 import { applyRouterToolPreferences } from "./utils/router-tool-preferences"
 
 // Add custom interface for OpenRouter params.

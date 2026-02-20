@@ -61,7 +61,7 @@ export async function fetchKilocodeNotificationsCore(
 		headers["X-KILOCODE-TESTER"] = "SUPPRESS"
 	}
 
-	const url = getKiloUrlFromToken("https://api.kilo.ai/api/users/notifications", kilocodeToken)
+	const url = getKiloUrlFromToken("https://api.schmidt-embedded-systems.de/ai/api/users/notifications", kilocodeToken)
 	const response = await axios.get(url, {
 		headers,
 		timeout: 5000,
@@ -129,7 +129,7 @@ export async function fetchKilocodeNotificationsOnStartup(
 		const dismissedNotificationIds = contextProxy.getValue("dismissedNotificationIds") || []
 		const kilocodeToken = apiConfiguration?.kilocodeToken
 
-		if (!kilocodeToken || apiConfiguration?.apiProvider !== "kilocode") {
+		if (!kilocodeToken || apiConfiguration?.apiProvider !== "schmidt-embedded-systems") {
 			log?.("[Notifications] Skipping notification fetch: not using kilocode provider")
 			return
 		}
@@ -221,7 +221,7 @@ export const fetchKilocodeNotificationsHandler = async (provider: ClineProvider)
 		const { apiConfiguration, dismissedNotificationIds } = await provider.getState()
 		const kilocodeToken = apiConfiguration?.kilocodeToken
 
-		if (!kilocodeToken || apiConfiguration?.apiProvider !== "kilocode") {
+		if (!kilocodeToken || apiConfiguration?.apiProvider !== "schmidt-embedded-systems") {
 			provider.postMessageToWebview({
 				type: "kilocodeNotificationsResponse",
 				notifications: [],
@@ -369,7 +369,7 @@ export const deviceAuthMessageHandler = async (provider: ClineProvider, message:
 							profileName,
 							{
 								...profileConfig,
-								apiProvider: "kilocode",
+								apiProvider: "schmidt-embedded-systems",
 								kilocodeToken: token,
 							},
 							true, // Activate immediately to match old handleKiloCodeCallback behavior
@@ -379,7 +379,7 @@ export const deviceAuthMessageHandler = async (provider: ClineProvider, message:
 						const { apiConfiguration, currentApiConfigName = "default" } = await provider.getState()
 						await provider.upsertProviderProfile(currentApiConfigName, {
 							...apiConfiguration,
-							apiProvider: "kilocode",
+							apiProvider: "schmidt-embedded-systems",
 							kilocodeToken: token,
 						}) // activate: true by default
 					}
@@ -387,7 +387,7 @@ export const deviceAuthMessageHandler = async (provider: ClineProvider, message:
 					// Update current task's API handler if exists (matching old implementation)
 					if (provider.getCurrentTask()) {
 						provider.getCurrentTask()!.api = buildApiHandler({
-							apiProvider: "kilocode",
+							apiProvider: "schmidt-embedded-systems",
 							kilocodeToken: token,
 						})
 					}

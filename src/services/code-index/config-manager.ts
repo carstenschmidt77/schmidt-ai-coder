@@ -36,7 +36,7 @@ export class CodeIndexConfigManager {
 	private scannerMaxBatchRetries?: number
 	// kilocode_change end
 
-	// kilocode_change start: Kilo org indexing props
+	// kilocode_change start: Schmidt AI org indexing props
 	private _kiloOrgProps: {
 		organizationId: string
 		kilocodeToken: string
@@ -49,23 +49,23 @@ export class CodeIndexConfigManager {
 		this._loadAndSetConfiguration()
 	}
 
-	// kilocode_change start: Kilo org indexing methods
+	// kilocode_change start: Schmidt AI org indexing methods
 	/**
-	 * Sets Kilo organization properties for cloud-based indexing
+	 * Sets Schmidt AI organization properties for cloud-based indexing
 	 */
 	public setKiloOrgProps(props: { organizationId: string; kilocodeToken: string; projectId: string }) {
 		this._kiloOrgProps = props
 	}
 
 	/**
-	 * Gets Kilo organization properties
+	 * Gets Schmidt AI organization properties
 	 */
 	public getKiloOrgProps() {
 		return this._kiloOrgProps
 	}
 
 	/**
-	 * Checks if Kilo org mode is available (has valid credentials)
+	 * Checks if Schmidt AI org mode is available (has valid credentials)
 	 */
 	public get isKiloOrgMode(): boolean {
 		return !!(
@@ -307,10 +307,10 @@ export class CodeIndexConfigManager {
 
 	/**
 	 * Checks if the service is properly configured based on the embedder type.
-	 * kilocode_change: Also returns true if Kilo org mode is available
+	 * kilocode_change: Also returns true if Schmidt AI org mode is available
 	 */
 	public isConfigured(): boolean {
-		// kilocode_change start: Allow Kilo org mode as configured
+		// kilocode_change start: Allow Schmidt AI org mode as configured
 		if (this.isKiloOrgMode) {
 			return true
 		}

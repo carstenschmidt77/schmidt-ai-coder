@@ -97,7 +97,7 @@ describe.skip("ImageGenerationSettings", () => {
 		// kilocode_change: no roo provider
 		it.skip("should not render API key field when provider is roo", () => {
 			const { queryByPlaceholderText } = render(
-				<ImageGenerationSettings {...defaultProps} enabled={true} imageGenerationProvider="kilocode" />,
+				<ImageGenerationSettings {...defaultProps} enabled={true} imageGenerationProvider="schmidt-embedded-systems" />,
 			)
 
 			expect(

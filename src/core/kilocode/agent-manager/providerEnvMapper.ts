@@ -39,7 +39,7 @@ const findKilocodeProviderId = (config: CliConfigShape | undefined): string | un
 	const kiloProviders = providers.filter((p): p is CliProviderShape => {
 		const provider = (p as CliProviderShape | undefined)?.provider
 		const id = (p as CliProviderShape | undefined)?.id
-		return provider === "kilocode" && hasNonEmptyString(id)
+		return provider === "schmidt-embedded-systems" && hasNonEmptyString(id)
 	})
 
 	if (kiloProviders.length === 0) {
@@ -88,7 +88,7 @@ export const buildProviderEnvOverrides = (
 		return {}
 	}
 
-	if (apiConfiguration.apiProvider !== "kilocode") {
+	if (apiConfiguration.apiProvider !== "schmidt-embedded-systems") {
 		debugLog(`[AgentManager] Provider "${apiConfiguration.apiProvider}" not eligible for env injection; skipping.`)
 		return {}
 	}
@@ -119,7 +119,7 @@ export const buildProviderEnvOverrides = (
 		}
 
 		overrides.KILO_PROVIDER = "default"
-		overrides.KILO_PROVIDER_TYPE = "kilocode"
+		overrides.KILO_PROVIDER_TYPE = "schmidt-embedded-systems"
 		overrides.KILOCODE_TOKEN = apiConfiguration.kilocodeToken
 		overrides.KILOCODE_MODEL = apiConfiguration.kilocodeModel
 

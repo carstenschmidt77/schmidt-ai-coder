@@ -81,7 +81,7 @@ describe("SimpleInstaller", () => {
 
 			const result = await installer.installItem(mockModeItem, { target: "project" })
 
-			expect(result.filePath).toBe(path.join("/test/workspace", ".kilocodemodes"))
+			expect(result.filePath).toBe(path.join("/test/workspace", ".schmidtaicodermodes"))
 			expect(mockCustomModesManager.importModeWithRules).toHaveBeenCalled()
 
 			// Verify the import was called with correct YAML structure
@@ -134,7 +134,7 @@ describe("SimpleInstaller", () => {
 
 			const result = await installerWithoutManager.installItem(mockModeItem, { target: "project" })
 
-			expect(result.filePath).toBe(path.join("/test/workspace", ".kilocodemodes"))
+			expect(result.filePath).toBe(path.join("/test/workspace", ".schmidtaicodermodes"))
 			expect(mockFs.writeFile).toHaveBeenCalled()
 		})
 	})
@@ -175,7 +175,7 @@ describe("SimpleInstaller", () => {
 			mockFs.readFile.mockResolvedValueOnce(invalidJson)
 
 			await expect(installer.installItem(mockMcpItem, { target: "project" })).rejects.toThrow(
-				"Cannot install MCP server: The .kilocode/mcp.json file contains invalid JSON",
+				"Cannot install MCP server: The .schmidtaicoder/mcp.json file contains invalid JSON",
 			)
 
 			// Should NOT write to file

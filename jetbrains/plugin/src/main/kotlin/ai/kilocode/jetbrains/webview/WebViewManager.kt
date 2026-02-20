@@ -377,7 +377,7 @@ class WebViewManager(var project: Project) : Disposable, ThemeChangeListener {
         try {
             stateMachine?.transitionTo(InitializationState.HTML_LOADING, "Loading HTML content")
             
-            data.htmlContent = data.htmlContent.replace("/jetbrains/resources/kilocode/", "./")
+            data.htmlContent = data.htmlContent.replace("/jetbrains/resources/schmidtaicoder/", "./")
             data.htmlContent = data.htmlContent.replace("<html lang=\"en\">", "<html lang=\"en\" style=\"background: var(--vscode-sideBar-background);\">")
             val encodedState = getLatestWebView()?.state.toString().replace("\"", "\\\"")
             val mRst = """<script\s+nonce="([A-Za-z0-9]{32})">""".toRegex().find(data.htmlContent)

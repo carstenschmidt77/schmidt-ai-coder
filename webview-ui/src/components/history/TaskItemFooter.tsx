@@ -5,7 +5,7 @@ import { formatCost } from "@/utils/costFormatting"
 import { CopyButton } from "./CopyButton"
 import { ExportButton } from "./ExportButton"
 import { DeleteButton } from "./DeleteButton"
-import { FavoriteButton } from "../kilocode/history/FavoriteButton" // kilocode_change
+import { FavoriteButton } from "../schmidtaicoder/history/FavoriteButton" // kilocode_change
 import { KiloShareSessionButton } from "./KiloShareSessionButton" // kilocode_change
 import { StandardTooltip } from "../ui/standard-tooltip"
 

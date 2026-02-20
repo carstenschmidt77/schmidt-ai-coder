@@ -21,8 +21,8 @@ import switchMode from "./switch_mode"
 import updateTodoList from "./update_todo_list"
 import writeToFile from "./write_to_file"
 
-import deleteFile from "./kilocode/delete_file"
-import fastEditFile from "./kilocode/fast_edit_file"
+import deleteFile from "./schmidtaicoder/delete_file"
+import fastEditFile from "./schmidtaicoder/fast_edit_file"
 
 export { getMcpServerTools } from "./mcp_server"
 export { convertOpenAIToolToAnthropic, convertOpenAIToolsToAnthropic } from "./converters"

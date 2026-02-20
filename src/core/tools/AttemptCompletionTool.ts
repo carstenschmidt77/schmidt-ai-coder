@@ -8,7 +8,7 @@ import { formatResponse } from "../prompts/responses"
 import { Package } from "../../shared/package"
 import type { ToolUse } from "../../shared/tools"
 import { t } from "../../i18n"
-import { getCommitRangeForNewCompletion } from "../checkpoints/kilocode/seeNewChanges" // kilocode_change
+import { getCommitRangeForNewCompletion } from "../checkpoints/schmidtaicoder/seeNewChanges" // kilocode_change
 
 // kilocode_change start
 async function getClineMessageOptions(

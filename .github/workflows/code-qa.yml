@@ -1,4 +1,4 @@
-name: Code QA Kilo Code
+name: Code QA Schmidt AI Coder
 
 on:
     workflow_dispatch:

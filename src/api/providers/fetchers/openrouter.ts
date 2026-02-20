@@ -17,7 +17,7 @@ import {
 	ModelSettingsSchema,
 	parseModelSettings,
 	VersionedModelSettingsSchema,
-} from "../kilocode/model-settings"
+} from "../schmidtaicoder/model-settings"
 import { resolveVersionedSettings } from "./versionedSettings" // kilocode_change
 
 /**

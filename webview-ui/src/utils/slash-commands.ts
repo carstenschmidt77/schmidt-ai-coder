@@ -2,7 +2,7 @@
 // kilocode_change: this file was pulled from Cline and adjusted for us
 
 import { getAllModes } from "@roo/modes"
-import { getBasename } from "./kilocode/path-webview"
+import { getBasename } from "./schmidtaicoder/path-webview"
 import { Fzf } from "@/lib/word-boundary-fzf" // kilocode_change
 import { ClineRulesToggles } from "@roo/cline-rules"
 
@@ -26,11 +26,11 @@ export function getSupportedSlashCommands(
 		},
 		{
 			name: "newrule",
-			description: "Create a new Kilo rule with context from your conversation",
+			description: "Create a new Schmidt AI rule with context from your conversation",
 		},
 		{ name: "reportbug", description: "Create a KiloCode GitHub issue" },
 		// kilocode_change start
-		{ name: "init", description: "Initialize Kilo Code for this workspace" },
+		{ name: "init", description: "Initialize Schmidt AI Coder for this workspace" },
 		{ name: "smol", description: "Condenses your current context window" },
 		{ name: "condense", description: "Condenses your current context window" },
 		{ name: "compact", description: "Condenses your current context window" },

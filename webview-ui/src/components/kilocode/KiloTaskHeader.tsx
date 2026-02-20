@@ -15,7 +15,7 @@ import { cn } from "@src/lib/utils"
 import { Button, StandardTooltip } from "@src/components/ui"
 import { useExtensionState } from "@src/context/ExtensionStateContext"
 import { useSelectedModel } from "@/components/ui/hooks/useSelectedModel"
-import { useTaskDiffStats } from "@/components/ui/hooks/kilocode/useTaskDiffStats"
+import { useTaskDiffStats } from "@/components/ui/hooks/schmidtaicoder/useTaskDiffStats"
 
 import Thumbnails from "../common/Thumbnails"
 

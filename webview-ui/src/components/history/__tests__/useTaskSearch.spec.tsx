@@ -15,11 +15,11 @@ vi.mock("@/utils/highlight", () => ({
 import { useExtensionState } from "@/context/ExtensionStateContext"
 
 // kilocode_change start
-import { useTaskHistory } from "@/kilocode/hooks/useTaskHistory"
-import { getTaskHistory } from "@roo/kilocode/getTaskHistory"
+import { useTaskHistory } from "@/schmidtaicoder/hooks/useTaskHistory"
+import { getTaskHistory } from "@roo/schmidtaicoder/getTaskHistory"
 import { TaskHistoryRequestPayload } from "@roo/WebviewMessage"
 
-vi.mock("@/kilocode/hooks/useTaskHistory")
+vi.mock("@/schmidtaicoder/hooks/useTaskHistory")
 
 function kiloCodeSetUpUseTaskHistoryMock(taskHistory: Partial<HistoryItem>[], cwd: string) {
 	;(useTaskHistory as ReturnType<typeof vi.fn>).mockImplementation(

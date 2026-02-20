@@ -3,12 +3,12 @@ import { telemetryClient } from "@/utils/TelemetryClient"
 import { vscode } from "@/utils/vscode"
 import { TelemetryEventName } from "@roo-code/types"
 import { useTranslation } from "react-i18next"
-import { useTaskHistory } from "@/kilocode/hooks/useTaskHistory"
+import { useTaskHistory } from "@/schmidtaicoder/hooks/useTaskHistory"
 import { useExtensionState } from "@/context/ExtensionStateContext"
 import { Lightbulb, Sparkles, ArrowRight } from "lucide-react"
 
 export const IdeaSuggestionsBox = () => {
-	const { t } = useTranslation("kilocode")
+	const { t } = useTranslation("schmidt-embedded-systems")
 	const { taskHistoryVersion } = useExtensionState()
 
 	// Check if current workspace has any tasks
